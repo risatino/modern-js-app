@@ -119,122 +119,145 @@
 
 <!-- POLITICAL WILL: HighChartJS HTML Block 2 -->
 
-<div class="container">
-  <div class="row">
-    
-    <div class="col-xs-4 col-sm-2">
-      <a href="#modal-policymaker-discourse" data-target="#modal-policymaker-discourse" data-toggle="modal"><img src="/media/images/percent_of_total_candidate_policymaker_discours.original.png" style="border:1px solid #eee"></a>
-      <h5>2.a.1. Percent of Candidate / Policymaker Discourse on Climate Change</h5>
+<style>
+
+#federal-lawmakers {
+width: 1250px; 
+padding-top: 50px;
+}
+
+</style>
+
+<div>
+    <div class="rich-text">
+        <h2><b>2. POLITICAL WILL:  Built political will to advance climate solutions </b></h2>    
     </div>
 
-    <div class="col-xs-4 col-sm-2">
-      <a href="#modal-favorable-unfavorable" data-target="#modal-favorable-unfavorable" data-toggle="modal"><img src="/media/images/favorable_and_unfavorable_candidate_policymaker.original.png" style="border:1px solid #eee"></a>
-      <h5>2.a.2. Favorable and Unfavorable Discourse Among Candidates / Policymakers</h5>
-    </div>
-
-    <div class="col-xs-4 col-sm-2">
-      <a href="#modal-public-discourse" data-target="#modal-public-discourse" data-toggle="modal"><img src="/media/images/percent_of_total_public_climate_change_conversa.original.png" style="border:1px solid #eee"></a>
-      <h5>2.b. Percent of Public Media Conversation on Climate Change Devoted to Solutions</h5>
-    </div>
-
-    <div class="col-xs-4 col-sm-2">
-      <a href="#modalvotes" data-target="#modalvotes" data-toggle="modal"><img src="/media/images/federal_votes_on_energy_and_climate_bills.original.png" style="border:1px solid #eee"></a>
-      <h5>2.c. U.S. Federal Votes on Energy and Climate Bills</h5>
-    </div>
-    
-  </div>
-</div>
-
-
-<div class="modal fade wide" id="modal-policymaker-discourse" tabindex="-1" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
-        <h2 class="modal-title" class="ss-standard ss-alert">2.a.1 Percent of Candidate / Policymaker Discourse on Climate Change</h2>
-      </div>
-      <div class="modal-body">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12 chart-wrap">   
-              <div class="chart-wrap">
-              <div id="percent_of_total_candidate_policymaker_discourse_on_climate_change" class="chart"></div>
-              <p style="font-size:1em;color:white;"><em>2017 data represents Q1 only</em></p>
-              </div>
+	<div class="container">
+	  <div class="row">
+	    <div class="col-xs-4 col-sm-2" id="vertical-icon-img">
+                <img src="/media/images/2political-grp.original.png" id="vertical-icon-img">
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<div class="modal fade wide" id="modal-favorable-unfavorable" tabindex="-1" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
-        <h2 class="modal-title" class="ss-standard ss-alert">2.a.2 Favorable and Unfavorable Discourse Among Candidates / Policymakers</h2>
-      </div>
-      <div class="modal-body">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12 chart-wrap">   
-              <div class="chart-wrap">
-              <div id="favorable_and_unfavorable_candidate_policymaker_discourse_on_climate_change" class="chart"></div>
-              <p style="font-size:1em;color:white;"><em>2017 data represents Q1 only</em></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+	    <div class="col-xs-4 col-sm-2">
+	      <a href="#modal-policymaker-discourse" data-target="#modal-policymaker-discourse" data-toggle="modal"><img src="/media/images/percent_of_total_candidate_policymaker_discours.original.png" style="border:1px solid #eee"></a>
+	      <h5>2.a.1. Percent of Candidate / Policymaker Discourse on Climate Change</h5>
+	    </div>
 
-<div class="modal fade wide" id="modal-public-discourse" tabindex="-1" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
-        <h2 class="modal-title" class="ss-standard ss-alert">2.b. Percent of Public Media Conversation on Climate Change Devoted to Solutions</h2>
-      </div>
-      <div class="modal-body">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12 chart-wrap">   
-              <div class="chart-wrap">
-              <div id="percent_of_total_public_climate_change_conversation_devoted_to_solutions" class="chart"></div>
-              <p style="font-size:1em;color:white;"><em>2017 data represents Q1 only</em></p>
-              </div>
-            </div>
-          </div>
+	    <div class="col-xs-4 col-sm-2">
+	      <a href="#modal-favorable-unfavorable" data-target="#modal-favorable-unfavorable" data-toggle="modal"><img src="/media/images/favorable_and_unfavorable_candidate_policymaker.original.png" style="border:1px solid #eee"></a>
+	      <h5>2.a.2. Favorable and Unfavorable Discourse Among Candidates / Policymakers</h5>
+	    </div>
+
+	    <div class="col-xs-4 col-sm-2">
+	      <a href="#modal-public-discourse" data-target="#modal-public-discourse" data-toggle="modal"><img src="/media/images/percent_of_total_public_climate_change_conversa.original.png" style="border:1px solid #eee"></a>
+	      <h5>2.b. Percent of Public Media Conversation on Climate Change Devoted to Solutions</h5>
+	    </div>
+
+	    <div class="col-xs-4 col-sm-2">
+	      <a href="#modalvotes" data-target="#modalvotes" data-toggle="modal"><img src="/media/images/federal_votes_on_energy_and_climate_bills.original.png" style="border:1px solid #eee"></a>
+	      <h5>2.c. U.S. Federal Votes on Energy and Climate Bills</h5>
+	    </div>
+
+        <div class="col-xs-4 col-sm-12">
+           <h5>2.d. Federal Lawmakers Supporting Climate Solutions</h5>
+           <img src="/media/images/Sen__Reps_support_Climate_Solutions_white_font.original.png" id="federal-lawmakers">
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade wide" id="modalvotes" tabindex="-1" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
-        <h2 class="modal-title" class="ss-standard ss-alert">2.c. U.S. Federal Votes on Energy and Climate Bills</h2>
-      </div>
-      <div class="modal-body">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12 chart-wrap">   
-              <div class="chart-wrap">
-              <div id="federal_votes_on_energy_and_climate_bills" class="chart"></div>
-              <p style="font-size:1em; text-align:right;"><em></em></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+	    
+	  </div>
+	</div>
+
+
+	<div class="modal fade wide" id="modal-policymaker-discourse" tabindex="-1" role="dialog">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+	        <h2 class="modal-title" class="ss-standard ss-alert">2.a.1 Percent of Candidate / Policymaker Discourse on Climate Change</h2>
+	      </div>
+	      <div class="modal-body">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-sm-12 chart-wrap">   
+	              <div class="chart-wrap">
+	              <div id="percent_of_total_candidate_policymaker_discourse_on_climate_change" class="chart"></div>
+	              <p style="font-size:1em;color:white;"><em>2017 data represents Q1 only</em></p>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="modal fade wide" id="modal-favorable-unfavorable" tabindex="-1" role="dialog">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+	        <h2 class="modal-title" class="ss-standard ss-alert">2.a.2 Favorable and Unfavorable Discourse Among Candidates / Policymakers</h2>
+	      </div>
+	      <div class="modal-body">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-sm-12 chart-wrap">   
+	              <div class="chart-wrap">
+	              <div id="favorable_and_unfavorable_candidate_policymaker_discourse_on_climate_change" class="chart"></div>
+	              <p style="font-size:1em;color:white;"><em>2017 data represents Q1 only</em></p>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="modal fade wide" id="modal-public-discourse" tabindex="-1" role="dialog">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+	        <h2 class="modal-title" class="ss-standard ss-alert">2.b. Percent of Public Media Conversation on Climate Change Devoted to Solutions</h2>
+	      </div>
+	      <div class="modal-body">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-sm-12 chart-wrap">   
+	              <div class="chart-wrap">
+	              <div id="percent_of_total_public_climate_change_conversation_devoted_to_solutions" class="chart"></div>
+	              <p style="font-size:1em;color:white;"><em>2017 data represents Q1 only</em></p>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div class="modal fade wide" id="modalvotes" tabindex="-1" role="dialog">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+	        <h2 class="modal-title" class="ss-standard ss-alert">2.c. U.S. Federal Votes on Energy and Climate Bills</h2>
+	      </div>
+	      <div class="modal-body">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-sm-12 chart-wrap">   
+	              <div class="chart-wrap">
+	              <div id="federal_votes_on_energy_and_climate_bills" class="chart"></div>
+	              <p style="font-size:1em; text-align:right;"><em></em></p>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 </div>
 
 <!-- RENEWABLES & CLEAN TECHNOLOGY: HighChartJS HTML Block 4 -->
