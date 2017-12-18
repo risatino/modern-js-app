@@ -83,6 +83,23 @@ describe('security', function () {
     }, /Error: No access to property "bind/);
   })
 
+  it ('should not allow disguising forbidden properties with unicode characters', function () {
+    var scope = {
+      a: {}
+    };
+
+    assert.throws(function () { math.eval('a.co\u006Estructor', scope); }, /Error: No access to property "constructor"/);
+    assert.throws(function () { math.eval('a["co\\u006Estructor"]', scope); }, /Error: No access to property "constructor"/);
+    assert.throws(function () { math.eval('a.constructor', scope); }, /Error: No access to property "constructor"/);
+    assert.throws(function () { math.eval('a.constructor = 2', scope); }, /Error: No access to property "constructor"/);
+    assert.throws(function () { math.eval('a["constructor"] = 2', scope); }, /Error: No access to property "constructor"/);
+    assert.throws(function () { math.eval('a["co\\u006Estructor"] = 2', scope); }, /Error: No access to property "constructor"/);
+    assert.throws(function () { math.eval('a = {"constructor": 2}', scope); }, /Error: No access to property "constructor"/);
+    assert.throws(function () { math.eval('a = {constructor: 2}', scope); }, /Error: No access to property "constructor"/);
+    assert.throws(function () { math.eval('a = {"co\\u006Estructor": 2}', scope); }, /Error: No access to property "constructor"/);
+    assert.throws(function () { math.eval('a = {co\u006Estructor: 2}', scope); }, /Error: No access to property "constructor"/);
+  })
+
   it ('should not allow calling Function via imported, overridden function', function () {
     assert.throws(function () {
       var math2 = math.create();
@@ -286,6 +303,24 @@ describe('security', function () {
     assert.throws(function () {
       math.eval("x=parse(\"a\",{nodes:{a:Chain}});Chain.bind(x,{})();evilMath=x.create().done();evilMath.import({\"_compile\":f(a,b,c)=\"eval\",\"isNode\":f()=true}); parse(\"(1)\").map(g(a,b,c)=evilMath.chain()).compile().eval()(\"console.log(\'hacked...\')\")");
     }, /Undefined symbol Chain/);
+  })
+
+  it ('should not allow passing a function name containg bad contents', function () {
+    // underlying issues where:
+    // the input '[]["fn"]()=0'   
+    // - defines a function in the root scope, but this shouldn't be allowed syntax
+    // - there is a typed function created which unsecurely evaluates JS code with the function name in it 
+    //   -> when the function name contains JS code it can be executed, example:
+    //
+    //         var fn = typed("(){}+console.log(`hacked...`);function a", { "": function () { } })
+
+    assert.throws(function () {
+      math.eval('[]["(){}+console.log(`hacked...`);function a"]()=0')
+    }, /SyntaxError: Invalid left hand side of assignment operator =/);
+
+    assert.throws(function () {
+      math.eval('{}["(){}+console.log(`hacked...`);function a"]()=0')
+    }, /SyntaxError: Invalid left hand side of assignment operator =/);
   })
 
   it ('should allow calling functions on math', function () {
