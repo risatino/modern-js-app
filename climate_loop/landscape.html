@@ -1,0 +1,57 @@
+<!--Climate: Landscape HTML lock 1-->
+
+<br><hr>
+<div class="row">
+  <div class="col-sm-12">
+    <br>
+    <h2>A Visual Tour of the World's C02 Emissions</h2>
+    <div class="video_wrapper">
+      <iframe src="https://www.youtube.com/embed/fJ0o2E4d8Ts" frameborder="0" allowfullscreen=""></iframe>
+    </div>
+    <br>
+    <br>
+    <hr>
+    <h2>Climate Time Machine</h2>
+    <iframe src="https://climate.nasa.gov/interactives/climate-time-machine" style="width:100%;min-height:800px;"></iframe>
+    <br>
+    <br>
+    <hr>
+    <h2>How global warming stacks up</h2>
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/-gHUHoqBn-Y?autohide=1&amp;fs=1&amp;autoplay=0&amp;rel=0&amp;modestbranding=1&amp;showinfo=0&amp;hd=1" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <br>
+    <br>
+    <hr>
+    <h2>Climate Scoreboard</h2>
+    <!-- 16:9 aspect ratio -->
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/DqEsDT86Fls?autohide=1&amp;fs=1&amp;autoplay=0&amp;rel=0&amp;modestbranding=1&amp;showinfo=0&amp;hd=1" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<!--Climate: Landscape HTML Block 2-->
+
+<br><hr>
+<div class="row">
+  <div class="col-sm-12">
+    <h2>EIA Coal Data Browser</h2>
+<iframe id="eia_widget" width="100%" height="500px" style="width:100%;height:500px" src="https://www.eia.gov/opendata/embed/iframe.php?geoset_id=COAL.PRODUCTION.TOT-TOT.A&map=us_merc_en&regions=&relation_mode=line" ></iframe>
+  </div>
+</div>
+<script>
+// reload coal browser iframe in hidden tabs
+$(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
+$('#eia_widget').attr('src', $('#eia_widget').attr('src'));
+});
+</script>
+
+<!--Climate: Landscape HTML Block 3-->
+
+<iframe id="frame" src="https://environment.yale.edu/ycom/factsheets/MapPage/2017Rev/"  scrolling="no" seamless="seamless" style="width: 100%; height: 2500px; background: #ffffff; margin: 0 auto; padding: 0; overflow: scroll; border:none;"></iframe>
+
+<!--Climate: Landscape HTML Block 4 - no longer exists-->
+
+<iframe src='http://goo.gl/rzJiqg' scrolling="no" style="width: 100%; height: 520px; border: 0"></iframe>
+
