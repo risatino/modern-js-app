@@ -40,9 +40,9 @@
 $(function() {
 Highcharts.setOptions({lang: { numericSymbols: null,thousandsSep: ','},});var setFontsize = '20px';var setFontsizeLegend = '22px';var topMargin = 20;var axisMargin = 20;var rightMargin = 200;var bgColor = '#252830';
 //Chart Data
-var total_electricity_india_sector = [{ name: 'Ada County, ID (Local)',color: '#1ca8dd',dashStyle: 'Solid',data: [429.4,413.7,350.4,303.4,293.8,302.4,null,null],zIndex: 1,visible: true},{ name: 'Synthetic Match (BJS)',color:'#00b324',dashStyle: 'ShortDash',data: [416.6,393.8,375.6,360.4,333.8,310.7,null,null],visible: true},{ name: 'Kootenai County, ID (BJS)',color: '#E3E3E6',dashStyle: 'ShortDashDot',data: [536.4,495.8,499.9,487.4,482.8,460.7,null,null],visible: true}];
+var total_electricity_india_sector=[{name:"Domestic",color:"#1ca8dd",dashStyle:"Solid",data:[131720,146080,169326,171104,183700,199842,217405,238876],zIndex:1,visible:!0},{name:"Industry",color:"#00b324",dashStyle:"ShortDash",data:[209474,236752,272589,352291,365989,384418,418346,423523],visible:!0},{name:"Agriculture",color:"#E3E3E6",dashStyle:"ShortDashDot",data:[109610,120209,131967,140960,147462,152744,168913,173185],visible:!0},{name:"Commercial",color:"#0067B1",dashStyle:"ShortDash",data:[209474,236752,272589,352291,365989,384418,418346,423523],visible:!0},{name:"Traction & Railways",color:"#00853F",dashStyle:"dotted",data:[209474,236752,272589,352291,365989,384418,418346,423523],visible:!0},{name:"Other",color:"#00ffff",dashStyle:"dotted",data:[209474,236752,272589,352291,365989,384418,418346,423523],visible:!0}];
 //Make Chart
-$("#total_electricity_india_sector").highcharts({chart: { marginRight: rightMargin,marginTop: topMargin,backgroundColor:bgColor,type: 'line',alignTicks: false},legend: { layout: 'horizontal',itemStyle: { fontSize: setFontsizeLegend}},credits: false,exporting: { enabled: false},title: false,xAxis: [{title: { style: { fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 6.50,zIndex: 1,label: { text: 'Baseline',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}], categories: [2010,2011,2012,2013,2014,2015,2016,2017],tickmarkPlacement: 'off',labels: {style: { fontSize: setFontsize}}}],yAxis:[{title: { text: 'Total Arrest Rate per 10,000 (1,000 displayed)',style: { fontSize: setFontsize},margin: axisMargin},max: 1000,min: 0,tickInterval: 250,labels: { formatter: function() {return Highcharts.numberFormat(this.value,0);},style: { fontSize: setFontsize}}}],tooltip: { shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style: { fontSize: setFontsize}},plotOptions: { column: { dataLabels: { style: { fontSize: setFontsize}},style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize}},series: { lineWidth: 4,marker: { fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: { hover: { enabled: true, radiusPlus: 4}}},states: { hover: { enabled: true,lineWidthPlus: 2}}}},series:total_electricity_india_sector});
+$("#total_electricity_india_sector").highcharts({chart:{marginRight:rightMargin,marginTop:topMargin,backgroundColor:bgColor,type:"line",alignTicks:!1},legend:{layout:"horizontal",itemStyle:{fontSize:setFontsizeLegend}},credits:!1,exporting:{enabled:!1},title:!1,xAxis:[{title:{style:{fontSize:setFontsize},margin:axisMargin},plotLines:[{color:"#ff0000",width:2,value:6.5,zIndex:1,label:{text:"Baseline",verticalAlign:"middle",textAlign:"center",style:{color:"white",fontWeight:"bold",fontSize:18}}}],categories:[2008,2009,2010,2011,2012,2013,2014,2015],tickmarkPlacement:"off",labels:{style:{fontSize:setFontsize}}}],yAxis:[{title:{text:"Total Electricity Consumed (MWh) by Sector",style:{fontSize:setFontsize},margin:axisMargin},max:1e3,min:0,tickInterval:250,labels:{formatter:function(){return Highcharts.numberFormat(this.value,0)},style:{fontSize:setFontsize}}}],tooltip:{shared:!0,useHTML:!0,headerFormat:"<h5>{point.key}</h5>",pointFormat:'<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style:{fontSize:setFontsize}},plotOptions:{column:{dataLabels:{style:{fontSize:setFontsize}},style:{color:Highcharts.theme&&Highcharts.theme.contrastTextColor||"black",fontSize:setFontsize}},series:{lineWidth:4,marker:{fillColor:bgColor,radius:6,lineWidth:4,lineColor:null,states:{hover:{enabled:!0,radiusPlus:4}}},states:{hover:{enabled:!0,lineWidthPlus:2}}}},series:total_electricity_india_sector});
 // reflow charts in hidden modals
 $('.modal').on('shown.bs.modal', function () {$(".chart").each(function() {var chart = $(this).highcharts();chart.reflow();});});        
 $('').on('shown.bs.modal', function () {$(".chart").each(function() {var chart = $(this).highcharts();chart.reflow();});});
@@ -84,3 +84,190 @@ $('').on('shown.bs.modal', function () {$(".chart").each(function() {var chart =
 </div>
 
 <br>
+
+<!--Still in Line Format-->
+
+<script> 
+    $(function() {
+        Highcharts.setOptions({
+            lang: {
+                numericSymbols: null,
+                thousandsSep: ','
+            },
+        });
+        var setFontsize = '20px';
+        var setFontsizeLegend = '22px';
+        var topMargin = 20;
+        var axisMargin = 20;
+        var rightMargin = 200;
+        var bgColor = '#252830';
+        //Chart Data
+        var total_electricity_india_sector = [{
+            name: 'Domestic',
+            color: '#1ca8dd',
+            dashStyle: 'Solid',
+            data: [131720, 146080, 169326, 171104, 183700, 199842, 217405, 238876],
+            zIndex: 1,
+            visible: true
+        }, {
+            name: 'Industry',
+            color: '#00b324',
+            dashStyle: 'ShortDash',
+            data: [209474, 236752, 272589, 352291, 365989, 384418, 418346, 423523],
+            visible: true
+        }, {
+            name: 'Agriculture',
+            color: '#E3E3E6',
+            dashStyle: 'ShortDashDot',
+            data: [109610, 120209, 131967, 140960, 147462, 152744, 168913, 173185],
+            visible: true
+        }, {
+            name: 'Commercial',
+            color: '#0067B1',
+            dashStyle: 'ShortDash',
+            data: [209474, 236752, 272589, 352291, 365989, 384418, 418346, 423523],
+            visible: true
+        }, {
+            name: 'Traction & Railways',
+            color: '#00853F',
+            dashStyle: 'dotted',
+            data: [209474, 236752, 272589, 352291, 365989, 384418, 418346, 423523],
+            visible: true
+        }, {
+            name: 'Other',
+            color: '#00ffff',
+            dashStyle: 'dotted',
+            data: [209474, 236752, 272589, 352291, 365989, 384418, 418346, 423523],
+            visible: true
+        }];
+        //Make Chart
+        $("#total_electricity_india_sector").highcharts({
+            chart: {
+                marginRight: rightMargin,
+                marginTop: topMargin,
+                backgroundColor: bgColor,
+                type: 'line',
+                alignTicks: false
+            },
+            legend: {
+                layout: 'horizontal',
+                itemStyle: {
+                    fontSize: setFontsizeLegend
+                }
+            },
+            credits: false,
+            exporting: {
+                enabled: false
+            },
+            title: false,
+            xAxis: [{
+                title: {
+                    style: {
+                        fontSize: setFontsize
+                    },
+                    margin: axisMargin
+                },
+                plotLines: [{
+                    color: '#ff0000',
+                    width: 2,
+                    value: 6.50,
+                    zIndex: 1,
+                    label: {
+                        text: 'Baseline',
+                        verticalAlign: 'middle',
+                        textAlign: 'center',
+                        style: {
+                            color: 'white',
+                            fontWeight: 'bold',
+                            fontSize: 18
+                        }
+                    }
+                }],
+                categories: [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015],
+                tickmarkPlacement: 'off',
+                labels: {
+                    style: {
+                        fontSize: setFontsize
+                    }
+                }
+            }],
+            yAxis: [{
+                title: {
+                    text: 'Total Electricity Consumed (MWh) by Sector',
+                    style: {
+                        fontSize: setFontsize
+                    },
+                    margin: axisMargin
+                },
+                max: 1000,
+                min: 0,
+                tickInterval: 250,
+                labels: {
+                    formatter: function() {
+                        return Highcharts.numberFormat(this.value, 0);
+                    },
+                    style: {
+                        fontSize: setFontsize
+                    }
+                }
+            }],
+            tooltip: {
+                shared: true,
+                useHTML: true,
+                headerFormat: '<h5>{point.key}</h5>',
+                pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',
+                style: {
+                    fontSize: setFontsize
+                }
+            },
+            plotOptions: {
+                column: {
+                    dataLabels: {
+                        style: {
+                            fontSize: setFontsize
+                        }
+                    },
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',
+                        fontSize: setFontsize
+                    }
+                },
+                series: {
+                    lineWidth: 4,
+                    marker: {
+                        fillColor: bgColor,
+                        radius: 6,
+                        lineWidth: 4,
+                        lineColor: null,
+                        states: {
+                            hover: {
+                                enabled: true,
+                                radiusPlus: 4
+                            }
+                        }
+                    },
+                    states: {
+                        hover: {
+                            enabled: true,
+                            lineWidthPlus: 2
+                        }
+                    }
+                }
+            },
+            series: total_electricity_india_sector
+        });
+        // reflow charts in hidden modals
+        $('.modal').on('shown.bs.modal', function() {
+            $(".chart").each(function() {
+                var chart = $(this).highcharts();
+                chart.reflow();
+            });
+        });
+        $('').on('shown.bs.modal', function() {
+            $(".chart").each(function() {
+                var chart = $(this).highcharts();
+                chart.reflow();
+            });
+        });
+    });
+</script>
