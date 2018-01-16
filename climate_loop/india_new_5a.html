@@ -3,11 +3,11 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-4 col-sm-2">
-      <a href="#modal_electricity_india" data-target="#modal_electricity_india" data-toggle="modal"><img src="/media/images/coal_fired_power_plants_in_the_us.original.png" style="border:1px solid #eee"></a>
+      <a href="#modal-electricity-india" data-target="#modal-electricity-india" data-toggle="modal"><img src="/media/images/coal_fired_power_plants_in_the_us.original.png" style="border:1px solid #eee"></a>
       <h5>5.a. Total Electricity Consumption by Sector (MWh)</h5>
     </div>
 
-    <div class="modal fade wide" id="modal_electricity_india" tabindex="-1" role="dialog">
+    <div class="modal fade wide" id="modal-electricity-india" tabindex="-1" role="dialog">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -42,7 +42,7 @@ Highcharts.setOptions({lang: { numericSymbols: null,thousandsSep: ','},});var se
 //Chart Data
 var total_electricity_india_sector = [{ name: 'Ada County, ID (Local)',color: '#1ca8dd',dashStyle: 'Solid',data: [429.4,413.7,350.4,303.4,293.8,302.4,null,null],zIndex: 1,visible: true},{ name: 'Synthetic Match (BJS)',color:'#00b324',dashStyle: 'ShortDash',data: [416.6,393.8,375.6,360.4,333.8,310.7,null,null],visible: true},{ name: 'Kootenai County, ID (BJS)',color: '#E3E3E6',dashStyle: 'ShortDashDot',data: [536.4,495.8,499.9,487.4,482.8,460.7,null,null],visible: true}];
 //Make Chart
-$("#total_electricity_india_sector").highcharts({chart: { marginRight: rightMargin,marginTop: topMargin,backgroundColor:bgColor,type: 'line',alignTicks: false},legend: { layout: 'horizontal',itemStyle: { fontSize: setFontsizeLegend}},credits: false,exporting: { enabled: false},title: false,xAxis: [{title: { style: { fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 6.50,zIndex: 1,label: { text: 'Baseline',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}], categories: [2010,2011,2012,2013,2014,2015,2016,2017],tickmarkPlacement: 'off',labels: {style: { fontSize: setFontsize}}}],yAxis:[{title: { text: 'Total Arrest Rate per 10,000 (1,000 displayed)',style: { fontSize: setFontsize},margin: axisMargin},max: 1000,min: 0,tickInterval: 250,labels: { formatter: function() {return Highcharts.numberFormat(this.value,0);},style: { fontSize: setFontsize}}}],tooltip: { shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style: { fontSize: setFontsize}},plotOptions: { column: { dataLabels: { style: { fontSize: setFontsize}},style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize}},series: { lineWidth: 4,marker: { fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: { hover: { enabled: true, radiusPlus: 4}}},states: { hover: { enabled: true,lineWidthPlus: 2}}}},series:total_electricity_india_sector);
+$("#total_electricity_india_sector").highcharts({chart: { marginRight: rightMargin,marginTop: topMargin,backgroundColor:bgColor,type: 'line',alignTicks: false},legend: { layout: 'horizontal',itemStyle: { fontSize: setFontsizeLegend}},credits: false,exporting: { enabled: false},title: false,xAxis: [{title: { style: { fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 6.50,zIndex: 1,label: { text: 'Baseline',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}], categories: [2010,2011,2012,2013,2014,2015,2016,2017],tickmarkPlacement: 'off',labels: {style: { fontSize: setFontsize}}}],yAxis:[{title: { text: 'Total Arrest Rate per 10,000 (1,000 displayed)',style: { fontSize: setFontsize},margin: axisMargin},max: 1000,min: 0,tickInterval: 250,labels: { formatter: function() {return Highcharts.numberFormat(this.value,0);},style: { fontSize: setFontsize}}}],tooltip: { shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style: { fontSize: setFontsize}},plotOptions: { column: { dataLabels: { style: { fontSize: setFontsize}},style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize}},series: { lineWidth: 4,marker: { fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: { hover: { enabled: true, radiusPlus: 4}}},states: { hover: { enabled: true,lineWidthPlus: 2}}}},series:total_electricity_india_sector});
 // reflow charts in hidden modals
 $('.modal').on('shown.bs.modal', function () {$(".chart").each(function() {var chart = $(this).highcharts();chart.reflow();});});        
 $('').on('shown.bs.modal', function () {$(".chart").each(function() {var chart = $(this).highcharts();chart.reflow();});});
@@ -54,11 +54,11 @@ $('').on('shown.bs.modal', function () {$(".chart").each(function() {var chart =
 <div class="container">
   <div class="row">
     <div class="col-xs-4 col-sm-2">
-      <a href="#modal_electricity_india" data-target="#modal_electricity_india" data-toggle="modal"><img src="/media/images/coal_fired_power_plants_in_the_us.original.png" style="border:1px solid #eee"></a>
+      <a href="#modal-electricity-india" data-target="#modal-electricity-india" data-toggle="modal"><img src="/media/images/coal_fired_power_plants_in_the_us.original.png" style="border:1px solid #eee"></a>
       <h5>5.a. Total Electricity Consumption by Sector (MWh)</h5>
     </div>
 
-    <div class="modal fade wide" id="modal_electricity_india" tabindex="-1" role="dialog">
+    <div class="modal fade wide" id="modal-electricity-india" tabindex="-1" role="dialog">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
