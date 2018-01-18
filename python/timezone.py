@@ -17,3 +17,25 @@ for tz in pytz.all_timezones:
 tz_choices = tuple(tz_choices)
 
 tz_choices = tuple((tz.replace('/','_'),tz) for tz in pytz.all_timezones)
+
+# change timezone choices to reflect:
+# (GMT) Greenwich mean time
+# (EST) Eastern standard time
+# (EDT) Eastern daylight time
+# (CST) Central standard time
+# (CDT) Central daylight time
+# (MST) Mountain standard time
+# (MDT) Mountain daylight time
+# (PST) Pacific standard time
+# (PDT) Pacific daylight time
+
+choices=( ('GMT', _('(GMT) Greenwich mean time'), 
+        ('EST', _('(EST) Eastern standard time'), 
+        ('EDT', _('(EDT) Eastern daylight time'),
+        ('CST', _('(CST) Central standard time'),
+        ('CDT', _('(CDT) Central daylight time'),
+        ('MST', _('(MST) Mountain standard time'),
+        ('MDT', _('(MDT) Mountain daylight time'),
+        ('PST', _('(PST) Pacific standard time'),
+        ('PDT', _('(PDT) Pacific daylight time') )
+
