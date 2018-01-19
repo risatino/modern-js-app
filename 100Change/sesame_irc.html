@@ -1,0 +1,27 @@
+<!--HTML Block 1 for HighChartJS test-->
+
+<!--HighchartJS-->
+<div class="container">
+  <div class="row">
+    <div id="sesame_seeds_budget_summary" class="chart"></div>
+  </div>
+  </div>
+</div>         
+<br>
+
+<h5><em>Travel includes per diem, accomodations, and transport</em></h5>
+
+<!--HTML Block 2 for HighchartJS test-->
+
+<script>
+$(function() {
+Highcharts.setOptions({lang: { numericSymbols: null,thousandsSep: ','},});var setFontsize = '20px';var setFontsizeLegend = '22px';var topMargin = 20;var axisMargin = 20;var rightMargin = 200;var bgColor = '#252830';
+//Chart Data
+var sesame_seeds_budget_summary=[{type:"spline",name:"Total",color:"#FF0000",dashStyle:"dashed",data:[15971289,20220375,23498520,20495690,17203609],zIndex:1,visible:!0},{name:"Personnel",color:"#3860DE",dashStyle:"Solid",data:[131720,146080,169326,171104,183700],zIndex:1,visible:!0},{name:"Travel",color:"#00BB27",dashStyle:"ShortDash",data:[209474,236752,272589,352291,365989],visible:!0},{name:"Program Supplies & Equipment",color:"#E6AE1A",dashStyle:"ShortDashDot",data:[109610,120209,131967,140960,147462],visible:!0},{name:"Dissemination and Communication",color:"#F45B5B",dashStyle:"ShortDash",data:[209474,236752,272589,352291,365989],visible:!0},{name:"Monitoring and Evaluation",color:"#AE1AF7",dashStyle:"dotted",data:[209474,236752,272589,352291,365989],visible:!0},{name:"Other Direct Costs",color:"#e3e3e6",dashStyle:"dotted",data:[209474,236752,272589,352291,365989],visible:!0},{name:"Third Party Vendors",color:"#e3e3e6",dashStyle:"dotted",data:[209474,236752,272589,352291,365989],visible:!0}];
+//Make Chart
+$("#sesame_seeds_budget_summary").highcharts({chart:{marginRight:rightMargin,marginTop:topMargin,backgroundColor:bgColor,type:"column",alignTicks:!1},legend:{layout:"horizontal",itemStyle:{fontSize:setFontsizeLegend}},credits:!1,exporting:{enabled:!1},title:!1,xAxis:[{title:{style:{fontSize:setFontsize},margin:axisMargin},categories:[2018,2019,2020,2021,2022],tickmarkPlacement:"off",labels:{style:{fontSize:setFontsize}}}],yAxis:[{title:{text:"Total US Dollars ($)",style:{fontSize:setFontsize},margin:axisMargin},max:1001000,min:0,tickInterval:200000,labels:{formatter:function(){return Highcharts.numberFormat(this.value,0)},style:{fontSize:setFontsize}}}],tooltip:{shared:!0,useHTML:!0,headerFormat:"<h5>{point.key}</h5>",pointFormat:'<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style:{fontSize:setFontsize}},plotOptions:{column:{dataLabels:{style:{fontSize:setFontsize}},style:{color:Highcharts.theme&&Highcharts.theme.contrastTextColor||"black",fontSize:setFontsize}},series:{lineWidth:4,marker:{fillColor:bgColor,radius:6,lineWidth:4,lineColor:null,states:{hover:{enabled:!0,radiusPlus:4}}},states:{hover:{enabled:!0,lineWidthPlus:2}}}},series:sesame_seeds_budget_summary});
+// reflow charts in hidden modals
+$('.modal').on('shown.bs.modal', function () {$(".chart").each(function() {var chart = $(this).highcharts();chart.reflow();});});        
+$('').on('shown.bs.modal', function () {$(".chart").each(function() {var chart = $(this).highcharts();chart.reflow();});});
+});
+</script>
