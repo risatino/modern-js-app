@@ -29,7 +29,9 @@ tz_choices = tuple((tz.replace('/','_'),tz) for tz in pytz.all_timezones)
 # (PST) Pacific standard time
 # (PDT) Pacific daylight time
 
-choices=( ('GMT', _('(GMT) Greenwich mean time'), 
+# Need to figure out why this doesn't work.
+
+choices=(('GMT', _('(GMT) Greenwich mean time'), 
         ('EST', _('(EST) Eastern standard time'), 
         ('EDT', _('(EDT) Eastern daylight time'),
         ('CST', _('(CST) Central standard time'),
@@ -37,5 +39,5 @@ choices=( ('GMT', _('(GMT) Greenwich mean time'),
         ('MST', _('(MST) Mountain standard time'),
         ('MDT', _('(MDT) Mountain daylight time'),
         ('PST', _('(PST) Pacific standard time'),
-        ('PDT', _('(PDT) Pacific daylight time') )
+        ('PDT', _('(PDT) Pacific daylight time'))
 
