@@ -319,9 +319,7 @@ var sesame_seeds_pie = [{
         data: [{
             name: 'Personnel',
             color: "lightblue",
-            y: 33,
-            sliced: true,
-            selected: true
+            y: 33
         }, {
             name: 'Travel',
             color: "#0080ff", 
@@ -393,4 +391,47 @@ $("#sesame_seeds_pie").highcharts({
 $('.modal').on('shown.bs.modal', function () {$(".chart").each(function() {var chart = $(this).highcharts();chart.reflow();});});        
 $('').on('shown.bs.modal', function () {$(".chart").each(function() {var chart = $(this).highcharts();chart.reflow();});});
 });
+</script>
+
+<!--Notes for initial active sliced: selected ---goes after y: %-->
+<script>
+//Chart Data
+var sesame_seeds_pie = [{
+        name: 'Sector',
+        data: [{
+            name: 'Personnel',
+            color: "lightblue",
+            y: 33,
+            sliced: true,
+            selected: true
+        }, {
+            name: 'Travel',
+            color: "#0080ff", 
+            y: 3
+        }, {
+            name: 'Program Supplies & Equipment',
+            color:"#19b3b3",
+            y: 15
+        }, {
+            name: 'Dissemination and Communication',
+            color:"#F45B5B",
+            y: 1
+        }, {
+            name: 'Monitoring and Evaluation',
+            color:"#04873F",
+            y: 10
+        }, {
+            name: 'Third Party Vendors',
+            color:"#83C54F",
+            y: 10
+        }, {
+            name: 'Other Direct Costs',
+            color:"#e3e3e6",
+            y: 16
+        }, {
+            name: 'Indirect Costs',
+            color:"#FDE2C0",
+            y: 12
+        }]
+    }];
 </script>
