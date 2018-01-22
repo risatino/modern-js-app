@@ -261,3 +261,136 @@ $('.modal').on('shown.bs.modal', function () {$(".chart").each(function() {var c
 $('').on('shown.bs.modal', function () {$(".chart").each(function() {var chart = $(this).highcharts();chart.reflow();});});
 });
 </script>
+
+<!-------------------------------------------------------------------------------1/22/2018--------------------------------------------------------------------->
+<!--HTML Block 1-->
+<style>
+.divider {
+  height: 1px;
+  width:100%;
+  display:block; 
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: white;
+}
+</style>
+
+<!--Sesame Seeds Summary Budget: Under Development-->
+  <h2>Sesame Seeds Summary Budget</h2>
+  <h2>Totals: <b>$100,000,028</b></h2>
+
+<!--HighchartJS stacked column chart-->
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <center><div id="sesame_seeds_budget_summary" class="chart"></div></center>
+    </div>
+  </div>
+</div>         
+<br>
+  <h5><em>Travel includes per diem, accommodations, and transport</em></h5>
+
+<br>
+
+<span class="divider"></span>
+
+<!--HighchartJS interactive pie chart-->
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div id="sesame_seeds_pie" class="chart"></div>
+    </div>
+  </div>
+</div>
+<!--end-->
+
+<!------------------------------------------------------------------------------------------------------------------------------------->
+<!--HTML Block 2-->
+<script>
+$(function() {
+Highcharts.setOptions({lang: { numericSymbols: null,thousandsSep: ','},});var setFontsize = '20px';var setFontsizeLegend = '22px';var topMargin = 20;var axisMargin = 20;var rightMargin = 200;var bgColor = '#252830';
+//Chart Data
+var sesame_seeds_budget_summary=[{name:"Personnel",color:"lightblue",dashStyle:"Solid",data:[6682739,7148019,7964339,6093385,5469310],zIndex:1,visible:!0},{name:"Travel",color:"#0080ff",dashStyle:"ShortDash",data:[574240,615975,693095,554025,494955],visible:!0},{name:"Program Supplies & Equipment",color:"#19b3b3",dashStyle:"ShortDashDot",data:[3105500,2954625,3497125,3484625,1911875],visible:!0},{name:"Dissemination and Communication",color:"#F45B5B",dashStyle:"ShortDash",data:[248000,369960,329960,143000,123000],visible:!0},{name:"Monitoring and Evaluation",color:"#04873F",dashStyle:"dotted",data:[2164961,2466311,2145115,1875340,1573462],visible:!0},{name:"Third Party Vendors",color:"#83C54F",dashStyle:"dotted",data:[1790652,2018465,2035760,1948760,1840760],visible:!0},{name:"Other Direct Costs",color:"#e3e3e6",dashStyle:"dotted",data:[1868902,2312177,4129746,4022050,3837340],visible:!0},{name:"Indirect Costs",color:"#FDE2C0",dashStyle:"dotted",data:[2146840,2334843,2703380,2374505,1952907],visible:!0},{type: 'spline',name: 'Total', color: '#ff3333', data: [18581834,20220375,23498520,20495690,17203609],marker: {lineWidth: 2,lineColor: '#ff3333',fillColor: 'white'},zIndex:1,showInLegend: false}];
+//Make Chart
+$("#sesame_seeds_budget_summary").highcharts({chart:{marginRight:rightMargin,marginTop:topMargin,backgroundColor:bgColor,type:"column",alignTicks:!1},legend:{layout:"horizontal",itemStyle:{fontSize:setFontsizeLegend}},credits:!1,exporting:{enabled:!1},title:!1,xAxis:[{title:{text:"Budget items from 2018 through 2022",style:{fontSize:setFontsize},margin:axisMargin},categories:["Year One", "Year Two","Year Three","Year Four","Year Five"],tickmarkPlacement:"off",labels:{style:{fontSize:setFontsize}}}],yAxis:[{title:{text:"Totals",style:{fontSize:setFontsize},margin:axisMargin},max:25e6,min:0,stackLabels:{enabled:!0,style:{fontWeight:"bold",fontSize:setFontsize,color:Highcharts.theme&&Highcharts.theme.textColor||"white"}},tickInterval:5e6,labels:{formatter:function(){return '$' + Highcharts.numberFormat(this.value,0)},style:{fontSize:setFontsize}}}],tooltip:{shared:!0,useHTML:!0,headerFormat:"<h5>{point.key}</h5>",pointFormat:'<span style="color:{series.color}">●</span> {series.name}: <b>${point.y}</b><br>',style:{fontSize:setFontsize}},plotOptions:{column:{stacking:"normal",pointPadding:0,groupPadding:0,dataLabels:{style:{fontSize:setFontsize}},style:{color:Highcharts.theme&&Highcharts.theme.contrastTextColor||"black",fontSize:setFontsize}},series:{lineWidth:1,marker:{fillColor:bgColor,radius:6,lineWidth:2,lineColor:null,states:{hover:{enabled:!0,radiusPlus:4}}},states:{hover:{enabled:!0,lineWidthPlus:2}}}},series:sesame_seeds_budget_summary});
+//Chart Data
+var sesame_seeds_pie = [{
+        name: 'Sector',
+        data: [{
+            name: 'Personnel',
+            color: "lightblue",
+            y: 33,
+            sliced: true,
+            selected: true
+        }, {
+            name: 'Travel',
+            color: "#0080ff", 
+            y: 3
+        }, {
+            name: 'Program Supplies & Equipment',
+            color:"#19b3b3",
+            y: 15
+        }, {
+            name: 'Dissemination and Communication',
+            color:"#F45B5B",
+            y: 1
+        }, {
+            name: 'Monitoring and Evaluation',
+            color:"#04873F",
+            y: 10
+        }, {
+            name: 'Third Party Vendors',
+            color:"#83C54F",
+            y: 10
+        }, {
+            name: 'Other Direct Costs',
+            color:"#e3e3e6",
+            y: 16
+        }, {
+            name: 'Indirect Costs',
+            color:"#FDE2C0",
+            y: 12
+        }]
+    }];
+//Make Chart
+$("#sesame_seeds_pie").highcharts({
+    chart: {
+        backgroundColor:bgColor,
+        type: 'pie'
+    },
+    legend: {
+        layout: "horizontal",
+        itemStyle: {
+            fontSize: setFontsizeLegend
+        }
+    },
+    credits: !1,
+    title: {
+        text: '% of Total'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    plotOptions: {
+        pie: {
+            innerSize: '50%',
+            allowPointSelect: true,
+            cursor: 'pointer',
+            shadow: false,
+            center: ['50%', '50%'],
+            dataLabels: {
+                enabled: false
+            },
+            tooltip: {
+            valueSuffix: '%'
+            },
+            showInLegend: true
+        }
+    },
+    series: sesame_seeds_pie
+});
+// reflow charts in hidden modals
+$('.modal').on('shown.bs.modal', function () {$(".chart").each(function() {var chart = $(this).highcharts();chart.reflow();});});        
+$('').on('shown.bs.modal', function () {$(".chart").each(function() {var chart = $(this).highcharts();chart.reflow();});});
+});
+</script>
