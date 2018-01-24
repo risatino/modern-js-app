@@ -29,7 +29,7 @@ tz_choices = tuple((tz.replace('/','_'),tz) for tz in pytz.all_timezones)
 # (PST) Pacific standard time
 # (PDT) Pacific daylight time
 
-# Need to figure out why this doesn't work.
+# Need to figure out why this doesn't work in apps/organization/models.py
 
 choices=(('GMT', _('(GMT) Greenwich mean time'), 
         ('EST', _('(EST) Eastern standard time'), 
@@ -40,4 +40,11 @@ choices=(('GMT', _('(GMT) Greenwich mean time'),
         ('MDT', _('(MDT) Mountain daylight time'),
         ('PST', _('(PST) Pacific standard time'),
         ('PDT', _('(PDT) Pacific daylight time'))
+        
+# Tag mapping in apps/articles/management/commands/import_mentions.py
+tag_mapping = { 
+            '40th_anniversary': {'tags': [0]},
+            
+# T-1104
+# 'Research & Results' to 'Grantee Research'
 
