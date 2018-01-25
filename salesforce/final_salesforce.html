@@ -347,23 +347,7 @@ ENDIF
                             </span>
                         </div>
                     </div>
-                    <div class="form-group ">
-                        <div class="col-sm-11 col-sm-push-1">
-                            <div class="checkbox">
-                                <label class="checkbox">
-                                    <input type="checkbox" id="HasOptedOutOfEmail" name="HasOptedOutOfEmail" value="%%[IF @HasOptedOutOfEmail == 'true' THEN ]%%true%%[ELSE]%%false%%[ENDIF]%%" %%[IF @HasOptedOutOfEmail == 'true' THEN ]%%checked%%[ELSE ENDIF]%%>
-                                    <span>I would like to unsubscribe from all MacArthur Foundation emails</span>
-                                </label>
-                            </div>
-                            <span class="help-block sr-only" id="hint_checkbox3">
-                                Check the box to opt out of all MacArthur emails.
-                            </span>
-                            <div class="col-sm-8 col-sm-push-1 reason_for_unsubscribe">
-                                <label for="comment">Why?</label>
-                                <textarea class="form-control" rows="5" id="Why_Unsubscribe" name="Why_Unsubscribe"></textarea>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
              
@@ -410,7 +394,6 @@ ENDIF
                             <input class="form-control" id="email" name="email" placeholder="example@email.com" type="email" value="%%=v(@EmailAddress)=%%"/>
                         </div>
                      </div>
-               
                      <div class="form-group ">
                         <label class="control-label col-sm-2" for="streetaddress">
                             Street Address
@@ -506,8 +489,8 @@ ENDIF
                             Country
                          </label>
                          <div class="col-sm-10">
-                             <select class="select form-control" id="country" name="country">
-                            <option value="">(please select a country)</option>
+                            <select class="select form-control" id="country" name="country">
+                                <option value="">(please select a country)</option>
                                 <option value="Afghanistan" %%[IF @Country == 'Afghanistan' THEN ]%%selected%%[ELSE ENDIF]%%>Afghanistan</option>
                                 <option value="Albania" %%[IF @Country == 'Albania' THEN ]%%selected%%[ELSE ENDIF]%%>Albania</option>
                                 <option value="Algeria" %%[IF @Country == 'Algeria' THEN ]%%selected%%[ELSE ENDIF]%%>Algeria</option>
@@ -522,232 +505,232 @@ ENDIF
                                 <option value="Aruba" %%[IF @Country == 'Aruba' THEN ]%%selected%%[ELSE ENDIF]%%>Aruba</option>
                                 <option value="Australia" %%[IF @Country == 'Australia' THEN ]%%selected%%[ELSE ENDIF]%%>Australia</option>
                                 <option value="Austria" %%[IF @Country == 'Austria' THEN ]%%selected%%[ELSE ENDIF]%%>Austria</option>
-                                 <option value="Azerbaijan" %%[IF @Country == 'Azerbaijan' THEN ]%%selected%%[ELSE ENDIF]%%>Azerbaijan</option>
+                                <option value="Azerbaijan" %%[IF @Country == 'Azerbaijan' THEN ]%%selected%%[ELSE ENDIF]%%>Azerbaijan</option>
                                 <option value="Bahamas" %%[IF @Country == 'Bahamas' THEN ]%%selected%%[ELSE ENDIF]%%>Bahamas</option>
-                            <option value="Bahrain" %%[IF @Country == 'Bahrain' THEN ]%%selected%%[ELSE ENDIF]%%>Bahrain</option>
-                            <option value="Bangladesh" %%[IF @Country == 'Bangladesh' THEN ]%%selected%%[ELSE ENDIF]%%>Bangladesh</option>
-                            <option value="Barbados" %%[IF @Country == 'Barbados' THEN ]%%selected%%[ELSE ENDIF]%%>Barbados</option>
-                            <option value="Belarus" %%[IF @Country == 'Belarus' THEN ]%%selected%%[ELSE ENDIF]%%>Belarus</option>
-                            <option value="Belgium" %%[IF @Country == 'Belgium' THEN ]%%selected%%[ELSE ENDIF]%%>Belgium</option>
-                            <option value="Belize" %%[IF @Country == 'Belize' THEN ]%%selected%%[ELSE ENDIF]%%>Belize</option>
-                            <option value="Benin" %%[IF @Country == 'Benin' THEN ]%%selected%%[ELSE ENDIF]%%>Benin</option>
-                            <option value="Bermuda" %%[IF @Country == 'Bermuda' THEN ]%%selected%%[ELSE ENDIF]%%>Bermuda</option>
-                            <option value="Bhutan" %%[IF @Country == 'Bhutan' THEN ]%%selected%%[ELSE ENDIF]%%>Bhutan</option>
-                            <option value="Bolivia" %%[IF @Country == 'Bolivia' THEN ]%%selected%%[ELSE ENDIF]%%>Bolivia</option>
-                            <option value="Bosnia and Herzegowina" %%[IF @Country == 'Bosnia and Herzegowina' THEN ]%%selected%%[ELSE ENDIF]%%>Bosnia and Herzegowina</option>
-                            <option value="Botswana" %%[IF @Country == 'Botswana' THEN ]%%selected%%[ELSE ENDIF]%%>Botswana</option>
-                            <option value="Bouvet Island" %%[IF @Country == 'Bouvet Island' THEN ]%%selected%%[ELSE ENDIF]%%>Bouvet Island</option>
-                            <option value="Brazil" %%[IF @Country == 'Brazil' THEN ]%%selected%%[ELSE ENDIF]%%>Brazil</option>
-                            <option value="British Indian Ocean Territory" %%[IF @Country == 'British Indian Ocean Territory' THEN ]%%selected%%[ELSE ENDIF]%%>British Indian Ocean Territory</option>
-                            <option value="Brunei Darussalam" %%[IF @Country == 'Brunei Darussalam' THEN ]%%selected%%[ELSE ENDIF]%%>Brunei Darussalam</option>
-                            <option value="Bulgaria" %%[IF @Country == 'Bulgaria' THEN ]%%selected%%[ELSE ENDIF]%%>Bulgaria</option>
-                            <option value="Burkina Faso" %%[IF @Country == 'Burkina Faso' THEN ]%%selected%%[ELSE ENDIF]%%>Burkina Faso</option>
-                            <option value="Burundi" %%[IF @Country == 'Burundi' THEN ]%%selected%%[ELSE ENDIF]%%>Burundi</option>
-                            <option value="Cambodia" %%[IF @Country == 'Cambodia' THEN ]%%selected%%[ELSE ENDIF]%%>Cambodia</option>
-                            <option value="Cameroon" %%[IF @Country == 'Cameroon' THEN ]%%selected%%[ELSE ENDIF]%%>Cameroon</option>
-                            <option value="Canada" %%[IF @Country == 'Canada' THEN ]%%selected%%[ELSE ENDIF]%%>Canada</option>
-                            <option value="Cape Verde" %%[IF @Country == 'Cape Verde' THEN ]%%selected%%[ELSE ENDIF]%%>Cape Verde</option>
-                            <option value="Cayman Islands" %%[IF @Country == 'Cayman Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Cayman Islands</option>
-                            <option value="Central African Republic" %%[IF @Country == 'Central African Republic' THEN ]%%selected%%[ELSE ENDIF]%%>Central African Republic</option>
-                            <option value="Chad" %%[IF @Country == 'Chad' THEN ]%%selected%%[ELSE ENDIF]%%>Chad</option>
-                            <option value="Chile" %%[IF @Country == 'Chile' THEN ]%%selected%%[ELSE ENDIF]%%>Chile</option>
-                            <option value="China" %%[IF @Country == 'China' THEN ]%%selected%%[ELSE ENDIF]%%>China</option>
-                            <option value="Christmas Island" %%[IF @Country == 'Christmas Island' THEN ]%%selected%%[ELSE ENDIF]%%>Christmas Island</option>
-                            <option value="Cocos Islands" %%[IF @Country == 'Cocos Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Cocos Islands</option>
-                            <option value="Colombia" %%[IF @Country == 'Colombia' THEN ]%%selected%%[ELSE ENDIF]%%>Colombia</option>
-                            <option value="Comoros" %%[IF @Country == 'Comoros' THEN ]%%selected%%[ELSE ENDIF]%%>Comoros</option>
-                            <option value="Congo" %%[IF @Country == 'Congo' THEN ]%%selected%%[ELSE ENDIF]%%>Congo</option>
-                            <option value="Congo, the Democratic Republic of the" %%[IF @Country == 'Congo, the Democratic Republic of the' THEN ]%%selected%%[ELSE ENDIF]%%>Congo, the Democratic Republic of the</option>
-                            <option value="Cook Islands" %%[IF @Country == 'Cook Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Cook Islands</option>
-                            <option value="Costa Rica" %%[IF @Country == 'Costa Rica' THEN ]%%selected%%[ELSE ENDIF]%%>Costa Rica</option>
-                            <option value="Cote dIvoire" %%[IF @Country == 'Cote dIvoire' THEN ]%%selected%%[ELSE ENDIF]%%>Cote dIvoire</option>
-                            <option value="Croatia" %%[IF @Country == 'Croatia' THEN ]%%selected%%[ELSE ENDIF]%%>Croatia</option>
-                            <option value="Cuba" %%[IF @Country == 'Cuba' THEN ]%%selected%%[ELSE ENDIF]%%>Cuba</option>
-                            <option value="Cyprus" %%[IF @Country == 'Cyprus' THEN ]%%selected%%[ELSE ENDIF]%%>Cyprus</option>
-                            <option value="Czech Republic" %%[IF @Country == 'Czech Republic' THEN ]%%selected%%[ELSE ENDIF]%%>Czech Republic</option>
-                            <option value="Denmark" %%[IF @Country == 'Denmark' THEN ]%%selected%%[ELSE ENDIF]%%>Denmark</option>
-                            <option value="Djibouti" %%[IF @Country == 'Djibouti' THEN ]%%selected%%[ELSE ENDIF]%%>Djibouti</option>
-                            <option value="Dominica" %%[IF @Country == 'Dominica' THEN ]%%selected%%[ELSE ENDIF]%%>Dominica</option>
-                            <option value="Dominican Republic" %%[IF @Country == 'Dominican Republic' THEN ]%%selected%%[ELSE ENDIF]%%>Dominican Republic</option>
-                            <option value="East Timor" %%[IF @Country == 'East Timor' THEN ]%%selected%%[ELSE ENDIF]%%>East Timor</option>
-                            <option value="Ecuador" %%[IF @Country == 'Ecuador' THEN ]%%selected%%[ELSE ENDIF]%%>Ecuador</option>
-                            <option value="Egypt" %%[IF @Country == 'Egypt' THEN ]%%selected%%[ELSE ENDIF]%%>Egypt</option>
-                            <option value="El Salvador" %%[IF @Country == 'El Salvador' THEN ]%%selected%%[ELSE ENDIF]%%>El Salvador</option>
-                            <option value="Equatorial Guinea" %%[IF @Country == 'Equatorial Guinea' THEN ]%%selected%%[ELSE ENDIF]%%>Equatorial Guinea</option>
-                            <option value="Eritrea" %%[IF @Country == 'Eritrea' THEN ]%%selected%%[ELSE ENDIF]%%>Eritrea</option>
-                            <option value="Estonia" %%[IF @Country == 'Estonia' THEN ]%%selected%%[ELSE ENDIF]%%>Estonia</option>
-                            <option value="Ethiopia" %%[IF @Country == 'Ethiopia' THEN ]%%selected%%[ELSE ENDIF]%%>Ethiopia</option>
-                            <option value="Falkland Islands" %%[IF @Country == 'Falkland Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Falkland Islands</option>
-                            <option value="Faroe Islands" %%[IF @Country == 'Faroe Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Faroe Islands</option>
-                            <option value="Fiji" %%[IF @Country == 'Fiji' THEN ]%%selected%%[ELSE ENDIF]%%>Fiji</option>
-                            <option value="Finland" %%[IF @Country == 'Finland' THEN ]%%selected%%[ELSE ENDIF]%%>Finland</option>
-                            <option value="France" %%[IF @Country == 'France' THEN ]%%selected%%[ELSE ENDIF]%%>France</option>
-                            <option value="France, Metropolitan" %%[IF @Country == 'France, Metropolitan' THEN ]%%selected%%[ELSE ENDIF]%%>France, Metropolitan</option>
-                            <option value="French Guiana" %%[IF @Country == 'French Guiana' THEN ]%%selected%%[ELSE ENDIF]%%>French Guiana</option>
-                            <option value="French Polynesia" %%[IF @Country == 'French Polynesia' THEN ]%%selected%%[ELSE ENDIF]%%>French Polynesia</option>
-                            <option value="French Southern Territories" %%[IF @Country == 'French Southern Territories' THEN ]%%selected%%[ELSE ENDIF]%%>French Southern Territories</option>
-                            <option value="Gabon" %%[IF @Country == 'Gabon' THEN ]%%selected%%[ELSE ENDIF]%%>Gabon</option>
-                            <option value="Gambia" %%[IF @Country == 'Gambia' THEN ]%%selected%%[ELSE ENDIF]%%>Gambia</option>
-                            <option value="Georgia" %%[IF @Country == 'Georgia' THEN ]%%selected%%[ELSE ENDIF]%%>Georgia</option>
-                            <option value="Germany" %%[IF @Country == 'Germany' THEN ]%%selected%%[ELSE ENDIF]%%>Germany</option>
-                            <option value="Ghana" %%[IF @Country == 'Ghana' THEN ]%%selected%%[ELSE ENDIF]%%>Ghana</option>
-                            <option value="Gibraltar" %%[IF @Country == 'Gibraltar' THEN ]%%selected%%[ELSE ENDIF]%%>Gibraltar</option>
-                            <option value="Greece" %%[IF @Country == 'Greece' THEN ]%%selected%%[ELSE ENDIF]%%>Greece</option>
-                            <option value="Greenland" %%[IF @Country == 'Greenland' THEN ]%%selected%%[ELSE ENDIF]%%>Greenland</option>
-                            <option value="Grenada" %%[IF @Country == 'Grenada' THEN ]%%selected%%[ELSE ENDIF]%%>Grenada</option>
-                            <option value="Guadeloupe" %%[IF @Country == 'Guadeloupe' THEN ]%%selected%%[ELSE ENDIF]%%>Guadeloupe</option>
-                            <option value="Guam" %%[IF @Country == 'Guam' THEN ]%%selected%%[ELSE ENDIF]%%>Guam</option>
-                            <option value="Guatemala" %%[IF @Country == 'Guatemala' THEN ]%%selected%%[ELSE ENDIF]%%>Guatemala</option>
-                            <option value="Guinea" %%[IF @Country == 'Guinea' THEN ]%%selected%%[ELSE ENDIF]%%>Guinea</option>
-                            <option value="Guinea-Bissau" %%[IF @Country == 'Guinea-Bissau' THEN ]%%selected%%[ELSE ENDIF]%%>Guinea-Bissau</option>
-                            <option value="Guyana" %%[IF @Country == 'Guyana' THEN ]%%selected%%[ELSE ENDIF]%%>Guyana</option>
-                            <option value="Haiti" %%[IF @Country == 'Haiti' THEN ]%%selected%%[ELSE ENDIF]%%>Haiti</option>
-                            <option value="Heard and Mc Donald Islands" %%[IF @Country == 'Heard and Mc Donald Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Heard and Mc Donald Islands</option>
-                            <option value="Holy See" %%[IF @Country == 'Holy See' THEN ]%%selected%%[ELSE ENDIF]%%>Holy See</option>
-                            <option value="Honduras" %%[IF @Country == 'Honduras' THEN ]%%selected%%[ELSE ENDIF]%%>Honduras</option>
-                            <option value="Hong Kong" %%[IF @Country == 'Hong Kong' THEN ]%%selected%%[ELSE ENDIF]%%>Hong Kong</option>
-                            <option value="Hungary" %%[IF @Country == 'Hungary' THEN ]%%selected%%[ELSE ENDIF]%%>Hungary</option>
-                            <option value="Iceland" %%[IF @Country == 'Iceland' THEN ]%%selected%%[ELSE ENDIF]%%>Iceland</option>
-                            <option value="India" %%[IF @Country == 'India' THEN ]%%selected%%[ELSE ENDIF]%%>India</option>
-                            <option value="Indonesia" %%[IF @Country == 'Indonesia' THEN ]%%selected%%[ELSE ENDIF]%%>Indonesia</option>
-                            <option value="Iran" %%[IF @Country == 'Iran' THEN ]%%selected%%[ELSE ENDIF]%%>Iran</option>
-                            <option value="Iraq" %%[IF @Country == 'Iraq' THEN ]%%selected%%[ELSE ENDIF]%%>Iraq</option>
-                            <option value="Ireland" %%[IF @Country == 'Ireland' THEN ]%%selected%%[ELSE ENDIF]%%>Ireland</option>
-                            <option value="Israel" %%[IF @Country == 'Israel' THEN ]%%selected%%[ELSE ENDIF]%%>Israel</option>
-                            <option value="Italy" %%[IF @Country == 'Italy' THEN ]%%selected%%[ELSE ENDIF]%%>Italy</option>
-                            <option value="Jamaica" %%[IF @Country == 'Jamaica' THEN ]%%selected%%[ELSE ENDIF]%%>Jamaica</option>
-                            <option value="Japan" %%[IF @Country == 'Japan' THEN ]%%selected%%[ELSE ENDIF]%%>Japan</option>
-                            <option value="Jordan" %%[IF @Country == 'Jordan' THEN ]%%selected%%[ELSE ENDIF]%%>Jordan</option>
-                            <option value="Kazakhstan" %%[IF @Country == 'Kazakhstan' THEN ]%%selected%%[ELSE ENDIF]%%>Kazakhstan</option>
-                            <option value="Kenya" %%[IF @Country == 'Kenya' THEN ]%%selected%%[ELSE ENDIF]%%>Kenya</option>
-                            <option value="Kiribati" %%[IF @Country == 'Kiribati' THEN ]%%selected%%[ELSE ENDIF]%%>Kiribati</option>
-                            <option value="Korea, Democratic Peoples Republic of" %%[IF @Country == 'Korea, Democratic Peoples Republic of' THEN ]%%selected%%[ELSE ENDIF]%%>Korea, Democratic People's Republic of</option>
-                            <option value="Korea, Republic of" %%[IF @Country == 'Korea, Republic of' THEN ]%%selected%%[ELSE ENDIF]%%>Korea, Republic of</option>
-                            <option value="Kuwait" %%[IF @Country == 'Kuwait' THEN ]%%selected%%[ELSE ENDIF]%%>Kuwait</option>
-                            <option value="Kyrgyzstan" %%[IF @Country == 'Kyrgyzstan' THEN ]%%selected%%[ELSE ENDIF]%%>Kyrgyzstan</option>
-                            <option value="Lao Peoples Democratic Republic" %%[IF @Country == 'Lao Peoples Democratic Republic' THEN ]%%selected%%[ELSE ENDIF]%%>Lao People's Democratic Republic</option>
-                            <option value="Latvia" %%[IF @Country == 'Latvia' THEN ]%%selected%%[ELSE ENDIF]%%>Latvia</option>
-                            <option value="Lebanon" %%[IF @Country == 'Lebanon' THEN ]%%selected%%[ELSE ENDIF]%%>Lebanon</option>
-                            <option value="Lesotho" %%[IF @Country == 'Lesotho' THEN ]%%selected%%[ELSE ENDIF]%%>Lesotho</option>
-                            <option value="Liberia" %%[IF @Country == 'Liberia' THEN ]%%selected%%[ELSE ENDIF]%%>Liberia</option>
-                            <option value="Libyan Arab Jamahiriya" %%[IF @Country == 'Libyan Arab Jamahiriya' THEN ]%%selected%%[ELSE ENDIF]%%>Libyan Arab Jamahiriya</option>
-                            <option value="Liechtenstein" %%[IF @Country == 'Liechtenstein' THEN ]%%selected%%[ELSE ENDIF]%%>Liechtenstein</option>
-                            <option value="Lithuania" %%[IF @Country == 'Lithuania' THEN ]%%selected%%[ELSE ENDIF]%%>Lithuania</option>
-                            <option value="Luxembourg" %%[IF @Country == 'Luxembourg' THEN ]%%selected%%[ELSE ENDIF]%%>Luxembourg</option>
-                            <option value="Macau" %%[IF @Country == 'Macau' THEN ]%%selected%%[ELSE ENDIF]%%>Macau</option>
-                            <option value="Macedonia, The Former Yugoslav Republic of" %%[IF @Country == 'Macedonia, The Former Yugoslav Republic of' THEN ]%%selected%%[ELSE ENDIF]%%>Macedonia, The Former Yugoslav Republic of</option>
-                            <option value="Madagascar" %%[IF @Country == 'Madagascar' THEN ]%%selected%%[ELSE ENDIF]%%>Madagascar</option>
-                            <option value="Malawi" %%[IF @Country == 'Malawi' THEN ]%%selected%%[ELSE ENDIF]%%>Malawi</option>
-                            <option value="Malaysia" %%[IF @Country == 'Malaysia' THEN ]%%selected%%[ELSE ENDIF]%%>Malaysia</option>
-                            <option value="Maldives" %%[IF @Country == 'Maldives' THEN ]%%selected%%[ELSE ENDIF]%%>Maldives</option>
-                            <option value="Mali" %%[IF @Country == 'Mali' THEN ]%%selected%%[ELSE ENDIF]%%>Mali</option>
-                            <option value="Malta" %%[IF @Country == 'Malta' THEN ]%%selected%%[ELSE ENDIF]%%>Malta</option>
-                            <option value="Marshall Islands" %%[IF @Country == 'Marshall Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Marshall Islands</option>
-                            <option value="Martinique" %%[IF @Country == 'Martinique' THEN ]%%selected%%[ELSE ENDIF]%%>Martinique</option>
-                            <option value="Mauritania" %%[IF @Country == 'Mauritania' THEN ]%%selected%%[ELSE ENDIF]%%>Mauritania</option>
-                            <option value="Mauritius" %%[IF @Country == 'Mauritius' THEN ]%%selected%%[ELSE ENDIF]%%>Mauritius</option>
-                            <option value="Mayotte" %%[IF @Country == 'Mayotte' THEN ]%%selected%%[ELSE ENDIF]%%>Mayotte</option>
-                            <option value="Mexico" %%[IF @Country == 'Mexico' THEN ]%%selected%%[ELSE ENDIF]%%>Mexico</option>
-                            <option value="Micronesia, Federated States of" %%[IF @Country == 'Micronesia, Federated States of' THEN ]%%selected%%[ELSE ENDIF]%%>Micronesia, Federated States of</option>
-                            <option value="Moldova, Republic of" %%[IF @Country == 'Moldova, Republic of' THEN ]%%selected%%[ELSE ENDIF]%%>Moldova, Republic of</option>
-                            <option value="Monaco" %%[IF @Country == 'Monaco' THEN ]%%selected%%[ELSE ENDIF]%%>Monaco</option>
-                            <option value="Mongolia" %%[IF @Country == 'Mongolia' THEN ]%%selected%%[ELSE ENDIF]%%>Mongolia</option>
-                            <option value="Montserrat" %%[IF @Country == 'Montserrat' THEN ]%%selected%%[ELSE ENDIF]%%>Montserrat</option>
-                            <option value="Morocco" %%[IF @Country == 'Morocco' THEN ]%%selected%%[ELSE ENDIF]%%>Morocco</option>
-                            <option value="Mozambique" %%[IF @Country == 'Mozambique' THEN ]%%selected%%[ELSE ENDIF]%%>Mozambique</option>
-                            <option value="Myanmar" %%[IF @Country == 'Myanmar' THEN ]%%selected%%[ELSE ENDIF]%%>Myanmar</option>
-                            <option value="Namibia" %%[IF @Country == 'Namibia' THEN ]%%selected%%[ELSE ENDIF]%%>Namibia</option>
-                            <option value="Nauru" %%[IF @Country == 'Nauru' THEN ]%%selected%%[ELSE ENDIF]%%>Nauru</option>
-  <option value="Nepal" %%[IF @Country == 'Nepal' THEN ]%%selected%%[ELSE ENDIF]%%>Nepal</option>
-                            <option value="Netherlands" %%[IF @Country == 'Netherlands' THEN ]%%selected%%[ELSE ENDIF]%%>Netherlands</option>
-                            <option value="Netherlands Antilles" %%[IF @Country == 'Netherlands Antilles' THEN ]%%selected%%[ELSE ENDIF]%%>Netherlands Antilles</option>
-                            <option value="New Caledonia" %%[IF @Country == 'New Caledonia' THEN ]%%selected%%[ELSE ENDIF]%%>New Caledonia</option>
-                            <option value="New Zealand" %%[IF @Country == 'New Zealand' THEN ]%%selected%%[ELSE ENDIF]%%>New Zealand</option>
-                            <option value="Nicaragua" %%[IF @Country == 'Nicaragua' THEN ]%%selected%%[ELSE ENDIF]%%>Nicaragua</option>
-                            <option value="Niger" %%[IF @Country == 'Niger' THEN ]%%selected%%[ELSE ENDIF]%%>Niger</option>
-                            <option value="Nigeria" %%[IF @Country == 'Nigeria' THEN ]%%selected%%[ELSE ENDIF]%%>Nigeria</option>
-                            <option value="Niue" %%[IF @Country == 'Niue' THEN ]%%selected%%[ELSE ENDIF]%%>Niue</option>
-                            <option value="Norfolk Island" %%[IF @Country == 'Norfolk Island' THEN ]%%selected%%[ELSE ENDIF]%%>Norfolk Island</option>
-                            <option value="Northern Mariana Islands" %%[IF @Country == 'Northern Mariana Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Northern Mariana Islands</option>
-                            <option value="Norway" %%[IF @Country == 'Norway' THEN ]%%selected%%[ELSE ENDIF]%%>Norway</option>
-                            <option value="Oman" %%[IF @Country == 'Oman' THEN ]%%selected%%[ELSE ENDIF]%%>Oman</option>
-                            <option value="Pakistan" %%[IF @Country == 'Pakistan' THEN ]%%selected%%[ELSE ENDIF]%%>Pakistan</option>
-                            <option value="Palau" %%[IF @Country == 'Palau' THEN ]%%selected%%[ELSE ENDIF]%%>Palau</option>
-                            <option value="Panama" %%[IF @Country == 'Panama' THEN ]%%selected%%[ELSE ENDIF]%%>Panama</option>
-                            <option value="Papua New Guinea" %%[IF @Country == 'Papua New Guinea' THEN ]%%selected%%[ELSE ENDIF]%%>Papua New Guinea</option>
-                            <option value="Paraguay" %%[IF @Country == 'Paraguay' THEN ]%%selected%%[ELSE ENDIF]%%>Paraguay</option>
-                            <option value="Peru" %%[IF @Country == 'Peru' THEN ]%%selected%%[ELSE ENDIF]%%>Peru</option>
-                            <option value="Philippines" %%[IF @Country == 'Philippines' THEN ]%%selected%%[ELSE ENDIF]%%>Philippines</option>
-                            <option value="Pitcairn" %%[IF @Country == 'Pitcairn' THEN ]%%selected%%[ELSE ENDIF]%%>Pitcairn</option>
-                            <option value="Poland" %%[IF @Country == 'Poland' THEN ]%%selected%%[ELSE ENDIF]%%>Poland</option>
-                            <option value="Portugal" %%[IF @Country == 'Portugal' THEN ]%%selected%%[ELSE ENDIF]%%>Portugal</option>
-                            <option value="Puerto Rico" %%[IF @Country == 'Puerto Rico' THEN ]%%selected%%[ELSE ENDIF]%%>Puerto Rico</option>
-                            <option value="Qatar" %%[IF @Country == 'Qatar' THEN ]%%selected%%[ELSE ENDIF]%%>Qatar</option>
-                            <option value="Reunion" %%[IF @Country == 'Reunion' THEN ]%%selected%%[ELSE ENDIF]%%>Reunion</option>
-                            <option value="Romania" %%[IF @Country == 'Romania' THEN ]%%selected%%[ELSE ENDIF]%%>Romania</option>
-                            <option value="Russian Federation" %%[IF @Country == 'Russian Federation' THEN ]%%selected%%[ELSE ENDIF]%%>Russian Federation</option>
-                            <option value="Rwanda" %%[IF @Country == 'Rwanda' THEN ]%%selected%%[ELSE ENDIF]%%>Rwanda</option>
-                            <option value="Saint Kitts and Nevis" %%[IF @Country == 'Saint Kitts and Nevis' THEN ]%%selected%%[ELSE ENDIF]%%>Saint Kitts and Nevis</option>
-                            <option value="Saint LUCIA" %%[IF @Country == 'Saint LUCIA' THEN ]%%selected%%[ELSE ENDIF]%%>Saint LUCIA</option>
-                            <option value="Saint Vincent and the Grenadines" %%[IF @Country == 'Saint Vincent and the Grenadines' THEN ]%%selected%%[ELSE ENDIF]%%>Saint Vincent and the Grenadines</option>
-                            <option value="Samoa" %%[IF @Country == 'Samoa' THEN ]%%selected%%[ELSE ENDIF]%%>Samoa</option>
-                            <option value="San Marino" %%[IF @Country == 'San Marino' THEN ]%%selected%%[ELSE ENDIF]%%>San Marino</option>
-                            <option value="Sao Tome and Principe" %%[IF @Country == 'Sao Tome and Principe' THEN ]%%selected%%[ELSE ENDIF]%%>Sao Tome and Principe</option>
-                            <option value="Saudi Arabia" %%[IF @Country == 'Saudi Arabia' THEN ]%%selected%%[ELSE ENDIF]%%>Saudi Arabia</option>
-                            <option value="Senegal" %%[IF @Country == 'Senegal' THEN ]%%selected%%[ELSE ENDIF]%%>Senegal</option>
-                            <option value="Seychelles" %%[IF @Country == 'Seychelles' THEN ]%%selected%%[ELSE ENDIF]%%>Seychelles</option>
-                            <option value="Sierra Leone" %%[IF @Country == 'Sierra Leone' THEN ]%%selected%%[ELSE ENDIF]%%>Sierra Leone</option>
-                            <option value="Singapore" %%[IF @Country == 'Singapore' THEN ]%%selected%%[ELSE ENDIF]%%>Singapore</option>
-                            <option value="Slovakia" %%[IF @Country == 'Slovakia' THEN ]%%selected%%[ELSE ENDIF]%%>Slovakia</option>
-                            <option value="Slovenia" %%[IF @Country == 'Slovenia' THEN ]%%selected%%[ELSE ENDIF]%%>Slovenia</option>
-                            <option value="Solomon Islands" %%[IF @Country == 'Solomon Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Solomon Islands</option>
-                            <option value="Somalia" %%[IF @Country == 'Somalia' THEN ]%%selected%%[ELSE ENDIF]%%>Somalia</option>
-                            <option value="South Africa" %%[IF @Country == 'South Africa' THEN ]%%selected%%[ELSE ENDIF]%%>South Africa</option>
-                            <option value="South Georgia and the South Sandwich Islands" %%[IF @Country == 'South Georgia and the South Sandwich Islands' THEN ]%%selected%%[ELSE ENDIF]%%>South Georgia and the South Sandwich Islands</option>
-                            <option value="Spain" %%[IF @Country == 'Spain' THEN ]%%selected%%[ELSE ENDIF]%%>Spain</option>
-                            <option value="Sri Lanka" %%[IF @Country == 'Sri Lanka' THEN ]%%selected%%[ELSE ENDIF]%%>Sri Lanka</option>
-                            <option value="St. Helena" %%[IF @Country == 'St. Helena' THEN ]%%selected%%[ELSE ENDIF]%%>St. Helena</option>
-                            <option value="St. Pierre and Miquelon" %%[IF @Country == 'St. Pierre and Miquelon' THEN ]%%selected%%[ELSE ENDIF]%%>St. Pierre and Miquelon</option>
-                            <option value="Sudan" %%[IF @Country == 'Sudan' THEN ]%%selected%%[ELSE ENDIF]%%>Sudan</option>
-                            <option value="Suriname" %%[IF @Country == 'Suriname' THEN ]%%selected%%[ELSE ENDIF]%%>Suriname</option>
-                            <option value="Svalbard and Jan Mayen Islands" %%[IF @Country == 'Svalbard and Jan Mayen Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Svalbard and Jan Mayen Islands</option>
-                            <option value="Swaziland" %%[IF @Country == 'Swaziland' THEN ]%%selected%%[ELSE ENDIF]%%>Swaziland</option>
-                            <option value="Sweden" %%[IF @Country == 'Sweden' THEN ]%%selected%%[ELSE ENDIF]%%>Sweden</option>
-                            <option value="Switzerland" %%[IF @Country == 'Switzerland' THEN ]%%selected%%[ELSE ENDIF]%%>Switzerland</option>
-                            <option value="Syrian Arab Republic" %%[IF @Country == 'Syrian Arab Republic' THEN ]%%selected%%[ELSE ENDIF]%%>Syrian Arab Republic</option>
-                            <option value="Taiwan, Province of China" %%[IF @Country == 'Taiwan, Province of China' THEN ]%%selected%%[ELSE ENDIF]%%>Taiwan, Province of China</option>
-                            <option value="Tajikistan" %%[IF @Country == 'Tajikistan' THEN ]%%selected%%[ELSE ENDIF]%%>Tajikistan</option>
-                            <option value="Tanzania, United Republic of" %%[IF @Country == 'Tanzania, United Republic of' THEN ]%%selected%%[ELSE ENDIF]%%>Tanzania, United Republic of</option>
-                            <option value="Thailand" %%[IF @Country == 'Thailand' THEN ]%%selected%%[ELSE ENDIF]%%>Thailand</option>
-                            <option value="Togo" %%[IF @Country == 'Togo' THEN ]%%selected%%[ELSE ENDIF]%%>Togo</option>
-                            <option value="Tokelau" %%[IF @Country == 'Tokelau' THEN ]%%selected%%[ELSE ENDIF]%%>Tokelau</option>
-                            <option value="Tonga" %%[IF @Country == 'Tonga' THEN ]%%selected%%[ELSE ENDIF]%%>Tonga</option>
-                            <option value="Trinidad and Tobago" %%[IF @Country == 'Trinidad and Tobago' THEN ]%%selected%%[ELSE ENDIF]%%>Trinidad and Tobago</option>
-                            <option value="Tunisia" %%[IF @Country == 'Tunisia' THEN ]%%selected%%[ELSE ENDIF]%%>Tunisia</option>
-                            <option value="Turkey" %%[IF @Country == 'Turkey' THEN ]%%selected%%[ELSE ENDIF]%%>Turkey</option>
-                            <option value="Turkmenistan" %%[IF @Country == 'Turkmenistan' THEN ]%%selected%%[ELSE ENDIF]%%>Turkmenistan</option>
-                            <option value="Turks and Caicos Islands" %%[IF @Country == 'Turks and Caicos Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Turks and Caicos Islands</option>
-                            <option value="Tuvalu" %%[IF @Country == 'Tuvalu' THEN ]%%selected%%[ELSE ENDIF]%%>Tuvalu</option>
-                            <option value="Uganda" %%[IF @Country == 'Uganda' THEN ]%%selected%%[ELSE ENDIF]%%>Uganda</option>
-                            <option value="Ukraine" %%[IF @Country == 'Ukraine' THEN ]%%selected%%[ELSE ENDIF]%%>Ukraine</option>
-                            <option value="United Arab Emirates" %%[IF @Country == 'United Arab Emirates' THEN ]%%selected%%[ELSE ENDIF]%%>United Arab Emirates</option>
-                            <option value="United Kingdom" %%[IF @Country == 'United Kingdom' THEN ]%%selected%%[ELSE ENDIF]%%>United Kingdom</option>
-                            <option value="United States" %%[IF @Country == 'United States' THEN ]%%selected%%[ELSE ENDIF]%%>United States</option>
-                            <option value="United States Minor Outlying Islands" %%[IF @Country == 'United States Minor Outlying Islands' THEN ]%%selected%%[ELSE ENDIF]%%>United States Minor Outlying Islands</option>
-                            <option value="Uruguay" %%[IF @Country == 'Uruguay' THEN ]%%selected%%[ELSE ENDIF]%%>Uruguay</option>
-                            <option value="Uzbekistan" %%[IF @Country == 'Uzbekistan' THEN ]%%selected%%[ELSE ENDIF]%%>Uzbekistan</option>
-                            <option value="Vanuatu" %%[IF @Country == 'Vanuatu' THEN ]%%selected%%[ELSE ENDIF]%%>Vanuatu</option>
-                            <option value="Venezuela" %%[IF @Country == 'Venezuela' THEN ]%%selected%%[ELSE ENDIF]%%>Venezuela</option>
-                            <option value="Viet Nam" %%[IF @Country == 'Viet Nam' THEN ]%%selected%%[ELSE ENDIF]%%>Viet Nam</option>
-                            <option value="Virgin Islands" %%[IF @Country == 'Virgin Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Virgin Islands</option>
-                            <option value="Virgin Islands" %%[IF @Country == 'Virgin Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Virgin Islands</option>
-                            <option value="Wallis and Futuna Islands" %%[IF @Country == 'Wallis and Futuna Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Wallis and Futuna Islands</option>
-                            <option value="Western Sahara" %%[IF @Country == 'Western Sahara' THEN ]%%selected%%[ELSE ENDIF]%%>Western Sahara</option>
-                            <option value="Yemen" %%[IF @Country == 'Yemen' THEN ]%%selected%%[ELSE ENDIF]%%>Yemen</option>
-                            <option value="Yugoslavia" %%[IF @Country == 'Yugoslavia' THEN ]%%selected%%[ELSE ENDIF]%%>Yugoslavia</option>
-                            <option value="Zambia" %%[IF @Country == 'Zambia' THEN ]%%selected%%[ELSE ENDIF]%%>Zambia</option>
-                            <option value="Zimbabwe" %%[IF @Country == 'Zimbabwe' THEN ]%%selected%%[ELSE ENDIF]%%>Zimbabwe</option>                               
-                             </select>
+                                <option value="Bahrain" %%[IF @Country == 'Bahrain' THEN ]%%selected%%[ELSE ENDIF]%%>Bahrain</option>
+                                <option value="Bangladesh" %%[IF @Country == 'Bangladesh' THEN ]%%selected%%[ELSE ENDIF]%%>Bangladesh</option>
+                                <option value="Barbados" %%[IF @Country == 'Barbados' THEN ]%%selected%%[ELSE ENDIF]%%>Barbados</option>
+                                <option value="Belarus" %%[IF @Country == 'Belarus' THEN ]%%selected%%[ELSE ENDIF]%%>Belarus</option>
+                                <option value="Belgium" %%[IF @Country == 'Belgium' THEN ]%%selected%%[ELSE ENDIF]%%>Belgium</option>
+                                <option value="Belize" %%[IF @Country == 'Belize' THEN ]%%selected%%[ELSE ENDIF]%%>Belize</option>
+                                <option value="Benin" %%[IF @Country == 'Benin' THEN ]%%selected%%[ELSE ENDIF]%%>Benin</option>
+                                <option value="Bermuda" %%[IF @Country == 'Bermuda' THEN ]%%selected%%[ELSE ENDIF]%%>Bermuda</option>
+                                <option value="Bhutan" %%[IF @Country == 'Bhutan' THEN ]%%selected%%[ELSE ENDIF]%%>Bhutan</option>
+                                <option value="Bolivia" %%[IF @Country == 'Bolivia' THEN ]%%selected%%[ELSE ENDIF]%%>Bolivia</option>
+                                <option value="Bosnia and Herzegowina" %%[IF @Country == 'Bosnia and Herzegowina' THEN ]%%selected%%[ELSE ENDIF]%%>Bosnia and Herzegowina</option>
+                                <option value="Botswana" %%[IF @Country == 'Botswana' THEN ]%%selected%%[ELSE ENDIF]%%>Botswana</option>
+                                <option value="Bouvet Island" %%[IF @Country == 'Bouvet Island' THEN ]%%selected%%[ELSE ENDIF]%%>Bouvet Island</option>
+                                <option value="Brazil" %%[IF @Country == 'Brazil' THEN ]%%selected%%[ELSE ENDIF]%%>Brazil</option>
+                                <option value="British Indian Ocean Territory" %%[IF @Country == 'British Indian Ocean Territory' THEN ]%%selected%%[ELSE ENDIF]%%>British Indian Ocean Territory</option>
+                                <option value="Brunei Darussalam" %%[IF @Country == 'Brunei Darussalam' THEN ]%%selected%%[ELSE ENDIF]%%>Brunei Darussalam</option>
+                                <option value="Bulgaria" %%[IF @Country == 'Bulgaria' THEN ]%%selected%%[ELSE ENDIF]%%>Bulgaria</option>
+                                <option value="Burkina Faso" %%[IF @Country == 'Burkina Faso' THEN ]%%selected%%[ELSE ENDIF]%%>Burkina Faso</option>
+                                <option value="Burundi" %%[IF @Country == 'Burundi' THEN ]%%selected%%[ELSE ENDIF]%%>Burundi</option>
+                                <option value="Cambodia" %%[IF @Country == 'Cambodia' THEN ]%%selected%%[ELSE ENDIF]%%>Cambodia</option>
+                                <option value="Cameroon" %%[IF @Country == 'Cameroon' THEN ]%%selected%%[ELSE ENDIF]%%>Cameroon</option>
+                                <option value="Canada" %%[IF @Country == 'Canada' THEN ]%%selected%%[ELSE ENDIF]%%>Canada</option>
+                                <option value="Cape Verde" %%[IF @Country == 'Cape Verde' THEN ]%%selected%%[ELSE ENDIF]%%>Cape Verde</option>
+                                <option value="Cayman Islands" %%[IF @Country == 'Cayman Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Cayman Islands</option>
+                                <option value="Central African Republic" %%[IF @Country == 'Central African Republic' THEN ]%%selected%%[ELSE ENDIF]%%>Central African Republic</option>
+                                <option value="Chad" %%[IF @Country == 'Chad' THEN ]%%selected%%[ELSE ENDIF]%%>Chad</option>
+                                <option value="Chile" %%[IF @Country == 'Chile' THEN ]%%selected%%[ELSE ENDIF]%%>Chile</option>
+                                <option value="China" %%[IF @Country == 'China' THEN ]%%selected%%[ELSE ENDIF]%%>China</option>
+                                <option value="Christmas Island" %%[IF @Country == 'Christmas Island' THEN ]%%selected%%[ELSE ENDIF]%%>Christmas Island</option>
+                                <option value="Cocos Islands" %%[IF @Country == 'Cocos Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Cocos Islands</option>
+                                <option value="Colombia" %%[IF @Country == 'Colombia' THEN ]%%selected%%[ELSE ENDIF]%%>Colombia</option>
+                                <option value="Comoros" %%[IF @Country == 'Comoros' THEN ]%%selected%%[ELSE ENDIF]%%>Comoros</option>
+                                <option value="Congo" %%[IF @Country == 'Congo' THEN ]%%selected%%[ELSE ENDIF]%%>Congo</option>
+                                <option value="Congo, the Democratic Republic of the" %%[IF @Country == 'Congo, the Democratic Republic of the' THEN ]%%selected%%[ELSE ENDIF]%%>Congo, the Democratic Republic of the</option>
+                                <option value="Cook Islands" %%[IF @Country == 'Cook Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Cook Islands</option>
+                                <option value="Costa Rica" %%[IF @Country == 'Costa Rica' THEN ]%%selected%%[ELSE ENDIF]%%>Costa Rica</option>
+                                <option value="Cote dIvoire" %%[IF @Country == 'Cote dIvoire' THEN ]%%selected%%[ELSE ENDIF]%%>Cote dIvoire</option>
+                                <option value="Croatia" %%[IF @Country == 'Croatia' THEN ]%%selected%%[ELSE ENDIF]%%>Croatia</option>
+                                <option value="Cuba" %%[IF @Country == 'Cuba' THEN ]%%selected%%[ELSE ENDIF]%%>Cuba</option>
+                                <option value="Cyprus" %%[IF @Country == 'Cyprus' THEN ]%%selected%%[ELSE ENDIF]%%>Cyprus</option>
+                                <option value="Czech Republic" %%[IF @Country == 'Czech Republic' THEN ]%%selected%%[ELSE ENDIF]%%>Czech Republic</option>
+                                <option value="Denmark" %%[IF @Country == 'Denmark' THEN ]%%selected%%[ELSE ENDIF]%%>Denmark</option>
+                                <option value="Djibouti" %%[IF @Country == 'Djibouti' THEN ]%%selected%%[ELSE ENDIF]%%>Djibouti</option>
+                                <option value="Dominica" %%[IF @Country == 'Dominica' THEN ]%%selected%%[ELSE ENDIF]%%>Dominica</option>
+                                <option value="Dominican Republic" %%[IF @Country == 'Dominican Republic' THEN ]%%selected%%[ELSE ENDIF]%%>Dominican Republic</option>
+                                <option value="East Timor" %%[IF @Country == 'East Timor' THEN ]%%selected%%[ELSE ENDIF]%%>East Timor</option>
+                                <option value="Ecuador" %%[IF @Country == 'Ecuador' THEN ]%%selected%%[ELSE ENDIF]%%>Ecuador</option>
+                                <option value="Egypt" %%[IF @Country == 'Egypt' THEN ]%%selected%%[ELSE ENDIF]%%>Egypt</option>
+                                <option value="El Salvador" %%[IF @Country == 'El Salvador' THEN ]%%selected%%[ELSE ENDIF]%%>El Salvador</option>
+                                <option value="Equatorial Guinea" %%[IF @Country == 'Equatorial Guinea' THEN ]%%selected%%[ELSE ENDIF]%%>Equatorial Guinea</option>
+                                <option value="Eritrea" %%[IF @Country == 'Eritrea' THEN ]%%selected%%[ELSE ENDIF]%%>Eritrea</option>
+                                <option value="Estonia" %%[IF @Country == 'Estonia' THEN ]%%selected%%[ELSE ENDIF]%%>Estonia</option>
+                                <option value="Ethiopia" %%[IF @Country == 'Ethiopia' THEN ]%%selected%%[ELSE ENDIF]%%>Ethiopia</option>
+                                <option value="Falkland Islands" %%[IF @Country == 'Falkland Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Falkland Islands</option>
+                                <option value="Faroe Islands" %%[IF @Country == 'Faroe Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Faroe Islands</option>
+                                <option value="Fiji" %%[IF @Country == 'Fiji' THEN ]%%selected%%[ELSE ENDIF]%%>Fiji</option>
+                                <option value="Finland" %%[IF @Country == 'Finland' THEN ]%%selected%%[ELSE ENDIF]%%>Finland</option>
+                                <option value="France" %%[IF @Country == 'France' THEN ]%%selected%%[ELSE ENDIF]%%>France</option>
+                                <option value="France, Metropolitan" %%[IF @Country == 'France, Metropolitan' THEN ]%%selected%%[ELSE ENDIF]%%>France, Metropolitan</option>
+                                <option value="French Guiana" %%[IF @Country == 'French Guiana' THEN ]%%selected%%[ELSE ENDIF]%%>French Guiana</option>
+                                <option value="French Polynesia" %%[IF @Country == 'French Polynesia' THEN ]%%selected%%[ELSE ENDIF]%%>French Polynesia</option>
+                                <option value="French Southern Territories" %%[IF @Country == 'French Southern Territories' THEN ]%%selected%%[ELSE ENDIF]%%>French Southern Territories</option>
+                                <option value="Gabon" %%[IF @Country == 'Gabon' THEN ]%%selected%%[ELSE ENDIF]%%>Gabon</option>
+                                <option value="Gambia" %%[IF @Country == 'Gambia' THEN ]%%selected%%[ELSE ENDIF]%%>Gambia</option>
+                                <option value="Georgia" %%[IF @Country == 'Georgia' THEN ]%%selected%%[ELSE ENDIF]%%>Georgia</option>
+                                <option value="Germany" %%[IF @Country == 'Germany' THEN ]%%selected%%[ELSE ENDIF]%%>Germany</option>
+                                <option value="Ghana" %%[IF @Country == 'Ghana' THEN ]%%selected%%[ELSE ENDIF]%%>Ghana</option>
+                                <option value="Gibraltar" %%[IF @Country == 'Gibraltar' THEN ]%%selected%%[ELSE ENDIF]%%>Gibraltar</option>
+                                <option value="Greece" %%[IF @Country == 'Greece' THEN ]%%selected%%[ELSE ENDIF]%%>Greece</option>
+                                <option value="Greenland" %%[IF @Country == 'Greenland' THEN ]%%selected%%[ELSE ENDIF]%%>Greenland</option>
+                                <option value="Grenada" %%[IF @Country == 'Grenada' THEN ]%%selected%%[ELSE ENDIF]%%>Grenada</option>
+                                <option value="Guadeloupe" %%[IF @Country == 'Guadeloupe' THEN ]%%selected%%[ELSE ENDIF]%%>Guadeloupe</option>
+                                <option value="Guam" %%[IF @Country == 'Guam' THEN ]%%selected%%[ELSE ENDIF]%%>Guam</option>
+                                <option value="Guatemala" %%[IF @Country == 'Guatemala' THEN ]%%selected%%[ELSE ENDIF]%%>Guatemala</option>
+                                <option value="Guinea" %%[IF @Country == 'Guinea' THEN ]%%selected%%[ELSE ENDIF]%%>Guinea</option>
+                                <option value="Guinea-Bissau" %%[IF @Country == 'Guinea-Bissau' THEN ]%%selected%%[ELSE ENDIF]%%>Guinea-Bissau</option>
+                                <option value="Guyana" %%[IF @Country == 'Guyana' THEN ]%%selected%%[ELSE ENDIF]%%>Guyana</option>
+                                <option value="Haiti" %%[IF @Country == 'Haiti' THEN ]%%selected%%[ELSE ENDIF]%%>Haiti</option>
+                                <option value="Heard and Mc Donald Islands" %%[IF @Country == 'Heard and Mc Donald Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Heard and Mc Donald Islands</option>
+                                <option value="Holy See" %%[IF @Country == 'Holy See' THEN ]%%selected%%[ELSE ENDIF]%%>Holy See</option>
+                                <option value="Honduras" %%[IF @Country == 'Honduras' THEN ]%%selected%%[ELSE ENDIF]%%>Honduras</option>
+                                <option value="Hong Kong" %%[IF @Country == 'Hong Kong' THEN ]%%selected%%[ELSE ENDIF]%%>Hong Kong</option>
+                                <option value="Hungary" %%[IF @Country == 'Hungary' THEN ]%%selected%%[ELSE ENDIF]%%>Hungary</option>
+                                <option value="Iceland" %%[IF @Country == 'Iceland' THEN ]%%selected%%[ELSE ENDIF]%%>Iceland</option>
+                                <option value="India" %%[IF @Country == 'India' THEN ]%%selected%%[ELSE ENDIF]%%>India</option>
+                                <option value="Indonesia" %%[IF @Country == 'Indonesia' THEN ]%%selected%%[ELSE ENDIF]%%>Indonesia</option>
+                                <option value="Iran" %%[IF @Country == 'Iran' THEN ]%%selected%%[ELSE ENDIF]%%>Iran</option>
+                                <option value="Iraq" %%[IF @Country == 'Iraq' THEN ]%%selected%%[ELSE ENDIF]%%>Iraq</option>
+                                <option value="Ireland" %%[IF @Country == 'Ireland' THEN ]%%selected%%[ELSE ENDIF]%%>Ireland</option>
+                                <option value="Israel" %%[IF @Country == 'Israel' THEN ]%%selected%%[ELSE ENDIF]%%>Israel</option>
+                                <option value="Italy" %%[IF @Country == 'Italy' THEN ]%%selected%%[ELSE ENDIF]%%>Italy</option>
+                                <option value="Jamaica" %%[IF @Country == 'Jamaica' THEN ]%%selected%%[ELSE ENDIF]%%>Jamaica</option>
+                                <option value="Japan" %%[IF @Country == 'Japan' THEN ]%%selected%%[ELSE ENDIF]%%>Japan</option>
+                                <option value="Jordan" %%[IF @Country == 'Jordan' THEN ]%%selected%%[ELSE ENDIF]%%>Jordan</option>
+                                <option value="Kazakhstan" %%[IF @Country == 'Kazakhstan' THEN ]%%selected%%[ELSE ENDIF]%%>Kazakhstan</option>
+                                <option value="Kenya" %%[IF @Country == 'Kenya' THEN ]%%selected%%[ELSE ENDIF]%%>Kenya</option>
+                                <option value="Kiribati" %%[IF @Country == 'Kiribati' THEN ]%%selected%%[ELSE ENDIF]%%>Kiribati</option>
+                                <option value="Korea, Democratic Peoples Republic of" %%[IF @Country == 'Korea, Democratic Peoples Republic of' THEN ]%%selected%%[ELSE ENDIF]%%>Korea, Democratic People's Republic of</option>
+                                <option value="Korea, Republic of" %%[IF @Country == 'Korea, Republic of' THEN ]%%selected%%[ELSE ENDIF]%%>Korea, Republic of</option>
+                                <option value="Kuwait" %%[IF @Country == 'Kuwait' THEN ]%%selected%%[ELSE ENDIF]%%>Kuwait</option>
+                                <option value="Kyrgyzstan" %%[IF @Country == 'Kyrgyzstan' THEN ]%%selected%%[ELSE ENDIF]%%>Kyrgyzstan</option>
+                                <option value="Lao Peoples Democratic Republic" %%[IF @Country == 'Lao Peoples Democratic Republic' THEN ]%%selected%%[ELSE ENDIF]%%>Lao People's Democratic Republic</option>
+                                <option value="Latvia" %%[IF @Country == 'Latvia' THEN ]%%selected%%[ELSE ENDIF]%%>Latvia</option>
+                                <option value="Lebanon" %%[IF @Country == 'Lebanon' THEN ]%%selected%%[ELSE ENDIF]%%>Lebanon</option>
+                                <option value="Lesotho" %%[IF @Country == 'Lesotho' THEN ]%%selected%%[ELSE ENDIF]%%>Lesotho</option>
+                                <option value="Liberia" %%[IF @Country == 'Liberia' THEN ]%%selected%%[ELSE ENDIF]%%>Liberia</option>
+                                <option value="Libyan Arab Jamahiriya" %%[IF @Country == 'Libyan Arab Jamahiriya' THEN ]%%selected%%[ELSE ENDIF]%%>Libyan Arab Jamahiriya</option>
+                                <option value="Liechtenstein" %%[IF @Country == 'Liechtenstein' THEN ]%%selected%%[ELSE ENDIF]%%>Liechtenstein</option>
+                                <option value="Lithuania" %%[IF @Country == 'Lithuania' THEN ]%%selected%%[ELSE ENDIF]%%>Lithuania</option>
+                                <option value="Luxembourg" %%[IF @Country == 'Luxembourg' THEN ]%%selected%%[ELSE ENDIF]%%>Luxembourg</option>
+                                <option value="Macau" %%[IF @Country == 'Macau' THEN ]%%selected%%[ELSE ENDIF]%%>Macau</option>
+                                <option value="Macedonia, The Former Yugoslav Republic of" %%[IF @Country == 'Macedonia, The Former Yugoslav Republic of' THEN ]%%selected%%[ELSE ENDIF]%%>Macedonia, The Former Yugoslav Republic of</option>
+                                <option value="Madagascar" %%[IF @Country == 'Madagascar' THEN ]%%selected%%[ELSE ENDIF]%%>Madagascar</option>
+                                <option value="Malawi" %%[IF @Country == 'Malawi' THEN ]%%selected%%[ELSE ENDIF]%%>Malawi</option>
+                                <option value="Malaysia" %%[IF @Country == 'Malaysia' THEN ]%%selected%%[ELSE ENDIF]%%>Malaysia</option>
+                                <option value="Maldives" %%[IF @Country == 'Maldives' THEN ]%%selected%%[ELSE ENDIF]%%>Maldives</option>
+                                <option value="Mali" %%[IF @Country == 'Mali' THEN ]%%selected%%[ELSE ENDIF]%%>Mali</option>
+                                <option value="Malta" %%[IF @Country == 'Malta' THEN ]%%selected%%[ELSE ENDIF]%%>Malta</option>
+                                <option value="Marshall Islands" %%[IF @Country == 'Marshall Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Marshall Islands</option>
+                                <option value="Martinique" %%[IF @Country == 'Martinique' THEN ]%%selected%%[ELSE ENDIF]%%>Martinique</option>
+                                <option value="Mauritania" %%[IF @Country == 'Mauritania' THEN ]%%selected%%[ELSE ENDIF]%%>Mauritania</option>
+                                <option value="Mauritius" %%[IF @Country == 'Mauritius' THEN ]%%selected%%[ELSE ENDIF]%%>Mauritius</option>
+                                <option value="Mayotte" %%[IF @Country == 'Mayotte' THEN ]%%selected%%[ELSE ENDIF]%%>Mayotte</option>
+                                <option value="Mexico" %%[IF @Country == 'Mexico' THEN ]%%selected%%[ELSE ENDIF]%%>Mexico</option>
+                                <option value="Micronesia, Federated States of" %%[IF @Country == 'Micronesia, Federated States of' THEN ]%%selected%%[ELSE ENDIF]%%>Micronesia, Federated States of</option>
+                                <option value="Moldova, Republic of" %%[IF @Country == 'Moldova, Republic of' THEN ]%%selected%%[ELSE ENDIF]%%>Moldova, Republic of</option>
+                                <option value="Monaco" %%[IF @Country == 'Monaco' THEN ]%%selected%%[ELSE ENDIF]%%>Monaco</option>
+                                <option value="Mongolia" %%[IF @Country == 'Mongolia' THEN ]%%selected%%[ELSE ENDIF]%%>Mongolia</option>
+                                <option value="Montserrat" %%[IF @Country == 'Montserrat' THEN ]%%selected%%[ELSE ENDIF]%%>Montserrat</option>
+                                <option value="Morocco" %%[IF @Country == 'Morocco' THEN ]%%selected%%[ELSE ENDIF]%%>Morocco</option>
+                                <option value="Mozambique" %%[IF @Country == 'Mozambique' THEN ]%%selected%%[ELSE ENDIF]%%>Mozambique</option>
+                                <option value="Myanmar" %%[IF @Country == 'Myanmar' THEN ]%%selected%%[ELSE ENDIF]%%>Myanmar</option>
+                                <option value="Namibia" %%[IF @Country == 'Namibia' THEN ]%%selected%%[ELSE ENDIF]%%>Namibia</option>
+                                <option value="Nauru" %%[IF @Country == 'Nauru' THEN ]%%selected%%[ELSE ENDIF]%%>Nauru</option>
+                                <option value="Nepal" %%[IF @Country == 'Nepal' THEN ]%%selected%%[ELSE ENDIF]%%>Nepal</option>
+                                <option value="Netherlands" %%[IF @Country == 'Netherlands' THEN ]%%selected%%[ELSE ENDIF]%%>Netherlands</option>
+                                <option value="Netherlands Antilles" %%[IF @Country == 'Netherlands Antilles' THEN ]%%selected%%[ELSE ENDIF]%%>Netherlands Antilles</option>
+                                <option value="New Caledonia" %%[IF @Country == 'New Caledonia' THEN ]%%selected%%[ELSE ENDIF]%%>New Caledonia</option>
+                                <option value="New Zealand" %%[IF @Country == 'New Zealand' THEN ]%%selected%%[ELSE ENDIF]%%>New Zealand</option>
+                                <option value="Nicaragua" %%[IF @Country == 'Nicaragua' THEN ]%%selected%%[ELSE ENDIF]%%>Nicaragua</option>
+                                <option value="Niger" %%[IF @Country == 'Niger' THEN ]%%selected%%[ELSE ENDIF]%%>Niger</option>
+                                <option value="Nigeria" %%[IF @Country == 'Nigeria' THEN ]%%selected%%[ELSE ENDIF]%%>Nigeria</option>
+                                <option value="Niue" %%[IF @Country == 'Niue' THEN ]%%selected%%[ELSE ENDIF]%%>Niue</option>
+                                <option value="Norfolk Island" %%[IF @Country == 'Norfolk Island' THEN ]%%selected%%[ELSE ENDIF]%%>Norfolk Island</option>
+                                <option value="Northern Mariana Islands" %%[IF @Country == 'Northern Mariana Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Northern Mariana Islands</option>
+                                <option value="Norway" %%[IF @Country == 'Norway' THEN ]%%selected%%[ELSE ENDIF]%%>Norway</option>
+                                <option value="Oman" %%[IF @Country == 'Oman' THEN ]%%selected%%[ELSE ENDIF]%%>Oman</option>
+                                <option value="Pakistan" %%[IF @Country == 'Pakistan' THEN ]%%selected%%[ELSE ENDIF]%%>Pakistan</option>
+                                <option value="Palau" %%[IF @Country == 'Palau' THEN ]%%selected%%[ELSE ENDIF]%%>Palau</option>
+                                <option value="Panama" %%[IF @Country == 'Panama' THEN ]%%selected%%[ELSE ENDIF]%%>Panama</option>
+                                <option value="Papua New Guinea" %%[IF @Country == 'Papua New Guinea' THEN ]%%selected%%[ELSE ENDIF]%%>Papua New Guinea</option>
+                                <option value="Paraguay" %%[IF @Country == 'Paraguay' THEN ]%%selected%%[ELSE ENDIF]%%>Paraguay</option>
+                                <option value="Peru" %%[IF @Country == 'Peru' THEN ]%%selected%%[ELSE ENDIF]%%>Peru</option>
+                                <option value="Philippines" %%[IF @Country == 'Philippines' THEN ]%%selected%%[ELSE ENDIF]%%>Philippines</option>
+                                <option value="Pitcairn" %%[IF @Country == 'Pitcairn' THEN ]%%selected%%[ELSE ENDIF]%%>Pitcairn</option>
+                                <option value="Poland" %%[IF @Country == 'Poland' THEN ]%%selected%%[ELSE ENDIF]%%>Poland</option>
+                                <option value="Portugal" %%[IF @Country == 'Portugal' THEN ]%%selected%%[ELSE ENDIF]%%>Portugal</option>
+                                <option value="Puerto Rico" %%[IF @Country == 'Puerto Rico' THEN ]%%selected%%[ELSE ENDIF]%%>Puerto Rico</option>
+                                <option value="Qatar" %%[IF @Country == 'Qatar' THEN ]%%selected%%[ELSE ENDIF]%%>Qatar</option>
+                                <option value="Reunion" %%[IF @Country == 'Reunion' THEN ]%%selected%%[ELSE ENDIF]%%>Reunion</option>
+                                <option value="Romania" %%[IF @Country == 'Romania' THEN ]%%selected%%[ELSE ENDIF]%%>Romania</option>
+                                <option value="Russian Federation" %%[IF @Country == 'Russian Federation' THEN ]%%selected%%[ELSE ENDIF]%%>Russian Federation</option>
+                                <option value="Rwanda" %%[IF @Country == 'Rwanda' THEN ]%%selected%%[ELSE ENDIF]%%>Rwanda</option>
+                                <option value="Saint Kitts and Nevis" %%[IF @Country == 'Saint Kitts and Nevis' THEN ]%%selected%%[ELSE ENDIF]%%>Saint Kitts and Nevis</option>
+                                <option value="Saint LUCIA" %%[IF @Country == 'Saint LUCIA' THEN ]%%selected%%[ELSE ENDIF]%%>Saint LUCIA</option>
+                                <option value="Saint Vincent and the Grenadines" %%[IF @Country == 'Saint Vincent and the Grenadines' THEN ]%%selected%%[ELSE ENDIF]%%>Saint Vincent and the Grenadines</option>
+                                <option value="Samoa" %%[IF @Country == 'Samoa' THEN ]%%selected%%[ELSE ENDIF]%%>Samoa</option>
+                                <option value="San Marino" %%[IF @Country == 'San Marino' THEN ]%%selected%%[ELSE ENDIF]%%>San Marino</option>
+                                <option value="Sao Tome and Principe" %%[IF @Country == 'Sao Tome and Principe' THEN ]%%selected%%[ELSE ENDIF]%%>Sao Tome and Principe</option>
+                                <option value="Saudi Arabia" %%[IF @Country == 'Saudi Arabia' THEN ]%%selected%%[ELSE ENDIF]%%>Saudi Arabia</option>
+                                <option value="Senegal" %%[IF @Country == 'Senegal' THEN ]%%selected%%[ELSE ENDIF]%%>Senegal</option>
+                                <option value="Seychelles" %%[IF @Country == 'Seychelles' THEN ]%%selected%%[ELSE ENDIF]%%>Seychelles</option>
+                                <option value="Sierra Leone" %%[IF @Country == 'Sierra Leone' THEN ]%%selected%%[ELSE ENDIF]%%>Sierra Leone</option>
+                                <option value="Singapore" %%[IF @Country == 'Singapore' THEN ]%%selected%%[ELSE ENDIF]%%>Singapore</option>
+                                <option value="Slovakia" %%[IF @Country == 'Slovakia' THEN ]%%selected%%[ELSE ENDIF]%%>Slovakia</option>
+                                <option value="Slovenia" %%[IF @Country == 'Slovenia' THEN ]%%selected%%[ELSE ENDIF]%%>Slovenia</option>
+                                <option value="Solomon Islands" %%[IF @Country == 'Solomon Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Solomon Islands</option>
+                                <option value="Somalia" %%[IF @Country == 'Somalia' THEN ]%%selected%%[ELSE ENDIF]%%>Somalia</option>
+                                <option value="South Africa" %%[IF @Country == 'South Africa' THEN ]%%selected%%[ELSE ENDIF]%%>South Africa</option>
+                                <option value="South Georgia and the South Sandwich Islands" %%[IF @Country == 'South Georgia and the South Sandwich Islands' THEN ]%%selected%%[ELSE ENDIF]%%>South Georgia and the South Sandwich Islands</option>
+                                <option value="Spain" %%[IF @Country == 'Spain' THEN ]%%selected%%[ELSE ENDIF]%%>Spain</option>
+                                <option value="Sri Lanka" %%[IF @Country == 'Sri Lanka' THEN ]%%selected%%[ELSE ENDIF]%%>Sri Lanka</option>
+                                <option value="St. Helena" %%[IF @Country == 'St. Helena' THEN ]%%selected%%[ELSE ENDIF]%%>St. Helena</option>
+                                <option value="St. Pierre and Miquelon" %%[IF @Country == 'St. Pierre and Miquelon' THEN ]%%selected%%[ELSE ENDIF]%%>St. Pierre and Miquelon</option>
+                                <option value="Sudan" %%[IF @Country == 'Sudan' THEN ]%%selected%%[ELSE ENDIF]%%>Sudan</option>
+                                <option value="Suriname" %%[IF @Country == 'Suriname' THEN ]%%selected%%[ELSE ENDIF]%%>Suriname</option>
+                                <option value="Svalbard and Jan Mayen Islands" %%[IF @Country == 'Svalbard and Jan Mayen Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Svalbard and Jan Mayen Islands</option>
+                                <option value="Swaziland" %%[IF @Country == 'Swaziland' THEN ]%%selected%%[ELSE ENDIF]%%>Swaziland</option>
+                                <option value="Sweden" %%[IF @Country == 'Sweden' THEN ]%%selected%%[ELSE ENDIF]%%>Sweden</option>
+                                <option value="Switzerland" %%[IF @Country == 'Switzerland' THEN ]%%selected%%[ELSE ENDIF]%%>Switzerland</option>
+                                <option value="Syrian Arab Republic" %%[IF @Country == 'Syrian Arab Republic' THEN ]%%selected%%[ELSE ENDIF]%%>Syrian Arab Republic</option>
+                                <option value="Taiwan, Province of China" %%[IF @Country == 'Taiwan, Province of China' THEN ]%%selected%%[ELSE ENDIF]%%>Taiwan, Province of China</option>
+                                <option value="Tajikistan" %%[IF @Country == 'Tajikistan' THEN ]%%selected%%[ELSE ENDIF]%%>Tajikistan</option>
+                                <option value="Tanzania, United Republic of" %%[IF @Country == 'Tanzania, United Republic of' THEN ]%%selected%%[ELSE ENDIF]%%>Tanzania, United Republic of</option>
+                                <option value="Thailand" %%[IF @Country == 'Thailand' THEN ]%%selected%%[ELSE ENDIF]%%>Thailand</option>
+                                <option value="Togo" %%[IF @Country == 'Togo' THEN ]%%selected%%[ELSE ENDIF]%%>Togo</option>
+                                <option value="Tokelau" %%[IF @Country == 'Tokelau' THEN ]%%selected%%[ELSE ENDIF]%%>Tokelau</option>
+                                <option value="Tonga" %%[IF @Country == 'Tonga' THEN ]%%selected%%[ELSE ENDIF]%%>Tonga</option>
+                                <option value="Trinidad and Tobago" %%[IF @Country == 'Trinidad and Tobago' THEN ]%%selected%%[ELSE ENDIF]%%>Trinidad and Tobago</option>
+                                <option value="Tunisia" %%[IF @Country == 'Tunisia' THEN ]%%selected%%[ELSE ENDIF]%%>Tunisia</option>
+                                <option value="Turkey" %%[IF @Country == 'Turkey' THEN ]%%selected%%[ELSE ENDIF]%%>Turkey</option>
+                                <option value="Turkmenistan" %%[IF @Country == 'Turkmenistan' THEN ]%%selected%%[ELSE ENDIF]%%>Turkmenistan</option>
+                                <option value="Turks and Caicos Islands" %%[IF @Country == 'Turks and Caicos Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Turks and Caicos Islands</option>
+                                <option value="Tuvalu" %%[IF @Country == 'Tuvalu' THEN ]%%selected%%[ELSE ENDIF]%%>Tuvalu</option>
+                                <option value="Uganda" %%[IF @Country == 'Uganda' THEN ]%%selected%%[ELSE ENDIF]%%>Uganda</option>
+                                <option value="Ukraine" %%[IF @Country == 'Ukraine' THEN ]%%selected%%[ELSE ENDIF]%%>Ukraine</option>
+                                <option value="United Arab Emirates" %%[IF @Country == 'United Arab Emirates' THEN ]%%selected%%[ELSE ENDIF]%%>United Arab Emirates</option>
+                                <option value="United Kingdom" %%[IF @Country == 'United Kingdom' THEN ]%%selected%%[ELSE ENDIF]%%>United Kingdom</option>
+                                <option value="United States" %%[IF @Country == 'United States' THEN ]%%selected%%[ELSE ENDIF]%%>United States</option>
+                                <option value="United States Minor Outlying Islands" %%[IF @Country == 'United States Minor Outlying Islands' THEN ]%%selected%%[ELSE ENDIF]%%>United States Minor Outlying Islands</option>
+                                <option value="Uruguay" %%[IF @Country == 'Uruguay' THEN ]%%selected%%[ELSE ENDIF]%%>Uruguay</option>
+                                <option value="Uzbekistan" %%[IF @Country == 'Uzbekistan' THEN ]%%selected%%[ELSE ENDIF]%%>Uzbekistan</option>
+                                <option value="Vanuatu" %%[IF @Country == 'Vanuatu' THEN ]%%selected%%[ELSE ENDIF]%%>Vanuatu</option>
+                                <option value="Venezuela" %%[IF @Country == 'Venezuela' THEN ]%%selected%%[ELSE ENDIF]%%>Venezuela</option>
+                                <option value="Viet Nam" %%[IF @Country == 'Viet Nam' THEN ]%%selected%%[ELSE ENDIF]%%>Viet Nam</option>
+                                <option value="Virgin Islands" %%[IF @Country == 'Virgin Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Virgin Islands</option>
+                                <option value="Virgin Islands" %%[IF @Country == 'Virgin Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Virgin Islands</option>
+                                <option value="Wallis and Futuna Islands" %%[IF @Country == 'Wallis and Futuna Islands' THEN ]%%selected%%[ELSE ENDIF]%%>Wallis and Futuna Islands</option>
+                                <option value="Western Sahara" %%[IF @Country == 'Western Sahara' THEN ]%%selected%%[ELSE ENDIF]%%>Western Sahara</option>
+                                <option value="Yemen" %%[IF @Country == 'Yemen' THEN ]%%selected%%[ELSE ENDIF]%%>Yemen</option>
+                                <option value="Yugoslavia" %%[IF @Country == 'Yugoslavia' THEN ]%%selected%%[ELSE ENDIF]%%>Yugoslavia</option>
+                                <option value="Zambia" %%[IF @Country == 'Zambia' THEN ]%%selected%%[ELSE ENDIF]%%>Zambia</option>
+                                <option value="Zimbabwe" %%[IF @Country == 'Zimbabwe' THEN ]%%selected%%[ELSE ENDIF]%%>Zimbabwe</option>                               
+                            </select>
                          </div>
                     </div>
                 </div>
@@ -891,15 +874,14 @@ ENDIF
                                     None of the Above
                                 </label>
                            </div>
+			<br>
+			               <div class="checkbox">
+                                <label class="checkbox">
+                                    <input name="HasOptedOutofEmail" id="HasOptedOutofEmail" type="checkbox" value="%%[IF @HasOptedOutOfEmail == 'true' THEN ]%%true%%[ELSE]%%false%%[ENDIF]%%" %%[IF @HasOptedOutOfEmail == 'true' THEN ]%%checked%%[ELSE ENDIF]%%>
+                                    I would like to unsubscribe from all MacArthur Foundation emails
+			                    </label>
+                           </div>
                         </div>
-                    </div>
-                    <div class="form-group ">
-                        <label class="control-label text-left col-sm-12 requiredField">
-                            Choosing one or more of the categories below will help us share relevant information with you.
-                            <span class="asteriskField">
-                                *
-                            </span>
-                        </label>
                     </div>
                 </div>
             </div>
