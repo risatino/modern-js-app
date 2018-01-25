@@ -195,7 +195,7 @@ ENDIF
         }
 
 	.header {
-		background-image: url('http://image.email-macfound.org/lib/fe8b1274746c0c7574/m/1/email-subscription-banner-gradient-1900.jpg');
+		background-image: url('http://image.email-macfound.org/lib/fe8b1274746c0c7574/m/1/subscription-banner-1900-3.jpg');
 		background-color: transparent;
 		background-repeat: no-repeat;
 	}
@@ -344,7 +344,15 @@ ENDIF
                             </span>
                         </div>
                     </div>
-                    
+<br>
+		<div class="form-group ">
+                        <div class="col-sm-11 col-sm-push-1">
+                            <span>
+                                <em>Everyone receives the annual announcement of the MacArthur Fellows and periodic updates about the 100&Change competition.</em>
+                            </span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
              
@@ -855,18 +863,24 @@ ENDIF
                 </div>
                 </div>
             <br>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div>
-    			    <div>            
-                            <label class="checkbox">
-                                <input class="control-label text-left col-sm-12" name="HasOptedOutofEmail" id="HasOptedOutofEmail" type="checkbox" value="%%[IF @HasOptedOutOfEmail == 'true' THEN ]%%true%%[ELSE]%%false%%[ENDIF]%%" %%[IF @HasOptedOutOfEmail == 'true' THEN ]%%checked%%[ELSE ENDIF]%%>
-                                I would like to unsubscribe from all MacArthur Foundation emails
-		            </label>
-                            </div>
+		<div class="row js-relevantinforow">
+                <div class="col-xs-12">
+                    <div class="form-group ">
+                        <label class="control-label text-left col-sm-12 requiredField">
+                            Unsubscribe
+                        </label>
+                        <div class="col-sm-11 col-sm-push-1">
+    			    <div class="checkbox">
+                                <label class="checkbox">
+                                    <input name="HasOptedOutofEmail" id="HasOptedOutofEmail" type="checkbox" value="%%[IF @HasOptedOutOfEmail == 'true' THEN ]%%true%%[ELSE]%%false%%[ENDIF]%%" %%[IF @HasOptedOutOfEmail == 'true' THEN ]%%checked%%[ELSE ENDIF]%%>
+                                    I would like to unsubscribe from all MacArthur Foundation emails.
+				</label>
+			    </div>
                         </div>
+			</div>
                     </div>
-                </div>    
+                </div>
+    
                 <div class="row top-buffer">
                     <div class="col-xs-12 col-sm-4 col-sm-offset-8 col-md-4">
                         <input type="submit" value="Submit" class="form-control btn btn-primary">
