@@ -1,0 +1,271 @@
+<!--Home Grown School Feeding (HGSF)-->
+
+<style>
+.font-style {
+color: #ffffff;
+}
+
+.panel-title a {
+color: #000000;
+}
+
+div.border-line {
+border-bottom: 5px solid transparent;
+}
+
+/* Pure CSS Tabs*/
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
+
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+body {
+	font-family: sans-serif;
+}
+
+h1 {
+	color: #ccc;
+	text-align: center;
+}
+
+a {
+  color: #ccc;
+  text-decoration: none;
+  outline: none;
+}
+
+/*Fun begins*/
+.tab_container {
+	margin: 0 auto;
+	padding-top: 40px;
+	position: relative;
+}
+
+input, section {
+  clear: both;
+  padding-top: 10px;
+  display: none;
+}
+
+label {
+  font-weight: 700;
+  font-size: 18px;
+  display: block;
+  float: left;
+  width: 20%;
+  padding: 1.5em;
+  color: #757575;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3 {
+  display: block;
+  padding: 20px;
+  color: #fff;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.tab_container .tab-content p,
+.tab_container .tab-content h3 {
+  -webkit-animation: fadeInScale 0.7s ease-in-out;
+  -moz-animation: fadeInScale 0.7s ease-in-out;
+  animation: fadeInScale 0.7s ease-in-out;
+}
+.tab_container .tab-content h3  {
+  text-align: center;
+}
+
+.tab_container [id^="tab"]:checked + label {
+  background: #252831;
+  box-shadow: inset 0 3px #0CE;
+}
+
+.tab_container [id^="tab"]:checked + label .fa {
+  color: #0CE;
+}
+
+label .fa {
+  font-size: 1.3em;
+  margin: 0 0.4em 0 0;
+}
+
+/*Media query*/
+@media only screen and (max-width: 900px) {
+  label span {
+    display: none;
+  }
+  
+  .tab_container {
+    width: 98%;
+  }
+}
+
+/*Content Animation*/
+@keyframes fadeInScale {
+  0% {
+  	transform: scale(0.9);
+  	opacity: 0;
+  }
+  
+  100% {
+  	transform: scale(1);
+  	opacity: 1;
+  }
+}
+
+.no_wrap {
+  text-align:center;
+  padding-top: 10px;
+  }
+.link {
+  text-align:center;
+  color: #0ce;
+}
+</style>
+
+		<div class="tab_container">
+			<input id="tab1" type="radio" name="tabs" checked>
+			<label for="tab1"><i class="fa fa-code"></i><span>Interim Outcomes</span></label>
+
+			<input id="tab2" type="radio" name="tabs">
+			<label for="tab2"><i class="fa fa-pencil-square-o"></i><span>Long-term Outcomes</span></label>
+
+			<input id="tab3" type="radio" name="tabs">
+			<label for="tab3"><i class="fa fa-bar-chart-o"></i><span>Feedback</span></label>
+
+			<section id="content1" class="tab-content">
+			     <h4>Title</h4>
+		      	<div class="container">
+      <div class="section full-width">
+        <div class="row">
+          <div class="col-md-12">
+    
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab">
+                  <h5 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Capacity Building: Do “voice” and “teeth” actors have the capacity and knowledge they need?</a></h5>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse" role="tabpanel">
+                  <div class="panel-body font-style">
+                     <h5></h5>
+                  </div>
+                </div>
+              </div>
+
+         <div class="border-line"></div>
+
+              <div class="panel-group" id="accordion">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab">
+                  <h5 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Collaboration: Are actors collaborating to leverage success and build pressure for change?</a></h5>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse" role="tabpanel">
+                  <div class="panel-body font-style">
+                     <h5></h5>
+                  </div>
+                </div>
+              </div>
+
+         <div class="border-line"></div>
+
+              <div class="panel-group" id="accordion">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab">
+                  <h5 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Voice: Are “voice” actors engaging in advocacy and monitoring?</a></h5>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse" role="tabpanel">
+                  <div class="panel-body font-style">
+                     <h5></h5>
+                  </div>
+                </div>
+              </div>
+   
+         <div class="border-line"></div>
+    
+              <div class="panel-group" id="accordion">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab1">
+                  <h5 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Teeth: Are “teeth” actors operating transparently and holding others accountable?</a></h5>
+                </div>
+                <div id="collapse4" class="panel-collapse collapse" role="tabpanel">
+                  <div class="panel-body font-style">
+                     <h5></h5>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          
+         </div><!-- /.col-md-4 -->
+       </div>
+     </div>
+    </div><!-- /.container -->
+			</section>
+
+			<section id="content2" class="tab-content">
+			    <h4>Title 2</h4>
+		      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		      	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		      	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+		      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		      	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		      	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		      	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		      	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		      	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</section>
+
+			<section id="content3" class="tab-content">
+		             <h4>Title 3</h4>
+		      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		      	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		      	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		      	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		      	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		      	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		      	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		      	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		      	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		      	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		      	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</section>
+
+		</div>
+
+<div class="no_wrap">
+<h5><em>This is an area for foot-liner notes under all nested tabs.</em></h5>
+</div>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h3></h3>
+     
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h3></h3>
+      <p></p>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h3></h3>
+      <p></p>
+    </div>
+  </div>
