@@ -90,7 +90,15 @@ $("#total_electricity_india_sector").highcharts({
         },
         max: 1002000,
         min: 0,
-        tickInterval: 202000,
+        stackLabels: {
+            enabled: !0,
+            style: {
+                fontWeight: "bold",
+                fontSize: setFontsize,
+                color: Highcharts.theme && Highcharts.theme.textColor || "white"
+            }
+        },
+        tickInterval: 202e3,
         labels: {
             formatter: function() {
                 return Highcharts.numberFormat(this.value, 0)
@@ -111,6 +119,9 @@ $("#total_electricity_india_sector").highcharts({
     },
     plotOptions: {
         column: {
+            stacking: "normal",
+            pointPadding: 0,
+            groupPadding: 0,
             dataLabels: {
                 style: {
                     fontSize: setFontsize
@@ -122,11 +133,11 @@ $("#total_electricity_india_sector").highcharts({
             }
         },
         series: {
-            lineWidth: 4,
+            lineWidth: 1,
             marker: {
                 fillColor: bgColor,
                 radius: 6,
-                lineWidth: 4,
+                lineWidth: 2,
                 lineColor: null,
                 states: {
                     hover: {
