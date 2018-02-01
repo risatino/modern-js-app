@@ -1,0 +1,160 @@
+<!--HTML BLock Section 4-->
+<div>
+    <div class="rich-text">
+        <h2><b>4. RENEWABLES & CLEAN TECHNOLOGY: Increased deployment of renewable energy</b></h2>    
+    </div>
+
+<div class="container">
+  <div class="row">
+    
+    <div class="col-xs-4 col-sm-2">
+                <img src="/media/images/4_renewables.original.png" id="vertical-icon-img">
+    </div>
+    <div class="col-xs-4 col-sm-2">
+      <a href="#modalnetgen-all" data-target="#modalnetgen-all" data-toggle="modal"><img src="/media/images/netgen-all.original.png" style="border:1px solid #eee"></a>
+      <h5>4.a.1. Net Generation: All Sectors</h5>
+    </div>
+    
+    <div class="col-xs-4 col-sm-2">
+      <a href="#modalnetgen-renew" data-target="#modalnetgen-renew" data-toggle="modal"><img src="/media/images/netgen-renewables.original.png" style="border:1px solid #eee"></a>
+      <h5>4.a.2. Net Generation: Renewables</h5>
+    </div>
+
+    <div class="col-xs-4 col-sm-2">
+      <a href="#modal-percent-us-renew" data-target="#modal-percent-us-renew" data-toggle="modal"><img src="/media/images/percentage_of_us_energy_production_from_renewab.original.png" style="border:1px solid #eee"></a>
+      <h5>4.a.3. Percent of U.S. Energy Production from Renewables & U.S. Investment in Clean Energy Deployment</h5>
+    </div>
+
+    <div class="col-xs-4 col-sm-2">
+        <a href="#modal-cost-us" data-target="#modal-cost-us" data-toggle="modal"><img src="/media/images/cost_of_us_PI_tax.original.png" style="border:1px solid #eee"></a>
+        <h5>4.b. U.S. Production & Investment Tax Credits</h5>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="modal fade wide" id="modalnetgen-all" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+        <h2 class="modal-title" class="ss-standard ss-alert">4.a.1. Net Generation: All Sectors</h2>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <iframe id="eia_widget" style="width:100%;height:500px" src="//www.eia.gov/opendata/embed/iframe.php?series_id=ELEC.GEN.SUN-US-99.A;ELEC.GEN.COW-US-99.A;ELEC.GEN.NG-US-99.A;ELEC.GEN.NUC-US-99.A;ELEC.GEN.HYC-US-99.A;ELEC.GEN.WND-US-99.A;ELEC.GEN.TSN-US-99.A;ELEC.GEN.GEO-US-99.A;ELEC.GEN.BIO-US-99.A;ELEC.GEN.WWW-US-99.A;ELEC.GEN.WAS-US-99.A;ELEC.GEN.DPV-US-99.A&analysis=none" load="iframe_load"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade wide" id="modalnetgen-renew" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+        <h2 class="modal-title" class="ss-standard ss-alert">4.a.2. Net Generation: Renewables</h2>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <iframe id="eia_widget" style="width:100%;height:500px" src="//www.eia.gov/opendata/embed/iframe.php?series_id=ELEC.GEN.SUN-US-99.A;ELEC.GEN.WND-US-99.A;ELEC.GEN.TSN-US-99.A;ELEC.GEN.GEO-US-99.A;ELEC.GEN.BIO-US-99.A;ELEC.GEN.WWW-US-99.A;ELEC.GEN.WAS-US-99.A;ELEC.GEN.DPV-US-99.A&analysis=none" load="iframe_load"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade wide" id="modal-percent-us-renew" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+        <h2 class="modal-title" class="ss-standard ss-alert">4.a.3. Percent of U.S. Energy Production from Renewables & U.S. Investment in Clean Energy Deployment</h2>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 chart-wrap">   
+              <div class="chart-wrap">
+              <div id="percentage_of_us_energy_production_from_renewables" class="chart"></div>
+              <p style="font-size:1em; text-align:right;"><em></em></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade wide" id="modal-cost-us" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+        <h2 class="modal-title" class="ss-standard ss-alert">4.b. U.S. Production & Investment Tax Credits</h2>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 chart-wrap">   
+              <div class="chart-wrap">
+              <div id="cost_of_us_production_tax_credit" class="chart"></div>
+            <br>
+              <p style="font-size:1em; text-align:left;color:#fff;"> <em>DATA SOURCE: Congressional Research Service - M. SHERLOCK</em></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Script Block-->
+<style>.highcharts-tooltip {z-index:10;}.highcharts-tooltip h5 {margin-bottom:0;}</style>
+<script>
+$(function() {Highcharts.setOptions({lang: {numericSymbols: null,thousandsSep: ','},});var setFontsize = '20px';var setFontsizeLegend = '22px';var topMargin = 20;var axisMargin = 40;var bgColor = '#252830';
+//Chart Data
+var us_greenhouse_gas_emissions_by_gas_1990_2015=[{name:"Carbon Dioxide",type:"line",color:"#f45b5b",data:[5123.04,5073.49,5178.58,5292.61,5385.92,5450.31,5636.3,5713.36,5753.83,5834.23,6001.36,5902.71,5943.95,5990.73,6105.43,6131.83,6051.5,6130.63,5932.98,5495.69,5699.93,5569.52,5362.1,5514.02,5565.5,5411.41,5330.27,5249.14,5168,5086.87,5005.73,4924.59,4843.46,4762.32,4681.19,4600.05],zoneAxis:"x",zones:[{value:26},{dashStyle:"dot",color:"pink"}],tooltip:{valuePrefix:"",valueSuffix:""},marker:{enabled:!1},zIndex:2,zoneAxis:"x",zones:[{value:26,color:"#f45b5b"},{dashStyle:"ShortDash",color:"#f45b5b"}],visible:!0},{name:"Methane",type:"line",color:"#2b908f",data:[780.79,785.32,784.25,769.1,772.93,765.12,756.48,740.47,725.78,713.91,704.21,695.77,684.23,684.41,675.81,680.94,682.08,685.96,695.09,690.39,692.12,672.1,666.07,658.77,659.14,655.72,633.44,611.17,588.89,566.61,544.34,522.06,499.78,477.5,455.23,432.95],tooltip:{valuePrefix:"",valueSuffix:""},marker:{enabled:!1},zIndex:3,zoneAxis:"x",zones:[{value:26,color:"#2b908f"},{dashStyle:"ShortDash",color:"#2b908f"}],visible:!0},{name:"Nitrous Oxide",type:"line",color:"#90ee7e",data:[359.55,358.73,361.88,373.89,364.88,376.98,383.38,374.19,388.73,363.02,361.92,363.85,362.21,365.98,385.93,361.64,371.13,378.84,361.6,362.27,370.5,364.04,340.73,335.53,335.48,334.81,328.39,321.97,315.54,309.12,302.7,296.28,289.86,283.43,277.01,270.59],tooltip:{valuePrefix:"",valueSuffix:""},marker:{enabled:!1},zIndex:4,zoneAxis:"x",zones:[{value:26,color:"#90ee7e"},{dashStyle:"ShortDash",color:"#90ee7e"}],visible:!0},{name:"Fluorinated gases",type:"line",color:"#7798BF",data:[99.68,90.72,95.3,94.95,97.89,116.57,126.92,133.97,149.13,145.58,146.36,132.83,140.62,130.39,137.46,138.86,141.76,153.63,155.64,151.75,162.92,171.09,169.39,171.74,179.57,184.71,177.06,169.41,161.77,154.12,146.47,138.82,131.17,123.53,115.88,108.23],tooltip:{valuePrefix:"",valueSuffix:""},marker:{enabled:!1},zIndex:5,zoneAxis:"x",zones:[{value:26,color:"#7798BF"},{dashStyle:"ShortDash",color:"#7798BF"}],visible:!0}];
+//Make Chart
+$("#us_greenhouse_gas_emissions_by_gas_1990_2015").highcharts({chart:{marginTop:topMargin,backgroundColor:bgColor,zoomType:'xy',type:'area',},legend:{layout:'horizontal',itemStyle:{fontSize:setFontsizeLegend}},credits:!1,exporting:{enabled:!1},title:!1,xAxis:[{title:{style:{fontSize:setFontsize},margin:axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 24.85,zIndex: 100,label: { text: 'Baseline',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories:[1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025],tickmarkPlacement:'off',labels:{style:{fontSize:setFontsize}}}],yAxis:[{title:{text:'Emissions (million metric tons of CO2 equivalents)',style:{fontSize:setFontsize},margin:axisMargin},min:0,labels:{formatter:function(){return Highcharts.numberFormat(this.value,0)},style:{fontSize:setFontsize}}}],tooltip:{shared:!0,useHTML:!0,headerFormat:'<h5>{point.key}</h5>',pointFormat:'<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style:{fontSize:setFontsize}},plotOptions:{column:{dataLabels:{style:{fontSize:setFontsize}},style:{color:(Highcharts.theme&&Highcharts.theme.contrastTextColor)||'black',fontSize:setFontsize}},series:{lineWidth:4,states:{hover:{enabled:!0,lineWidthPlus:2}}}},series:us_greenhouse_gas_emissions_by_gas_1990_2015})
+//Make Chart
+$("#coal_fired_megawatts_retired").highcharts({data: { googleSpreadsheetKey: '1-ARFqp4UH_sdJmAaZVP3qmmIE3ZFNnUfJZDKpr2cImE',googleSpreadsheetWorksheet: 16},chart: {marginTop: topMargin,backgroundColor:bgColor,zoomType: 'xy', type: 'line',},legend: { layout: 'horizontal',itemStyle: {fontSize: setFontsizeLegend}},credits: false,exporting: {enabled: false},title: false,xAxis: [{title: {style: {fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 2014.00,zIndex: 100,label: {text: 'Baseline',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [],tickmarkPlacement: 'off',labels: {style: {fontSize: setFontsize}}}],yAxis:[{title: { text: '', style: {fontSize: setFontsize }, margin: axisMargin},min:0,labels: {  formatter: function () {return Highcharts.numberFormat(this.value,0);}, style: {fontSize: setFontsize }}}],tooltip: {shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style: { fontSize: setFontsize}},plotOptions: {column: { dataLabels: {style: { fontSize: setFontsize} },style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize }},series: {lineWidth: 4, marker: {fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: {hover: {enabled: true,radiusPlus: 4}}},states: {hover: {enabled: true,lineWidthPlus: 2} }}}});
+//Chart Data
+var coal_fired_power_plants_in_the_us = [{ name: 'Coal-Fired Power Plants In The U.S.',type: 'line',data: [null,null,649,642,635,623,587],tooltip: { valuePrefix: '',valueSuffix: ''},visible: true},{ name: 'Cumulative Number of Coal Plants Retired',type: 'column',data: [9,25,57,80,100,142,183,193],tooltip: { valuePrefix: '',valueSuffix: ''},yAxis: 1,visible: true}];
+//Make Chart
+$("#coal_fired_power_plants_in_the_us").highcharts({chart: {marginTop: topMargin,backgroundColor:bgColor,zoomType: 'xy',type: 'line', alignTicks: false},legend: { layout: 'horizontal',itemStyle: {fontSize: setFontsizeLegend}},credits: false,exporting: {enabled: false},title: false,xAxis: [{title: {style: {fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 4.85,zIndex: 100,label: {text: 'Baseline',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [2010,2011,2012,2013,2014,2015,2016,2017],tickmarkPlacement: 'off',labels: {style: {fontSize: setFontsize}}}],yAxis:[{title: { text: 'Coal-Fired Power Plants In The U.S.', style: {fontSize: setFontsize }, margin: axisMargin},min: 0,tickInterval: 140,labels: {  formatter: function () {return Highcharts.numberFormat(this.value,0);}, style: {fontSize: setFontsize }}},{opposite: true,title: { text: 'Cumulative Number of Coal Plants Retired', style: {fontSize: setFontsize }, margin: axisMargin},min: 0,tickInterval: 50,labels: { formatter: function () {return Highcharts.numberFormat(this.value,0);}, style: {fontSize: setFontsize }}}],tooltip: {shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style: { fontSize: setFontsize}},plotOptions: {column: { dataLabels: {style: { fontSize: setFontsize} },style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize }},series: {lineWidth: 4, marker: {fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: {hover: {enabled: true,radiusPlus: 4}}},states: {hover: {enabled: true,lineWidthPlus: 2} }}},series: coal_fired_power_plants_in_the_us});
+//Make Chart
+$("#us_renewable_energy_production").highcharts({data: { googleSpreadsheetKey: '1-ARFqp4UH_sdJmAaZVP3qmmIE3ZFNnUfJZDKpr2cImE',googleSpreadsheetWorksheet: 1},chart: {marginTop: topMargin,backgroundColor:bgColor,zoomType: 'xy', type: 'line',},legend: { layout: 'horizontal',itemStyle: {fontSize: setFontsizeLegend}},credits: false,exporting: {enabled: false},title: false,xAxis: [{title: {style: {fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 2014.85,zIndex: 100,label: {text: 'Baseline',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [],tickmarkPlacement: 'off',labels: {style: {fontSize: setFontsize}}}],yAxis:[{title: { text: 'Energy Production (in Thousands Megawatthours)', style: {fontSize: setFontsize }, margin: axisMargin},min: 0,labels: {  formatter: function () {return Highcharts.numberFormat(this.value,0);}, style: {fontSize: setFontsize }}}],tooltip: {shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style: { fontSize: setFontsize}},plotOptions: {column: { dataLabels: {style: { fontSize: setFontsize} },style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize }},series: {lineWidth: 4, marker: {fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: {hover: {enabled: true,radiusPlus: 4}}},states: {hover: {enabled: true,lineWidthPlus: 2} }}}});
+//Make Chart
+$("#carbon_intensity_of_us_gdp").highcharts({data: { googleSpreadsheetKey: '1-ARFqp4UH_sdJmAaZVP3qmmIE3ZFNnUfJZDKpr2cImE',googleSpreadsheetWorksheet: 2},chart: {marginTop: topMargin,backgroundColor:bgColor,zoomType: 'xy', type: 'area',},legend: { layout: 'horizontal',itemStyle: {fontSize: setFontsizeLegend}},credits: false,exporting: {enabled: false},title: false,xAxis: [{title: {style: {fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 2014.85,zIndex: 100,label: {text: 'Baseline',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [],tickmarkPlacement: 'off',labels: {style: {fontSize: setFontsize}}}],yAxis:[{title: { text: 'kg of C02 per 2011 PPP $ of GDP', style: {fontSize: setFontsize }, margin: axisMargin},min: 0,tickInterval: 1,labels: {  formatter: function () {return Highcharts.numberFormat(this.value,0) + 'kg';}, style: {fontSize: setFontsize }}}],tooltip: {shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',valueSuffix: 'kg',style: { fontSize: setFontsize}},plotOptions: {column: { dataLabels: {style: { fontSize: setFontsize} },style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize }},series: {lineWidth: 4, marker: {fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: {hover: {enabled: true,radiusPlus: 4}}},states: {hover: {enabled: true,lineWidthPlus: 2} }}}});
+//Make Chart
+$("#percentage_of_us_energy_production_from_renewables").highcharts({data: { googleSpreadsheetKey: '1-ARFqp4UH_sdJmAaZVP3qmmIE3ZFNnUfJZDKpr2cImE',googleSpreadsheetWorksheet: 3},chart: {marginTop: topMargin,backgroundColor:bgColor,zoomType: 'xy', type: 'area',},legend: { layout: 'horizontal',itemStyle: {fontSize: setFontsizeLegend}},credits: false,exporting: {enabled: false},title: false,xAxis: [{title: {style: {fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 2014.85,zIndex: 100,label: {text: 'Baseline',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [],tickmarkPlacement: 'off',labels: {style: {fontSize: setFontsize}}}],yAxis:[{title: { text: '', style: {fontSize: setFontsize }, margin: axisMargin},min:0,labels: {  formatter: function () {return Highcharts.numberFormat(this.value,0) + '%';}, style: {fontSize: setFontsize }}}],tooltip: {shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',valueSuffix: '%',style: { fontSize: setFontsize}},plotOptions: {column: { dataLabels: {style: { fontSize: setFontsize} },style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize }},series: {lineWidth: 4, marker: {fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: {hover: {enabled: true,radiusPlus: 4}}},states: {hover: {enabled: true,lineWidthPlus: 2} }}}});
+//Make Chart
+$("#federal_votes_on_energy_and_climate_bills").highcharts({data: { googleSpreadsheetKey: '1-ARFqp4UH_sdJmAaZVP3qmmIE3ZFNnUfJZDKpr2cImE',googleSpreadsheetWorksheet: 10},chart: {marginTop: topMargin,backgroundColor:bgColor,zoomType: 'xy', type: 'line',},legend: { layout: 'horizontal',itemStyle: {fontSize: setFontsizeLegend}},credits: false,exporting: {enabled: false},title: false,xAxis: [{title: {style: {fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 2014.85,zIndex: 100,label: {text: 'Baseline',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [],tickmarkPlacement: 'off',labels: {style: {fontSize: setFontsize}}}],yAxis:[{title: { text: 'Number of Votes', style: {fontSize: setFontsize }, margin: axisMargin},min: 0,labels: {  formatter: function () {return Highcharts.numberFormat(this.value,0);}, style: {fontSize: setFontsize }}}],tooltip: {shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style: { fontSize: setFontsize}},plotOptions: {column: { dataLabels: {style: { fontSize: setFontsize} },style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize }},series: {lineWidth: 4, marker: {fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: {hover: {enabled: true,radiusPlus: 4}}},states: {hover: {enabled: true,lineWidthPlus: 2} }}}});
+//Make Chart
+$("#cost_of_us_production_tax_credit").highcharts({data: { googleSpreadsheetKey: '1-ARFqp4UH_sdJmAaZVP3qmmIE3ZFNnUfJZDKpr2cImE',googleSpreadsheetWorksheet: 4},chart: {marginTop: topMargin,backgroundColor:bgColor,zoomType: 'xy', type: 'line',},legend: { layout: 'horizontal',itemStyle: {fontSize: setFontsizeLegend}},credits: false,exporting: {enabled: false},title: false,xAxis: [{title: { text: 'Years',style: {fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 2014.85,zIndex: 100,label: {text: 'Baseline',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [],tickmarkPlacement: 'off',labels: {style: {fontSize: setFontsize}}}],yAxis:[{title: { text: 'Billions in tax expenditures', style: {fontSize: setFontsize }, margin: axisMargin},min: 0,tickInterval: 1,labels: {  formatter: function () {return '$' + Highcharts.numberFormat(this.value,0) + 'b';}, style: {fontSize: setFontsize }}}],tooltip: {shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',valuePrefix: '$',valueSuffix: 'b',style: { fontSize: setFontsize}},plotOptions: {column: { dataLabels: {style: { fontSize: setFontsize} },style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize }},series: {lineWidth: 4, marker: {fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: {hover: {enabled: true,radiusPlus: 4}}},states: {hover: {enabled: true,lineWidthPlus: 2} }}}});
+//Make Chart
+$("#investment_in_clean_energy_deployment").highcharts({data: { googleSpreadsheetKey: '1-ARFqp4UH_sdJmAaZVP3qmmIE3ZFNnUfJZDKpr2cImE',googleSpreadsheetWorksheet: 5},chart: {marginTop: topMargin,backgroundColor:bgColor,zoomType: 'xy', type: 'area',},legend: { layout: 'horizontal',itemStyle: {fontSize: setFontsizeLegend}},credits: false,exporting: {enabled: false},title: false,xAxis: [{title: {style: {fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 2014.85,zIndex: 100,label: {text: 'Baseline',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [],tickmarkPlacement: 'off',labels: {style: {fontSize: setFontsize}}}],yAxis:[{title: { text: 'Investment in Billions', style: {fontSize: setFontsize }, margin: axisMargin},min: 0,labels: {  formatter: function () {return '$' + Highcharts.numberFormat(this.value,0) + 'b';}, style: {fontSize: setFontsize }}}],tooltip: {shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',valuePrefix: '$',valueSuffix: 'b',style: { fontSize: setFontsize}},plotOptions: {column: { dataLabels: {style: { fontSize: setFontsize} },style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize }},series: {lineWidth: 4, marker: {fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: {hover: {enabled: true,radiusPlus: 4}}},states: {hover: {enabled: true,lineWidthPlus: 2} }}}});
+//Make Chart
+$("#percent_of_total_candidate_policymaker_discourse_on_climate_change").highcharts({data: { googleSpreadsheetKey: '1-ARFqp4UH_sdJmAaZVP3qmmIE3ZFNnUfJZDKpr2cImE',googleSpreadsheetWorksheet: 12},chart: {marginTop: topMargin,backgroundColor:bgColor,zoomType: 'xy', type: 'line',},legend: { layout: 'horizontal',itemStyle: {fontSize: setFontsizeLegend}},credits: false,exporting: {enabled: false},title: false,xAxis: [{title: {style: {fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 2014.85,zIndex: 100,label: {text: 'Baseline',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [],tickmarkPlacement: 'off',labels: {style: {fontSize: setFontsize}}}],yAxis:[{title: { text: '', style: {fontSize: setFontsize }, margin: axisMargin},min: 0,tickInterval: 1,labels: {  formatter: function () {return Highcharts.numberFormat(this.value,0) + '%';}, style: {fontSize: setFontsize }}}],tooltip: {shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',valueSuffix: '%',style: { fontSize: setFontsize}},plotOptions: {column: { dataLabels: {style: { fontSize: setFontsize} },style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize }},series: {lineWidth: 4, marker: {fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: {hover: {enabled: true,radiusPlus: 4}}},states: {hover: {enabled: true,lineWidthPlus: 2} }}}});
+//Make Chart
+$("#favorable_and_unfavorable_candidate_policymaker_discourse_on_climate_change").highcharts({data: { googleSpreadsheetKey: '1-ARFqp4UH_sdJmAaZVP3qmmIE3ZFNnUfJZDKpr2cImE',googleSpreadsheetWorksheet: 13},chart: {marginTop: topMargin,backgroundColor:bgColor,zoomType: 'xy', type: 'line',},legend: { layout: 'horizontal',itemStyle: {fontSize: setFontsizeLegend}},credits: false,exporting: {enabled: false},title: false,xAxis: [{title: {style: {fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 2014.85,zIndex: 100,label: {text: 'Baseline',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [],tickmarkPlacement: 'off',labels: {style: {fontSize: setFontsize}}}],yAxis:[{title: { text: '', style: {fontSize: setFontsize }, margin: axisMargin},min:0,labels: {  formatter: function () {return Highcharts.numberFormat(this.value,0) + '%';}, style: {fontSize: setFontsize }}}],tooltip: {shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',valueSuffix: '%',style: { fontSize: setFontsize}},plotOptions: {column: { dataLabels: {style: { fontSize: setFontsize} },style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize }},series: {lineWidth: 4, marker: {fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: {hover: {enabled: true,radiusPlus: 4}}},states: {hover: {enabled: true,lineWidthPlus: 2} }}}});
+//Make Chart
+$("#percent_of_total_public_climate_change_conversation_devoted_to_solutions").highcharts({data: { googleSpreadsheetKey: '1-ARFqp4UH_sdJmAaZVP3qmmIE3ZFNnUfJZDKpr2cImE',googleSpreadsheetWorksheet: 14},chart: {marginTop: topMargin,backgroundColor:bgColor,zoomType: 'xy', type: 'line',},legend: { layout: 'horizontal',itemStyle: {fontSize: setFontsizeLegend}},credits: false,exporting: {enabled: false},title: false,xAxis: [{title: {style: {fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 2014.85,zIndex: 100,label: {text: 'Baseline',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [],tickmarkPlacement: 'off',labels: {style: {fontSize: setFontsize}}}],yAxis:[{title: { text: '', style: {fontSize: setFontsize }, margin: axisMargin},min:0,labels: {  formatter: function () {return Highcharts.numberFormat(this.value,0) + '%';}, style: {fontSize: setFontsize }}}],tooltip: {shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',valueSuffix: '%',style: { fontSize: setFontsize}},plotOptions: {column: { dataLabels: {style: { fontSize: setFontsize} },style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize }},series: {lineWidth: 4, marker: {fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: {hover: {enabled: true,radiusPlus: 4}}},states: {hover: {enabled: true,lineWidthPlus: 2} }}}});
+// reflow charts in hidden tabs
+$(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {$(".chart").each(function() {var chart = $(this).highcharts();chart.reflow();});});
+$('.modal').on('shown.bs.modal', function () {$(".chart").each(function() {var chart = $(this).highcharts();chart.reflow();});});        
+});
+</script>
