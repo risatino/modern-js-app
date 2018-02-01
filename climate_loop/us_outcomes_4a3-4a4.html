@@ -139,8 +139,165 @@ $("#coal_fired_power_plants_in_the_us").highcharts({chart: {marginTop: topMargin
 $("#us_renewable_energy_production").highcharts({data: { googleSpreadsheetKey: '1-ARFqp4UH_sdJmAaZVP3qmmIE3ZFNnUfJZDKpr2cImE',googleSpreadsheetWorksheet: 1},chart: {marginTop: topMargin,backgroundColor:bgColor,zoomType: 'xy', type: 'line',},legend: { layout: 'horizontal',itemStyle: {fontSize: setFontsizeLegend}},credits: false,exporting: {enabled: false},title: false,xAxis: [{title: {style: {fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 2014.85,zIndex: 100,label: {text: 'Baseline',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [],tickmarkPlacement: 'off',labels: {style: {fontSize: setFontsize}}}],yAxis:[{title: { text: 'Energy Production (in Thousands Megawatthours)', style: {fontSize: setFontsize }, margin: axisMargin},min: 0,labels: {  formatter: function () {return Highcharts.numberFormat(this.value,0);}, style: {fontSize: setFontsize }}}],tooltip: {shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style: { fontSize: setFontsize}},plotOptions: {column: { dataLabels: {style: { fontSize: setFontsize} },style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize }},series: {lineWidth: 4, marker: {fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: {hover: {enabled: true,radiusPlus: 4}}},states: {hover: {enabled: true,lineWidthPlus: 2} }}}});
 //Make Chart
 $("#carbon_intensity_of_us_gdp").highcharts({data: { googleSpreadsheetKey: '1-ARFqp4UH_sdJmAaZVP3qmmIE3ZFNnUfJZDKpr2cImE',googleSpreadsheetWorksheet: 2},chart: {marginTop: topMargin,backgroundColor:bgColor,zoomType: 'xy', type: 'area',},legend: { layout: 'horizontal',itemStyle: {fontSize: setFontsizeLegend}},credits: false,exporting: {enabled: false},title: false,xAxis: [{title: {style: {fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 2014.85,zIndex: 100,label: {text: 'Baseline',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [],tickmarkPlacement: 'off',labels: {style: {fontSize: setFontsize}}}],yAxis:[{title: { text: 'kg of C02 per 2011 PPP $ of GDP', style: {fontSize: setFontsize }, margin: axisMargin},min: 0,tickInterval: 1,labels: {  formatter: function () {return Highcharts.numberFormat(this.value,0) + 'kg';}, style: {fontSize: setFontsize }}}],tooltip: {shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',valueSuffix: 'kg',style: { fontSize: setFontsize}},plotOptions: {column: { dataLabels: {style: { fontSize: setFontsize} },style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize }},series: {lineWidth: 4, marker: {fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: {hover: {enabled: true,radiusPlus: 4}}},states: {hover: {enabled: true,lineWidthPlus: 2} }}}});
+
+//Chart Data
+var percentage_of_us_energy_production_from_renewables = [{
+    name: 'Percentage of U.S. Energy Production from Renewables',
+    type: 'area',
+    color: 
+    data: [12.22, 12.84, 13.16, 13.35, 14.94],
+    tooltip: {
+        valuePrefix: '',
+        valueSuffix: ''
+    },
+    visible: true
+}, {
+    name: 'Investment in Clean Energy Deployment',
+    type: 'area',
+    color: 
+    data: [9, 25, 57, 80, null],
+    tooltip: {
+        valuePrefix: '',
+        valueSuffix: ''
+    },
+    yAxis: 1,
+    visible: true
+}];
 //Make Chart
-$("#percentage_of_us_energy_production_from_renewables").highcharts({data: { googleSpreadsheetKey: '1-ARFqp4UH_sdJmAaZVP3qmmIE3ZFNnUfJZDKpr2cImE',googleSpreadsheetWorksheet: 3},chart: {marginTop: topMargin,backgroundColor:bgColor,zoomType: 'xy', type: 'area',},legend: { layout: 'horizontal',itemStyle: {fontSize: setFontsizeLegend}},credits: false,exporting: {enabled: false},title: false,xAxis: [{title: {style: {fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 2014.85,zIndex: 100,label: {text: 'Baseline',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [],tickmarkPlacement: 'off',labels: {style: {fontSize: setFontsize}}}],yAxis:[{title: { text: '', style: {fontSize: setFontsize }, margin: axisMargin},min:0,labels: {  formatter: function () {return Highcharts.numberFormat(this.value,0) + '%';}, style: {fontSize: setFontsize }}}],tooltip: {shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',valueSuffix: '%',style: { fontSize: setFontsize}},plotOptions: {column: { dataLabels: {style: { fontSize: setFontsize} },style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize }},series: {lineWidth: 4, marker: {fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: {hover: {enabled: true,radiusPlus: 4}}},states: {hover: {enabled: true,lineWidthPlus: 2} }}}});
+$("#percentage_of_us_energy_production_from_renewables").highcharts({
+    chart: {
+        marginTop: topMargin,
+        backgroundColor: bgColor,
+        zoomType: 'xy',
+        type: 'area',
+        alignTicks: false
+    },
+    legend: {
+        layout: 'horizontal',
+        itemStyle: {
+            fontSize: setFontsizeLegend
+        }
+    },
+    credits: false,
+    exporting: {
+        enabled: false
+    },
+    title: false,
+    xAxis: [{
+        title: {
+            style: {
+                fontSize: setFontsize
+            },
+            margin: axisMargin
+        },
+        plotLines: [{
+            color: '#ff0000',
+            width: 2,
+            value: 4.85,
+            zIndex: 100,
+            label: {
+                text: 'Baseline',
+                verticalAlign: 'middle',
+                textAlign: 'center',
+                style: {
+                    color: 'white',
+                    fontWeight: 'bold',
+                    fontSize: 18
+                }
+            }
+        }],
+        categories: [2012, 2013, 2014, 2015, 2016],
+        tickmarkPlacement: 'off',
+        labels: {
+            style: {
+                fontSize: setFontsize
+            }
+        }
+    }],
+    yAxis: [{
+        title: {
+            text: 'Percentage of U.S. Energy Production from Renewables',
+            style: {
+                fontSize: setFontsize
+            },
+            margin: axisMargin
+        },
+        min: 0,
+        tickInterval: 140,
+        labels: {
+            formatter: function() {
+                return Highcharts.numberFormat(this.value, 0) + '%';
+            },
+            style: {
+                fontSize: setFontsize
+            }
+        }
+    }, {
+        opposite: true,
+        title: {
+            text: 'Investment in Clean Energy Deployment',
+            style: {
+                fontSize: setFontsize
+            },
+            margin: axisMargin
+        },
+        min: 0,
+        tickInterval: 50,
+        labels: {
+            formatter: function() {
+                return '$' + Highcharts.numberFormat(this.value, 0);
+            },
+            style: {
+                fontSize: setFontsize
+            }
+        }
+    }],
+    tooltip: {
+        shared: true,
+        useHTML: true,
+        headerFormat: '<h5>{point.key}</h5>',
+        pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',
+        style: {
+            fontSize: setFontsize
+        }
+    },
+    plotOptions: {
+        column: {
+            dataLabels: {
+                style: {
+                    fontSize: setFontsize
+                }
+            },
+            style: {
+                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',
+                fontSize: setFontsize
+            }
+        },
+        series: {
+            lineWidth: 4,
+            marker: {
+                fillColor: bgColor,
+                radius: 6,
+                lineWidth: 4,
+                lineColor: null,
+                states: {
+                    hover: {
+                        enabled: true,
+                        radiusPlus: 4
+                    }
+                }
+            },
+            states: {
+                hover: {
+                    enabled: true,
+                    lineWidthPlus: 2
+                }
+            }
+        }
+    },
+    series: percentage_of_us_energy_production_from_renewables
+});
+
 //Make Chart
 $("#federal_votes_on_energy_and_climate_bills").highcharts({data: { googleSpreadsheetKey: '1-ARFqp4UH_sdJmAaZVP3qmmIE3ZFNnUfJZDKpr2cImE',googleSpreadsheetWorksheet: 10},chart: {marginTop: topMargin,backgroundColor:bgColor,zoomType: 'xy', type: 'line',},legend: { layout: 'horizontal',itemStyle: {fontSize: setFontsizeLegend}},credits: false,exporting: {enabled: false},title: false,xAxis: [{title: {style: {fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 2014.85,zIndex: 100,label: {text: 'Baseline',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [],tickmarkPlacement: 'off',labels: {style: {fontSize: setFontsize}}}],yAxis:[{title: { text: 'Number of Votes', style: {fontSize: setFontsize }, margin: axisMargin},min: 0,labels: {  formatter: function () {return Highcharts.numberFormat(this.value,0);}, style: {fontSize: setFontsize }}}],tooltip: {shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style: { fontSize: setFontsize}},plotOptions: {column: { dataLabels: {style: { fontSize: setFontsize} },style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize }},series: {lineWidth: 4, marker: {fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: {hover: {enabled: true,radiusPlus: 4}}},states: {hover: {enabled: true,lineWidthPlus: 2} }}}});
 //Make Chart
