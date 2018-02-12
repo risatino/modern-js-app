@@ -91,9 +91,9 @@ $("#coal_fired_power_plants_in_the_us").highcharts({
         min: 0,
         tickInterval: 140,
         labels: {
-            format: '{value}%',,
+            format: '{value}%',
             formatter: function() {
-                return Highcharts.numberFormat(this.value, 0) + %;
+                return Highcharts.numberFormat(this.value, 0) + '%';
             },
             style: {
                 fontSize: setFontsize
