@@ -1,233 +1,10 @@
 <script>
-var megawatts_retired=[{name:"Percentage of U.S. Energy Production from Renewables",type:"line",color:"#f45b5b",data:[12.22,12.84,13.16,13.35,14.94],tooltip:{valueSuffix:"%",},marker:{enabled:!1},zIndex:2,zoneAxis:"x",zones:[{value:26,color:"#f45b5b"},{dashStyle:"ShortDash",color:"#f45b5b"}],visible:!0},{name:"New Private Sector Investment in Clean Energy Deployment (in billions)",type:"line",color:"#2b908f",yAxis:1,data:[40.6,35.3,38.4,51.4,46.4],tooltip:{valuePrefix:"$", valueSuffix:"b"},marker:{enabled:!1},zIndex:3,zoneAxis:"x",zones:[{value:26,color:"#2b908f"},{dashStyle:"ShortDash",color:"#2b908f"}],visible:!0}]
-//Make Chart
-$("#megawatts_retired").highcharts({chart:{marginTop:topMargin,backgroundColor:bgColor,zoomType:"xy",type:"line"},legend:{layout:"horizontal",itemStyle:{fontSize:setFontsizeLegend}},credits:!1,exporting:{enabled:!1},title:!1,xAxis:[{title:{style:{fontSize:setFontsize},margin:axisMargin},plotLines:[{color:"#ff0000",width:2,value:4.9,zIndex:100,label:{text:"Strategy Approved",verticalAlign:"middle",textAlign:"center",style:{color:"white",fontWeight:"bold",fontSize:18}}}],categories:[2010,2011,2012,2013,2014,2015,2016,2017],tickmarkPlacement:"off",labels:{style:{fontSize:setFontsize}}}],yAxis:[{title:{text:"Thousand Megawatt Hours (MWh)",style:{fontSize:setFontsize},margin:axisMargin},min:0,labels:{format:"{value} MWh",formatter:function(){return Highcharts.numberFormat(this.value,0)},style:{fontSize:setFontsize}}},{opposite:!0,title:{text:"Megawatts (MW)",style:{fontSize:setFontsize},margin:axisMargin},min:0,labels:{format:"{value} MW",formatter:function(){return Highcharts.numberFormat(this.value,0)},style:{fontSize:setFontsize}}}],tooltip:{shared:!0,useHTML:!0,headerFormat:"<h5>{point.key}</h5>",pointFormat:'<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style:{fontSize:setFontsize}},plotOptions:{column:{dataLabels:{style:{fontSize:setFontsize}},style:{color:Highcharts.theme&&Highcharts.theme.contrastTextColor||"black",fontSize:setFontsize}},series:{lineWidth:4,states:{hover:{enabled:!0,lineWidthPlus:2}}}},series:megawatts_retired});
-
-//Chart Data
-var megawatts_retired = [{
-    name: "Percentage of U.S. Energy Production from Renewables",
-    type: "line",
-    color: "#f45b5b",
-    data: [12.22, 12.84, 13.16, 13.35, 14.94],
-    tooltip: {
-        valueSuffix: "%",
-    },
-    marker: {
-        enabled: !1
-    },
-    zIndex: 2,
-    zoneAxis: "x",
-    zones: [{
-        value: 26,
-        color: "#f45b5b"
-    }, {
-        dashStyle: "ShortDash",
-        color: "#f45b5b"
-    }],
-    visible: !0
-}, {
-    name: "New Private Sector Investment in Clean Energy Deployment (in billions)",
-    type: "line",
-    color: "#2b908f",
-    yAxis: 1,
-    data: [40.6, 35.3, 38.4, 51.4, 46.4],
-    tooltip: {
-        valuePrefix: "$",
-        valueSuffix: "b"
-    },
-    marker: {
-        enabled: !1
-    },
-    zIndex: 3,
-    zoneAxis: "x",
-    zones: [{
-        value: 26,
-        color: "#2b908f"
-    }, {
-        dashStyle: "ShortDash",
-        color: "#2b908f"
-    }],
-    visible: !0
-}]
-
-//Make Chart
-$("#megawatts_retired").highcharts({
+$("#coal_fired_power_plants_in_the_us").highcharts({
     chart: {
         marginTop: topMargin,
         backgroundColor: bgColor,
-        zoomType: 'xy',
-        type: 'line',
-    },
-    legend: {
-        layout: 'horizontal',
-        itemStyle: {
-            fontSize: setFontsizeLegend
-        }
-    },
-    credits: !1,
-    exporting: {
-        enabled: !1
-    },
-    title: !1,
-    xAxis: [{
-        title: {
-            style: {
-                fontSize: setFontsize
-            },
-            margin: axisMargin
-        },
-        plotLines: [{
-            color: '#ff0000',
-            width: 2,
-            value: 2.85,
-            zIndex: 100,
-            label: {
-                text: 'Strategy Approved',
-                verticalAlign: 'middle',
-                textAlign: 'center',
-                style: {
-                    color: 'white',
-                    fontWeight: 'bold',
-                    fontSize: 18
-                }
-            }
-        }],
-        categories: [2012, 2013, 2014, 2015, 2016],
-        tickmarkPlacement: 'off',
-        labels: {
-            style: {
-                fontSize: setFontsize
-            }
-        }
-    }],
-    yAxis: [{
-        title: {
-            text: '',
-            style: {
-                fontSize: setFontsize
-            },
-            margin: axisMargin
-        },
-        categories: [],
-        min: 0,
-        labels: {
-            format: '{value}%',
-            formatter: function() {
-                return Highcharts.numberFormat(this.value, 0) + '%'
-            },
-            style: {
-                fontSize: setFontsize
-            }
-        }
-    }, {
-        opposite: !0,
-        title: {
-            text: '',
-            style: {
-                fontSize: setFontsize
-            },
-            margin: axisMargin
-        },
-        min: 0,
-        labels: {
-            format: '${value}',
-            formatter: function() {
-                return '$' + Highcharts.numberFormat(this.value, 0) + 'b'
-            },
-            style: {
-                fontSize: setFontsize
-            }
-        },
-    }],
-    tooltip: {
-        shared: !0,
-        useHTML: !0,
-        headerFormat: '<h5>{point.key}</h5>',
-        pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',
-        style: {
-            fontSize: setFontsize
-        }
-    },
-    plotOptions: {
-        column: {
-            dataLabels: {
-                style: {
-                    fontSize: setFontsize
-                }
-            },
-            style: {
-                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',
-                fontSize: setFontsize
-            }
-        },
-        series: {
-            lineWidth: 4,
-            states: {
-                hover: {
-                    enabled: !0,
-                    lineWidthPlus: 2
-                }
-            }
-        }
-    },
-    series: megawatts_retired
-})
-
-// 1.a.1.2. Remove second Y-axis // Old Script
-
-
-// Chart Data 3.a.1.2. Stacked column chart
-var total_electricity_india_sector = [{
-    name: "Domestic",
-    color: "#0080ff",
-    data: [131720, 146080, 169326, 171104, 183700, 199842, 217405, 238876],
-    visible: !0
-}, {
-    name: "Industry",
-    color: "#04873F",
-    data: [209474, 236752, 272589, 352291, 365989, 384418, 418346, 423523],
-    visible: !0
-}, {
-    name: "Agriculture",
-    color: "#FDE2C0",
-    data: [109610, 120209, 131967, 140960, 147462, 152744, 168913, 173185],
-    visible: !0
-}, {
-    name: "Commercial",
-    color: "#19b3b3",
-    data: [54189, 60600, 67289, 65381, 72794, 74247, 78391, 86037],
-    visible: !0
-}, {
-    name: "Traction & Railways",
-    color: "#F45B5B",
-    data: [11425, 12408, 14003, 14206, 14100, 15540, 16177, 16594],
-    visible: !0
-}, {
-    name: "Other",
-    color: "#e3e3e6",
-    data: [37577, 36595, 39218, 41252, 40256, 47418, 49289, 62976],
-    visible: !0
-}, {
-    type: "spline",
-    name: "Total",
-    color: "#ff3333",
-    data: [553995, 612644, 694392, 785194, 824301, 874209, 948521, 1001191],
-    marker: {
-        lineWidth: 2,
-        lineColor: "#ff3333",
-        fillColor: "white"
-    },
-    zIndex: 1,
-    showInLegend: !0
-}]
-// Make Data
-$("#total_electricity_india_sector").highcharts({
-    chart: {
-        marginRight: rightMargin,
-        marginTop: topMargin,
-        backgroundColor: bgColor,
-        type: "column",
-        alignTicks: !1
+        zoomType: "xy",
+        type: "column"
     },
     legend: {
         layout: "horizontal",
@@ -247,7 +24,23 @@ $("#total_electricity_india_sector").highcharts({
             },
             margin: axisMargin
         },
-        categories: [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015],
+        plotLines: [{
+            color: "#ff0000",
+            width: 2,
+            value: 4.85,
+            zIndex: 100,
+            label: {
+                text: "Strategy Approved",
+                verticalAlign: "middle",
+                textAlign: "center",
+                style: {
+                    color: "white",
+                    fontWeight: "bold",
+                    fontSize: 18
+                }
+            }
+        }],
+        categories: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017],
         tickmarkPlacement: "off",
         labels: {
             style: {
@@ -257,23 +50,14 @@ $("#total_electricity_india_sector").highcharts({
     }],
     yAxis: [{
         title: {
-            text: "Total Electricity Consumed (MWh)",
+            text: "Coal-Fired Power Plants In The U.S.",
             style: {
                 fontSize: setFontsize
             },
             margin: axisMargin
         },
-        max: 12e5,
         min: 0,
-        stackLabels: {
-            enabled: !0,
-            style: {
-                fontWeight: "bold",
-                fontSize: setFontsize,
-                color: Highcharts.theme && Highcharts.theme.textColor || "white"
-            }
-        },
-        tickInterval: 3e5,
+        tickInterval: 140,
         labels: {
             formatter: function() {
                 return Highcharts.numberFormat(this.value, 0)
@@ -287,17 +71,13 @@ $("#total_electricity_india_sector").highcharts({
         shared: !0,
         useHTML: !0,
         headerFormat: "<h5>{point.key}</h5>",
-        pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y} MWh</b><br>',
+        pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',
         style: {
             fontSize: setFontsize
         }
     },
     plotOptions: {
         column: {
-            stacking: "normal",
-            pointWidth: 50,
-            pointPadding: 0,
-            groupPadding: 0,
             dataLabels: {
                 style: {
                     fontSize: setFontsize
@@ -309,11 +89,11 @@ $("#total_electricity_india_sector").highcharts({
             }
         },
         series: {
-            lineWidth: 1,
+            lineWidth: 4,
             marker: {
                 fillColor: bgColor,
                 radius: 6,
-                lineWidth: 2,
+                lineWidth: 4,
                 lineColor: null,
                 states: {
                     hover: {
@@ -330,7 +110,6 @@ $("#total_electricity_india_sector").highcharts({
             }
         }
     },
-    series: total_electricity_india_sector
-});
-
+    series: coal_fired_power_plants_in_the_us
+})
 </script>
