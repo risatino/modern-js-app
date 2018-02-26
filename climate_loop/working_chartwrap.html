@@ -380,5 +380,266 @@ $("#us_greenhouse_gas_emissions_by_gas_1990_2015").highcharts({
     series: us_greenhouse_gas_emissions_by_gas_1990_2015
 })
 
+//3a12 Chart
+var num_esco_bee_india = [{
+    name: 'Number of ESCOs empanelled with BEE',
+    color: '#1ca8dd',
+    dashStyle: 'Solid',
+    data: [37, null, null, null, null, null, null, 129, 137, 141],
+    zIndex: 1,
+    visible: true
+}];
+//Make Chart
+$("#num_esco_bee_india").highcharts({
+    chart: {
+        marginRight: rightMargin,
+        marginTop: topMargin,
+        backgroundColor: bgColor,
+        type: 'line',
+        alignTicks: false
+    },
+    legend: {
+        layout: 'horizontal',
+        itemStyle: {
+            fontSize: setFontsizeLegend
+        }
+    },
+    credits: false,
+    exporting: {
+        enabled: false
+    },
+    title: false,
+    xAxis: [{
+        title: {
+            style: {
+                fontSize: setFontsize
+            },
+            margin: axisMargin
+        },
+        plotLines: [{
+            color: '#ff0000',
+            width: 2,
+            value: 5.48,
+            zIndex: 1,
+            label: {
+                text: 'Baseline',
+                verticalAlign: 'middle',
+                textAlign: 'center',
+                style: {
+                    color: 'white',
+                    fontWeight: 'bold',
+                    fontSize: 18
+                }
+            }
+        }],
+        categories: [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017],
+        tickmarkPlacement: 'off',
+        labels: {
+            style: {
+                fontSize: setFontsize
+            }
+        }
+    }],
+    yAxis: [{
+        title: {
+            text: '',
+            style: {
+                fontSize: setFontsize
+            },
+            margin: axisMargin
+        },
+        max: 150,
+        min: 0,
+        tickInterval: 30,
+        labels: {
+            formatter: function() {
+                return Highcharts.numberFormat(this.value, 0);
+            },
+            style: {
+                fontSize: setFontsize
+            }
+        }
+    }],
+    tooltip: {
+        shared: true,
+        useHTML: true,
+        headerFormat: '<h5>{point.key}</h5>',
+        pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',
+        style: {
+            fontSize: setFontsize
+        }
+    },
+    plotOptions: {
+        column: {
+            dataLabels: {
+                style: {
+                    fontSize: setFontsize
+                }
+            },
+            style: {
+                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',
+                fontSize: setFontsize
+            }
+        },
+        series: {
+            lineWidth: 4,
+            marker: {
+                fillColor: bgColor,
+                radius: 6,
+                lineWidth: 4,
+                lineColor: null,
+                states: {
+                    hover: {
+                        enabled: true,
+                        radiusPlus: 4
+                    }
+                }
+            },
+            states: {
+                hover: {
+                    enabled: true,
+                    lineWidthPlus: 2
+                }
+            }
+        }
+    },
+    series: num_esco_bee_india
+});
 
+// HighCharts: 2.b.1.1. and 2.b.1.2.
+//Chart Data
+var india_total_capacity_renewable=[{name:"Gross budgetary support for Renewable Energy",color:"#1ca8dd",dashStyle:"Solid",data:[499.4,560,995,1198,1150,424.5,820,246,null,null,null,null,null],zIndex:2,visible:!0}];
+//Make Data
+$("#india_total_capacity_renewable").highcharts({chart:{marginRight:rightMargin,marginTop:topMargin,backgroundColor:bgColor,type:"line",alignTicks:!1},legend:{layout:"horizontal",itemStyle:{fontSize:setFontsizeLegend}},credits:!1,exporting:{enabled:!1},title:!1,xAxis:[{title:{style:{fontSize:setFontsize},margin:axisMargin},plotLines:[{color:"#ff0000",width:2,value:6.85,zIndex:1,label:{text:"Strategy Approved",verticalAlign:"middle",textAlign:"center",style:{color:"white",fontWeight:"bold",fontSize:18}}}],categories:[2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020],tickmarkPlacement:"off",labels:{style:{fontSize:setFontsize}}}],yAxis:[{title:{text:"INR crore 1",style:{fontSize:setFontsize},margin:axisMargin},max:1500,min:0,tickInterval:250,labels:{formatter:function(){return Highcharts.numberFormat(this.value,0)},style:{fontSize:setFontsize}}}],tooltip:{shared:!0,useHTML:!0,headerFormat:"<h5>{point.key}</h5>",pointFormat:'<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style:{fontSize:setFontsize}},plotOptions:{column:{dataLabels:{style:{fontSize:setFontsize}},style:{color:Highcharts.theme&&Highcharts.theme.contrastTextColor||"black",fontSize:setFontsize}},series:{lineWidth:4,marker:{fillColor:bgColor,radius:6,lineWidth:4,lineColor:null,states:{hover:{enabled:!0,radiusPlus:4}}},states:{hover:{enabled:!0,lineWidthPlus:2}}}},series:india_total_capacity_renewable});
+
+//Chart Data
+var india_renewables_indicator=[{name:"Gross budgetary support for Renewable Energy",color:"#1ca8dd",dashStyle:"Solid",data:[499.4,560,995,1198,1150,424.5,820,246,null,null,null,null,null],zIndex:2,visible:!0}];
+//Make Data
+$("#india_renewables_indicator").highcharts({chart:{marginRight:rightMargin,marginTop:topMargin,backgroundColor:bgColor,type:"line",alignTicks:!1},legend:{layout:"horizontal",itemStyle:{fontSize:setFontsizeLegend}},credits:!1,exporting:{enabled:!1},title:!1,xAxis:[{title:{style:{fontSize:setFontsize},margin:axisMargin},plotLines:[{color:"#ff0000",width:2,value:6.85,zIndex:1,label:{text:"Strategy Approved",verticalAlign:"middle",textAlign:"center",style:{color:"white",fontWeight:"bold",fontSize:18}}}],categories:[2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020],tickmarkPlacement:"off",labels:{style:{fontSize:setFontsize}}}],yAxis:[{title:{text:"INR crore 1",style:{fontSize:setFontsize},margin:axisMargin},max:1500,min:0,tickInterval:250,labels:{formatter:function(){return Highcharts.numberFormat(this.value,0)},style:{fontSize:setFontsize}}}],tooltip:{shared:!0,useHTML:!0,headerFormat:"<h5>{point.key}</h5>",pointFormat:'<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style:{fontSize:setFontsize}},plotOptions:{column:{dataLabels:{style:{fontSize:setFontsize}},style:{color:Highcharts.theme&&Highcharts.theme.contrastTextColor||"black",fontSize:setFontsize}},series:{lineWidth:4,marker:{fillColor:bgColor,radius:6,lineWidth:4,lineColor:null,states:{hover:{enabled:!0,radiusPlus:4}}},states:{hover:{enabled:!0,lineWidthPlus:2}}}},series:india_renewables_indicator});
+
+
+var india_total_off_grid_power = [{
+    name: "Total installed capacity for off-grid/captive power capacities",
+    color: "#1ca8dd",
+    dashStyle: "Solid",
+    data: [461,671,826,1089,1123,1236,1403,1555],
+    zIndex: 2,
+    visible: !0
+}];
+//Make Data
+$("#india_total_off_grid_power").highcharts({
+    chart: {
+        marginRight: rightMargin,
+        marginTop: topMargin,
+        backgroundColor: bgColor,
+        type: "line",
+        alignTicks: !1
+    },
+    legend: {
+        layout: "horizontal",
+        itemStyle: {
+            fontSize: setFontsizeLegend
+        }
+    },
+    credits: !1,
+    exporting: {
+        enabled: !1
+    },
+    title: !1,
+    xAxis: [{
+        title: {
+            style: {
+                fontSize: setFontsize
+            },
+            margin: axisMargin
+        },
+        plotLines: [{
+            color: "#ff0000",
+            width: 2,
+            value: 5.90,
+            zIndex: 1,
+            label: {
+                text: "Strategy Approved",
+                verticalAlign: "middle",
+                textAlign: "center",
+                style: {
+                    color: "white",
+                    fontWeight: "bold",
+                    fontSize: 18
+                }
+            }
+        }],
+        categories: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017],
+        tickmarkPlacement: "off",
+        labels: {
+            style: {
+                fontSize: setFontsize
+            }
+        }
+    }],
+    yAxis: [{
+        title: {
+            text: "Megawatts (MW)",
+            style: {
+                fontSize: setFontsize
+            },
+            margin: axisMargin
+        },
+        max: 5e4,
+        min: 0,
+        tickInterval: 25e3,
+        labels: {
+            formatter: function() {
+                return Highcharts.numberFormat(this.value, 0)
+            },
+            style: {
+                fontSize: setFontsize
+            }
+        }
+    }],
+    tooltip: {
+        shared: !0,
+        useHTML: !0,
+        headerFormat: "<h5>{point.key}</h5>",
+        pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',
+        style: {
+            fontSize: setFontsize
+        }
+    },
+    plotOptions: {
+        column: {
+            dataLabels: {
+                style: {
+                    fontSize: setFontsize
+                }
+            },
+            style: {
+                color: Highcharts.theme && Highcharts.theme.contrastTextColor || "black",
+                fontSize: setFontsize
+            }
+        },
+        series: {
+            lineWidth: 4,
+            marker: {
+                fillColor: bgColor,
+                radius: 6,
+                lineWidth: 4,
+                lineColor: null,
+                states: {
+                    hover: {
+                        enabled: !0,
+                        radiusPlus: 4
+                    }
+                }
+            },
+            states: {
+                hover: {
+                    enabled: !0,
+                    lineWidthPlus: 2
+                }
+            }
+        }
+    },
+    series: india_total_off_grid_power
+});
 </script>
