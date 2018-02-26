@@ -9,20 +9,19 @@
 <script type="text/javascript">
 
 $(function () {
-    $('#container').highcharts({
+    $('#slope-sample').highcharts({
     chart: {
-        renderTo:'container',
+        renderTo:'slope-sample',
         defaultSeriesType:'line',
         marginTop:100
     },
     title:{
-        text:'% of Major CSOs focusing on<br/>Climate/Renewable Energy and policy, 2015 and 2017'
+        text:'Current Receipts of Government as a<br/>Percentage of Gross Domestic<br/>Product, 1970 and 1979'
     },
     legend:{
-        enabled:true
+        enabled:false
     },
     tooltip: {
-        shared: true,
         formatter: function() {
             return this.series.name + ' ' + this.y;
         }
@@ -30,7 +29,7 @@ $(function () {
     xAxis: {
         opposite:true,
         lineColor:'#999',
-        categories:['2015','2017'],
+        categories:['1970','1979'],
         title:{
             text:''
         },
@@ -49,9 +48,6 @@ $(function () {
             text:'',
        }
     },
-    credits: {
-      enabled: false
-    },
     plotOptions: {
         line:{
             lineWidth:2,
@@ -67,8 +63,8 @@ $(function () {
                 x:10,
                 y:0,
                 formatter:function(){
-                    if(this.x == 2017){
-                        return this.series.name + ' ' + this.y + '%';
+                    if(this.x == 1979){
+                        return this.series.name + ' ' + this.y;
                     }
                 }
             }
@@ -85,37 +81,41 @@ $(function () {
                 x:-10,
                 y:0,
                 formatter:function(){
-                    return this.point.name + ' ' + this.y + '%';
+                    return this.point.name + ' ' + this.y;
                 }
             }
         }
     },
     series: [{
-        name:'Very High',
-        data: [0,0],
-        color: 'red'
+        name:'Sweden',
+        data: [46.9,57.4]
     },{
-        name:'High',
-        data: [28,33],
-        color: '#1D97C6'
+        name:'Netherlands',
+        data: [44,55.8]
     },{
-         name:'Medium',
-         data: [56,53],
-         color: 'green'
+         name:'Norway',
+         data: [43.5,52.2]
      },{
-         name:'Low',
-         data: [17,4],
-         color: 'orange'
+         name:'Britain',
+         data: [40.7,39]
      },{
-         name:'Very Low',
-         data: [0,0],
+         name:'France',
+         data: [39,43.4]
+     },{
+         name:'Germany',
+         data: [37.5,42.9]
+     },{
+         name:'Belgium',
+         data: [35.2,43.2]
      },{
          type:'scatter',
-         data: [{'x':0,'y':0,'name':'Very High','color':'red'},
-             {'x':0,'y':28,'name':'High','color':'#1D97C6'},
-             {'x':0,'y':56,'name':'Medium','color':'blue'},
-             {'x':0,'y':17,'name':'Low','color':'orange'},
-             {'x':0,'y':0,'name':'Very Low'}]
+         data: [{'x':0,'y':46.9,'name':'Sweden'},
+             {'x':0,'y':44,'name':'Netherlands'},
+             {'x':0,'y':43.5,'name':'Norway'},
+             {'x':0,'y':40.7,'name':'Britain'},
+             {'x':0,'y':39,'name':'France'},
+             {'x':0,'y':37.5,'name':'Germany'},
+             {'x':0,'y':35.2,'name':'Belgium'}]
       }]
   });
 });
@@ -124,7 +124,7 @@ $(function () {
 </head>
 <body>
 
-    <div id="container" style="min-width: 500px; height: 600px; margin: 0 auto"></div>
+    <div id="slope-sample" style="min-width: 500px; height: 600px; margin: 0 auto"></div>
 
 </body>
 </html>
