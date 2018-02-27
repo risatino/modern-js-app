@@ -9,121 +9,132 @@
 <script type="text/javascript">
 
 $(function () {
-    $('#india_major_csos').highcharts({
+$("#india_major_csos").highcharts({
     chart: {
-        marginRight: rightMargin,
         marginTop: topMargin,
         backgroundColor: bgColor,
-        renderTo:'india_major_csos',
-        defaultSeriesType:'line',
-        marginTop:100
+        renderTo: "india_major_csos",
+        defaultSeriesType: "line",
+        marginTop: 80
     },
-    title:{
-        text:'% of Major CSOs focusing on<br/>Climate/Renewable Energy and policy, 2015 and 2017'
+    title: {
+        text: ""
     },
-    legend:{
-        enabled:true,
-        layout: 'horizontal',
+    legend: {
+        enabled: !0,
+        layout: "horizontal",
         itemStyle: {
             fontSize: setFontsizeLegend
         }
     },
     tooltip: {
-        enabled: false,
+        enabled: !1,
         formatter: function() {
-            return this.series.name + ' ' + this.y;
+            return this.series.name + " " + this.y
         }
     },
     xAxis: {
-        opposite:true,
-        lineColor:'#fff',
-        categories:['2015','2017'],
-        title:{
-            text:''
+        opposite: !0,
+        lineColor: "#fff",
+        categories: ["2015", "2017"],
+        title: {
+            text: ""
         },
-        labels:{
-            style:{
-                fontWeight:'bold',
+        labels: {
+            style: {
+                fontWeight: "bold",
                 fontSize: setFontsize
             }
         }
     },
     yAxis: {
-        gridLineWidth:0,
-        labels:{
-            enabled:false,
+        gridLineWidth: 0,
+        labels: {
+            enabled: !1
         },
-        title:{
-            text:'',
-       }
+        title: {
+            text: ""
+        }
     },
     credits: {
-      enabled: false
+        enabled: !1
     },
     plotOptions: {
-        line:{
-            lineWidth:2,
-            shadow:false,
-            color:'#000',
-            marker:{
-                radius:2,
-                symbol: 'circle'
+        line: {
+            lineWidth: 4,
+            shadow: !1,
+            color: "#fff",
+            marker: {
+                radius: 4,
+                symbol: "circle"
             },
-            dataLabels:{
+            dataLabels: {
                 style: {
                     fontSize: setFontsize
                 },
-                enabled:true,
-                align:'left',
-                x:10,
-                y:0,
-                formatter:function(){
-                    if(this.x == 2017){
-                        return this.series.name + ' ' + this.y + '%';
-                    }
+                color: "#fff",
+                enabled: !0,
+                align: "left",
+                x: 10,
+                y: 0,
+                formatter: function() {
+                    if (2017 == this.x) return this.series.name + " " + this.y + "%"
                 }
             }
         },
-        scatter:{
-            shadow:false,
-            color:'#666',
-            marker:{
-                radius:2
+        scatter: {
+            shadow: !1,
+            color: "#fff",
+            marker: {
+                radius: 2
             },
-            dataLabels:{
+            dataLabels: {
                 style: {
                     fontSize: setFontsize
                 },
-                enabled:true,
-                align:'right',
-                x:-10,
-                y:0,
-                formatter:function(){
-                    return this.point.name + ' ' + this.y + '%';
+                enabled: !0,
+                align: "right",
+                x: -10,
+                y: 0,
+                formatter: function() {
+                    return this.point.name + " " + this.y + "%"
                 }
             }
         }
     },
     series: [{
-        name:'High',
-        data: [28,33],
-        color: '#f03b20'
-    },{
-         name:'Medium',
-         data: [56,53],
-         color: '#31a354'
-     },{
-         name:'Low',
-         data: [17,4],
-         color: '#fdae6b'
-     },{
-         showInLegend: false,
-         type:'scatter',
-         data: [{'x':0,'y':28,'name':'High','color':'#f03b20'},
-             {'x':0,'y':56,'name':'Medium','color':'#31a354'},
-             {'x':0,'y':17,'name':'Low','color':'#fdae6b'}]
-      }]
-  });
+        name: "High",
+        data: [28, 33],
+        color: "#f03b20"
+    }, {
+        name: "Medium",
+        data: [56, 53],
+        color: "#31a354"
+    }, {
+        name: "Low",
+        data: [17, 4],
+        color: "#fdae6b"
+    }, {
+        showInLegend: !1,
+        type: "scatter",
+        data: [{
+            x: 0,
+            y: 28,
+            name: "High",
+            color: "#f03b20"
+        }, {
+            x: 0,
+            y: 56,
+            name: "Medium",
+            color: "#31a354"
+        }, {
+            x: 0,
+            y: 17,
+            name: "Low",
+            color: "#fdae6b"
+        }]
+    }]
+});
 });
 
 </script>
