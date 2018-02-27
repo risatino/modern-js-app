@@ -22,7 +22,7 @@ $(function () {
         enabled:true
     },
     tooltip: {
-        shared: true,
+        enabled: false,
         formatter: function() {
             return this.series.name + ' ' + this.y;
         }
@@ -91,10 +91,6 @@ $(function () {
         }
     },
     series: [{
-        name:'Very High',
-        data: [0,0],
-        color: 'red'
-    },{
         name:'High',
         data: [28,33],
         color: '#1D97C6'
@@ -107,15 +103,10 @@ $(function () {
          data: [17,4],
          color: 'orange'
      },{
-         name:'Very Low',
-         data: [0,0],
-     },{
          type:'scatter',
-         data: [{'x':0,'y':0,'name':'Very High','color':'red'},
-             {'x':0,'y':28,'name':'High','color':'#1D97C6'},
-             {'x':0,'y':56,'name':'Medium','color':'blue'},
-             {'x':0,'y':17,'name':'Low','color':'orange'},
-             {'x':0,'y':0,'name':'Very Low'}]
+         data: [{'x':0,'y':28,'name':'High','color':'#1D97C6'},
+             {'x':0,'y':56,'name':'Medium','color':'green'},
+             {'x':0,'y':17,'name':'Low','color':'orange'}]
       }]
   });
 });
