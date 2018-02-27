@@ -9,9 +9,12 @@
 <script type="text/javascript">
 
 $(function () {
-    $('#container').highcharts({
+    $('#india_major_csos').highcharts({
     chart: {
-        renderTo:'container',
+        marginRight: rightMargin,
+        marginTop: topMargin,
+        backgroundColor: bgColor,
+        renderTo:'india_major_csos',
         defaultSeriesType:'line',
         marginTop:100
     },
@@ -19,7 +22,11 @@ $(function () {
         text:'% of Major CSOs focusing on<br/>Climate/Renewable Energy and policy, 2015 and 2017'
     },
     legend:{
-        enabled:true
+        enabled:true,
+        layout: 'horizontal',
+        itemStyle: {
+            fontSize: setFontsizeLegend
+        }
     },
     tooltip: {
         enabled: false,
@@ -29,14 +36,15 @@ $(function () {
     },
     xAxis: {
         opposite:true,
-        lineColor:'#999',
+        lineColor:'#fff',
         categories:['2015','2017'],
         title:{
             text:''
         },
         labels:{
             style:{
-                fontWeight:'bold'
+                fontWeight:'bold',
+                fontSize: setFontsize
             }
         }
     },
@@ -56,12 +64,15 @@ $(function () {
         line:{
             lineWidth:2,
             shadow:false,
-            color:'#666',
+            color:'#000',
             marker:{
                 radius:2,
                 symbol: 'circle'
             },
             dataLabels:{
+                style: {
+                    fontSize: setFontsize
+                },
                 enabled:true,
                 align:'left',
                 x:10,
@@ -80,6 +91,9 @@ $(function () {
                 radius:2
             },
             dataLabels:{
+                style: {
+                    fontSize: setFontsize
+                },
                 enabled:true,
                 align:'right',
                 x:-10,
@@ -93,21 +107,21 @@ $(function () {
     series: [{
         name:'High',
         data: [28,33],
-        color: '#1D97C6'
+        color: '#f03b20'
     },{
          name:'Medium',
          data: [56,53],
-         color: 'green'
+         color: '#31a354'
      },{
          name:'Low',
          data: [17,4],
-         color: 'orange'
+         color: '#fdae6b'
      },{
          showInLegend: false,
          type:'scatter',
-         data: [{'x':0,'y':28,'name':'High','color':'#1D97C6'},
-             {'x':0,'y':56,'name':'Medium','color':'green'},
-             {'x':0,'y':17,'name':'Low','color':'orange'}]
+         data: [{'x':0,'y':28,'name':'High','color':'#f03b20'},
+             {'x':0,'y':56,'name':'Medium','color':'#31a354'},
+             {'x':0,'y':17,'name':'Low','color':'#fdae6b'}]
       }]
   });
 });
@@ -116,7 +130,7 @@ $(function () {
 </head>
 <body>
 
-    <div id="container" style="min-width: 500px; height: 600px; margin: 0 auto"></div>
+    <div id="india_major_csos" style="min-width: 500px; height: 600px; margin: 0 auto"></div>
 
 </body>
 </html>

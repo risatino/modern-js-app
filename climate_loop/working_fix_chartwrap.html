@@ -75,31 +75,48 @@ $('').on('shown.bs.modal', function () {$(".chart").each(function() {var chart =
 });
 
 
-//Chart Data
-var india_natl_clean_fund = [{
-    name: 'Annual Budget',
-    color: '#1ca8dd',
+//1a11 new
+var india_major_csos = [{
+    name:'High',
+    data: [28,33],
     dashStyle: 'Solid',
-    data: [1066, 1500, 1650, 4700, 5123, 6902, 8703],
-    zIndex: 1,
+    color: '#f03b20',
     visible: !0
 }, {
-    name: 'Annual Disbursement',
-    color: '#00b324',
+    name:'Medium',
+    data: [56,53],
+    color: '#31a354',
     dashStyle: 'ShortDash',
-    data: [220, 246, 1218, 2087, 5234, 6902, 0],
     visible: !0
+},{
+    name:'Low',
+    data: [17,4],
+    dashStyle: 'Solid',
+    color: '#fdae6b',
+    visible: !0
+},{
+    showInLegend: false,
+    type:'scatter',
+    data: [{'x':0,'y':28,'name':'High','color':'#f03b20'},
+        {'x':0,'y':56,'name':'Medium','color':'#31a354'},
+        {'x':0,'y':17,'name':'Low','color':'#fdae6b'}]
 }]
 
 //Make Chart
-$("#india_natl_clean_fund").highcharts({
+$("#india_major_csos").highcharts({
     chart: {
+        marginRight: rightMargin,
         marginTop: topMargin,
         backgroundColor: bgColor,
         type: 'line',
+        marginTop:100,
         alignTicks: !1
     },
+    title:{
+        text:'% of Major CSOs focusing on<br/>Climate/Renewable Energy and policy, 2015 and 2017'
+    },
     legend: {
+        enabled:true,
         layout: 'horizontal',
         itemStyle: {
             fontSize: setFontsizeLegend
@@ -109,31 +126,16 @@ $("#india_natl_clean_fund").highcharts({
     exporting: {
         enabled: !1
     },
-    title: !1,
     xAxis: [{
+        opposite:true,
+        lineColor:'#999',
         title: {
             style: {
                 fontSize: setFontsize
             },
             margin: axisMargin
         },
-        plotLines: [{
-            color: '#ff0000',
-            width: 2,
-            value: 8,
-            zIndex: 1,
-            label: {
-                text: 'Baseline',
-                verticalAlign: 'middle',
-                textAlign: 'center',
-                style: {
-                    color: 'white',
-                    fontWeight: 'bold',
-                    fontSize: 18
-                }
-            }
-        }],
-        categories: [2011, 2012, 2013, 2014, 2015, 2016, 2017],
+        categories: [2015, 2017],
         tickmarkPlacement: 'off',
         labels: {
             style: {
@@ -149,32 +151,41 @@ $("#india_natl_clean_fund").highcharts({
             },
             margin: axisMargin
         },
-        max: 9000,
-        min: 0,
-        tickInterval: 9000,
+        gridLineWidth:0,
         labels: {
-            formatter: function() {
-                return Highcharts.numberFormat(this.value, 0)
-            },
-            style: {
-                fontSize: setFontsize
-            }
+            enabled:false;
         }
+    },
+    credits: {
+      enabled: false
     }],
     tooltip: {
-        shared: !0,
-        useHTML: !0,
-        headerFormat: '<h5>{point.key}</h5>',
-        pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b>  INR crore<br>',
-        style: {
-            fontSize: setFontsize
+        enabled: false,
+        formatter: function() {
+            return this.series.name + ' ' + this.y;
         }
     },
     plotOptions: {
-        column: {
-            dataLabels: {
+        line:{
+            lineWidth:2,
+            shadow:false,
+            color:'#666',
+            marker:{
+                radius:2,
+                symbol: 'circle'
+            },
+            dataLabels:{
                 style: {
                     fontSize: setFontsize
+                },
+                enabled:true,
+                align:'left',
+                x:10,
+                y:0,
+                formatter:function(){
+                    if(this.x == 2017){
+                        return this.series.name + ' ' + this.y + '%';
+                    }
                 }
             },
             style: {
@@ -182,145 +193,274 @@ $("#india_natl_clean_fund").highcharts({
                 fontSize: setFontsize
             }
         },
-        series: {
-            lineWidth: 4,
-            marker: {
-                fillColor: bgColor,
-                radius: 6,
-                lineWidth: 4,
-                lineColor: null,
-                states: {
-                    hover: {
-                        enabled: !0,
-                        radiusPlus: 4
-                    }
-                }
+        scatter:{
+            shadow:false,
+            color:'#666',
+            marker:{
+                radius:2
             },
-            states: {
-                hover: {
-                    enabled: !0,
-                    lineWidthPlus: 2
+            dataLabels:{
+                enabled:true,
+                align:'right',
+                x:-10,
+                y:0,
+                formatter:function(){
+                    return this.point.name + ' ' + this.y + '%';
                 }
             }
         }
     },
-    series: india_natl_clean_fund
+    series: india_major_csos
 })
 
-//3.a.1.2. Total Electricity Consumption by Sector (MWh)
-$("#total_electricity_india_sector").highcharts({
+// Chart and Make Data 1a11
+$("#india_major_csos").highcharts({chart:{marginTop:topMargin,backgroundColor:bgColor,renderTo:"india_major_csos",defaultSeriesType:"line",marginTop:80},title:{text:""},legend:{enabled:!0,layout:"horizontal",itemStyle:{fontSize:setFontsizeLegend}},tooltip:{enabled:!1,formatter:function(){return this.series.name+" "+this.y}},xAxis:{opposite:!0,lineColor:"#fff",categories:["2015","2017"],title:{text:""},labels:{style:{fontWeight:"bold",fontSize:setFontsize}}},yAxis:{gridLineWidth:0,labels:{enabled:!1},title:{text:""}},credits:{enabled:!1},plotOptions:{line:{lineWidth:4,shadow:!1,color:"#fff",marker:{radius:4,symbol:"circle"},dataLabels:{style:{fontSize:setFontsize},color:"#fff",enabled:!0,align:"left",x:10,y:0,formatter:function(){if(2017==this.x)return this.series.name+" "+this.y+"%"}}},scatter:{shadow:!1,color:"#fff",marker:{radius:2},dataLabels:{style:{fontSize:setFontsize},enabled:!0,align:"right",x:-10,y:0,formatter:function(){return this.point.name+" "+this.y+"%"}}}},series:[{name:"High",data:[28,33],color:"#f03b20"},{name:"Medium",data:[56,53],color:"#31a354"},{name:"Low",data:[17,4],color:"#fdae6b"},{showInLegend:!1,type:"scatter",data:[{x:0,y:28,name:"High",color:"#f03b20"},{x:0,y:56,name:"Medium",color:"#31a354"},{x:0,y:17,name:"Low",color:"#fdae6b"}]}]});
+// end of 1.a.1.1.
+
+// Chart and Make Data 1a12
+$("#india_major_csos").highcharts({
     chart: {
         marginTop: topMargin,
         backgroundColor: bgColor,
-        type: "column",
-        alignTicks: !1
+        renderTo: "india_major_csos",
+        defaultSeriesType: "line",
+        marginTop: 80
+    },
+    title: {
+        text: ""
     },
     legend: {
+        enabled: !0,
         layout: "horizontal",
         itemStyle: {
             fontSize: setFontsizeLegend
         }
     },
-    credits: !1,
-    exporting: {
-        enabled: !1
-    },
-    title: !1,
-    xAxis: [{
-        title: {
-            style: {
-                fontSize: setFontsize
-            },
-            margin: axisMargin
-        },
-        categories: [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015],
-        tickmarkPlacement: "off",
-        labels: {
-            style: {
-                fontSize: setFontsize
-            }
+    tooltip: {
+        enabled: !1,
+        formatter: function() {
+            return this.series.name + " " + this.y
         }
-    }],
-    yAxis: [{
+    },
+    xAxis: {
+        opposite: !0,
+        lineColor: "#fff",
+        categories: ["2015", "2017"],
         title: {
-            text: "Total Electricity Consumed (MWh)",
-            style: {
-                fontSize: setFontsize
-            },
-            margin: axisMargin
+            text: ""
         },
-        max: 12e5,
-        min: 0,
-        stackLabels: {
-            enabled: !0,
+        labels: {
             style: {
                 fontWeight: "bold",
-                fontSize: setFontsize,
-                color: Highcharts.theme && Highcharts.theme.textColor || "white"
-            }
-        },
-        tickInterval: 3e5,
-        labels: {
-            formatter: function() {
-                return Highcharts.numberFormat(this.value, 0)
-            },
-            style: {
                 fontSize: setFontsize
             }
         }
-    }],
-    tooltip: {
-        shared: !0,
-        useHTML: !0,
-        headerFormat: "<h5>{point.key}</h5>",
-        pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y} MWh</b><br>',
-        style: {
-            fontSize: setFontsize
+    },
+    yAxis: {
+        gridLineWidth: 0,
+        labels: {
+            enabled: !1
+        },
+        title: {
+            text: ""
         }
     },
+    credits: {
+        enabled: !1
+    },
     plotOptions: {
-        column: {
-            stacking: "normal",
-            pointWidth: 50,
-            pointPadding: 0,
-            groupPadding: 0,
+        line: {
+            lineWidth: 4,
+            shadow: !1,
+            color: "#fff",
+            marker: {
+                radius: 4,
+                symbol: "circle"
+            },
             dataLabels: {
                 style: {
                     fontSize: setFontsize
+                },
+                color: "#fff",
+                enabled: !0,
+                align: "left",
+                x: 10,
+                y: 0,
+                formatter: function() {
+                    if (2017 == this.x) return this.series.name + " " + this.y + "%"
                 }
-            },
-            style: {
-                color: Highcharts.theme && Highcharts.theme.contrastTextColor || "black",
-                fontSize: setFontsize
             }
         },
-        series: {
-            lineWidth: 1,
+        scatter: {
+            shadow: !1,
+            color: "#fff",
             marker: {
-                fillColor: bgColor,
-                radius: 6,
-                lineWidth: 2,
-                lineColor: null,
-                states: {
-                    hover: {
-                        enabled: !0,
-                        radiusPlus: 4
-                    }
-                }
+                radius: 2
             },
-            states: {
-                hover: {
-                    enabled: !0,
-                    lineWidthPlus: 2
+            dataLabels: {
+                style: {
+                    fontSize: setFontsize
+                },
+                enabled: !0,
+                align: "right",
+                x: -10,
+                y: 0,
+                formatter: function() {
+                    return this.point.name + " " + this.y + "%"
                 }
             }
         }
     },
-    series: total_electricity_india_sector
+    series: [{
+        name: "High",
+        data: [28, 33],
+        color: "#f03b20"
+    }, {
+        name: "Medium",
+        data: [56, 53],
+        color: "#31a354"
+    }, {
+        name: "Low",
+        data: [17, 4],
+        color: "#fdae6b"
+    }, {
+        showInLegend: !1,
+        type: "scatter",
+        data: [{
+            x: 0,
+            y: 28,
+            name: "High",
+            color: "#f03b20"
+        }, {
+            x: 0,
+            y: 56,
+            name: "Medium",
+            color: "#31a354"
+        }, {
+            x: 0,
+            y: 17,
+            name: "Low",
+            color: "#fdae6b"
+        }]
+    }]
 });
+//end of 1.a.1.2.
 
-//4b11 new
-// Chart Data
+//this code works
 
-// Make Data
+$('#india_major_csos').highcharts({
+    chart: {
+        marginTop: topMargin,
+        backgroundColor: bgColor,
+        renderTo:'india_major_csos',
+        defaultSeriesType:'line',
+        marginTop: 80
+    },
+    title:{
+        text:''
+    },
+    legend:{
+        enabled:true,
+        layout: 'horizontal',
+        itemStyle: {
+            fontSize: setFontsizeLegend
+        }
+    },
+    tooltip: {
+        enabled: false,
+        formatter: function() {
+            return this.series.name + ' ' + this.y;
+        }
+    },
+    xAxis: {
+        opposite:true,
+        lineColor:'#fff',
+        categories:['2015','2017'],
+        title:{
+            text:''
+        },
+        labels:{
+            style:{
+                fontWeight:'bold',
+                fontSize: setFontsize
+            }
+        }
+    },
+    yAxis: {
+        gridLineWidth: 0,
+        labels:{
+            enabled:false,
+        },
+        title:{
+            text:'',
+       }
+    },
+    credits: {
+      enabled: false
+    },
+    plotOptions: {
+        line:{
+            lineWidth:4,
+            shadow:false,
+            color:'#fff',
+            marker:{
+                radius:4,
+                symbol: 'circle'
+            },
+            dataLabels:{
+                style: {
+                    fontSize: setFontsize
+                },
+                color:'#fff',
+                enabled:true,
+                align:'left',
+                x:10,
+                y:0,
+                formatter:function(){
+                    if(this.x == 2017){
+                        return this.series.name + ' ' + this.y + '%';
+                    }
+                }
+            }
+        },
+        scatter:{
+            shadow:false,
+            color:'#fff',
+            marker:{
+                radius:2
+            },
+            dataLabels:{
+                style: {
+                    fontSize: setFontsize
+                },
+                enabled:true,
+                align:'right',
+                x:-10,
+                y:0,
+                formatter:function(){
+                    return this.point.name + ' ' + this.y + '%';
+                }
+            }
+        }
+    },
+    series: [{
+        name:'High',
+        data: [28,33],
+        color: '#f03b20'
+    },{
+         name:'Medium',
+         data: [56,53],
+         color: '#31a354'
+     },{
+         name:'Low',
+         data: [17,4],
+         color: '#fdae6b'
+     },{
+         showInLegend: false,
+         type:'scatter',
+         data: [{'x':0,'y':28,'name':'High','color':'#f03b20'},
+             {'x':0,'y':56,'name':'Medium','color':'#31a354'},
+             {'x':0,'y':17,'name':'Low','color':'#fdae6b'}]
+      }]
+  });
 </script>
