@@ -1,0 +1,129 @@
+<script>
+//5a11, 5a12, 5a13 India start
+$("#india_political_will_cls").highcharts({
+    chart: {
+        backgroundColor: bgColor,
+        renderTo: "india_political_will_cls",
+        defaultSeriesType: "line",
+        marginTop: 80
+    },
+    title: {
+        text: ""
+    },
+    legend: {
+        enabled: !0,
+        layout: "horizontal",
+        itemStyle: {
+            fontSize: setFontsizeLegend
+        }
+    },
+    tooltip: {
+        enabled: !1,
+        formatter: function() {
+            return this.series.name + " " + this.y
+        }
+    },
+    xAxis: {
+        opposite: !0,
+        lineColor: "#fff",
+        categories: ["2015", "2016", "2017"],
+        title: {
+            text: ""
+        },
+        labels: {
+            style: {
+                fontWeight: "bold",
+                fontSize: setFontsize
+            }
+        }
+    },
+    yAxis: {
+        gridLineWidth: 0,
+        labels: {
+            enabled: !1
+        },
+        title: {
+            text: ""
+        }
+    },
+    credits: {
+        enabled: !1
+    },
+    plotOptions: {
+        line: {
+            lineWidth: 4,
+            shadow: !1,
+            color: "#fff",
+            marker: {
+                radius: 4,
+                symbol: "circle"
+            },
+            dataLabels: {
+                style: {
+                    fontSize: setFontsize
+                },
+                color: "#fff",
+                enabled: !0,
+                align: "left",
+                x: 10,
+                y: 0,
+                formatter: function() {
+                    if (2017 == this.x) return this.series.name + " " + this.y + "%"
+                }
+            }
+        },
+        scatter: {
+            shadow: !1,
+            color: "#fff",
+            marker: {
+                radius: 2
+            },
+            dataLabels: {
+                style: {
+                    fontSize: setFontsize
+                },
+                enabled: !0,
+                align: 'right',
+                x: -10,
+                y: 0,
+                formatter: function() {
+                    return this.point.name + " " + this.y + "%"
+                }
+            }
+        }
+    },
+    series: [{
+        name: '5.a.1.1. Renewable Energy',
+        data: [18, 0, 6],
+        color: '#E55758'
+    }, {
+        name: '5.a.1.2. Clean Technology',
+        data: [4, 0, 9],
+        color: '#31a354'
+    }, {
+        name: '5.a.1.3. Climate Change',
+        data: [3, 0, 4],
+        color: 'orange'
+    }, {
+        showInLegend: !1,
+        type: "scatter",
+        data: [{
+            'x': 0,
+            'y': 18,
+            'name': '5.a.1.1. Renewable Energy',
+            'color': '#E55758'
+        }, {
+            'x': 0,
+            'y': 4,
+            'name': '5.a.1.2. Clean Technology',
+            'color': '#31a354'
+        }, {
+            'x': 0,
+            'y': 3,
+            'name': '5.a.1.3. Climate Change',
+            'color': 'orange'
+        }]
+    }]
+});
+//5a11, 5a12, 5a13 India end
+</script>
