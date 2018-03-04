@@ -1,5 +1,16 @@
+<!--original-->
 <div class="breadcrumbs">
   <a href="/">TheLoop</a>{% if pagesection %} / <a href="{{ pagesection.url }}">{{ pagesection }}</a> {% endif %}
+</div>
+
+<!--test driven development 1-->
+<div class="breadcrumbs">
+  <a href="/">TheLoop</a>{% if pagesection %} / <a href="{{ pagesection.url }}">{{ pagesection }}</a> / <a href="{{ pagesection.url }}">{{ pagesection }}</a> {% endif %}
+</div>
+
+<!--test driven development 2-->
+<div class="breadcrumbs">
+  <a href="/">TheLoop</a>{% if pagesection == 2 %} / <a href="{{ pagesection.url }}">{{ pagesection }}</a> / <a href="{{ pagesection.url }}">{{ pagesection }}</a> {% endif %}
 </div>
 
 <!--This code is just for the home page, you'll need to find the url and make an if statement based on that?-->
