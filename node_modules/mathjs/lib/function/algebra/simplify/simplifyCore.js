@@ -4,6 +4,7 @@ function factory(type, config, load, typed, math) {
   var ConstantNode = math.expression.node.ConstantNode;
   var OperatorNode = math.expression.node.OperatorNode;
   var FunctionNode = math.expression.node.FunctionNode;
+  var ParenthesisNode = math.expression.node.ParenthesisNode;
 
   var node0 = new ConstantNode(0);
   var node1 = new ConstantNode(1);
@@ -16,7 +17,7 @@ function factory(type, config, load, typed, math) {
    *
    * Syntax:
    *
-   *     simplify.simpifyCore(expr)
+   *     simplify.simplifyCore(expr)
    *
    * Examples:
    *
@@ -73,6 +74,8 @@ function factory(type, config, load, typed, math) {
               if (type.isOperatorNode(a0)) {
                   if (a0.fn === 'unaryMinus') {
                       return a0.args[0];
+                  } else if (a0.fn === 'subtract') {
+                      return new OperatorNode('-', 'subtract', [a0.args[1], a0.args[0]]);
                   }
               }
               return new OperatorNode(node.op, node.fn, [a0]);
@@ -118,9 +121,22 @@ function factory(type, config, load, typed, math) {
                   return node1;
               } else if (a1.value === "1") {
                   return a0;
-              } else if (type.isConstantNode(a1) && a0.value && a0.value.length < 5 && a1.value && a1.value.length < 2) { // fold constant
-                  return new ConstantNode(
-                      math.pow(Number(a0.value), Number(a1.value)));
+              } else {
+                  if (type.isConstantNode(a0) && 
+                      a0.value && a0.value.length < 5 && 
+                      a1.value && a1.value.length < 2) { 
+                      // fold constant
+                      return new ConstantNode(
+                          math.pow(Number(a0.value), Number(a1.value)));
+                  } else if (type.isOperatorNode(a0) && a0.op === "^") {
+                      var a01 = a0.args[1];
+                      if (type.isConstantNode(a01)) {
+                          return new OperatorNode(node.op, node.fn, [
+                              a0.args[0], 
+                              new ConstantNode(a01.value * a1.value)
+                          ]);
+                      }
+                  }
               }
           }
           return new OperatorNode(node.op, node.fn, [a0, a1]);
