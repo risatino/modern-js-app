@@ -361,16 +361,40 @@
     color: $purple;
   }
 }
+
 </style>
+
 <div class="stay-informed">
- <div class="layout-constrain">
-  <div class="stay-informed__title">
-   Stay Informed</div><div class="stay-informed__intro">
-   Sign up for periodic news updates and event invitations. Connect with us on Twitter, Facebook, and YouTube.</div><div class="stay-informed__content">
-   <form action="{% url " newsletters="">
-    <label class="element-hidden" for="newsletter-signup">Enter Email Address</label> <input class="form-item form-item--email" id="newsletter-signup" placeholder="Enter your email address" type="email"> <label class="form-item--icon-submit" for="newsletter-submit"> <span class="element-hidden">Sign Up</span> <input class="element-invisible" id="newsletter-submit" name="email" type="submit" value="email"> </label><div aria-hidden="true" class="new-icon new-icon--submit">
-    </div><label class="form-item--icon-submit" for="newsletter-submit"> </label></form><div class="stay-informed__social">
-    <a class="new-icon new-icon--circle new-icon--white new-icon--twitter" href="https://twitter.com/#!/macfound">Twitter</a> <a class="new-icon new-icon--circle new-icon--white new-icon--facebook" href="https://www.facebook.com/macarthurfdn">Facebook</a> <a class="new-icon new-icon--circle new-icon--white new-icon--youtube" href="http://www.youtube.com/user/macfound">Youtube</a> <a class="new-icon new-icon--circle new-icon--white new-icon--linkedin" href="https://www.linkedin.com/company/macarthur-foundation/">LinkedIn</a></div></div></div></div><script>
+  <div class="layout-constrain">
+    <div class="stay-informed__title">
+      Stay Informed
+    </div>
+    <div class="stay-informed__intro">
+      Sign up for periodic news updates and event invitations. Connect with us on Twitter, Facebook, and YouTube.
+    </div>
+    <div class="stay-informed__content">
+      <form action="{% url "newsletters" %}" method="GET" class="stay-informed__newsletter">
+        <label for="newsletter-signup" class="element-hidden">Enter Email Address</label>
+        <input id="newsletter-signup" type="email" placeholder="Enter your email address" class="form-item form-item--email" />
+        <label class="form-item--icon-submit" for="newsletter-submit">
+          <span class="element-hidden">Sign Up</span>
+            <input type="submit" name="email" id="newsletter-submit" value="email" class="element-invisible">
+            <div class="new-icon new-icon--submit" aria-hidden="true"></div>
+        </label>
+      </form>
+      
+      <div class="stay-informed__social">
+        <a href="https://twitter.com/macfound" title=""><img src="http://image.email-macfound.org/lib/fe8b1274746c0c7574/m/1/2c4b029f-9027-4218-b992-4a2005d20ff1.png"></a> 
+        <a href="https://www.facebook.com/macarthurfdn"><img src="http://image.email-macfound.org/lib/fe8b1274746c0c7574/m/1/37058c7d-a723-4e9d-828f-ec28ed485e60.png?b=1496799667000"></a> 
+        <a href="http://www.youtube.com/user/macfound"><img src="http://image.email-macfound.org/lib/fe8b1274746c0c7574/m/1/eb5c988d-326c-49d2-89e5-1a3a303437a9.png?b=1496799667000"></a> 
+        <a href="https://www.linkedin.com/company/macarthur-foundation/"><img src="http://image.email-macfound.org/lib/fe8b1274746c0c7574/m/1/33e4101f-bf00-41b5-b8ed-1ba5ea267129.png?b=1496799667000"></a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<script>
   $('#newsletter-submit').click(function(){
     $(this).val($('#newsletter-signup').val());
   })
