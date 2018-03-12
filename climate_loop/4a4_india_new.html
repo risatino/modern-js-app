@@ -135,17 +135,18 @@
     });
 </script>
 
-<!--new data-->
+<!--new data----------------------------------------------------------------------------------------------------------------------------------->
 <script>
+
 //Start of 4.a.4.
 //Chart Data    
 var categories = ['Coal', 'Petroleum Liquids', 'Petroleum Coke', 'Natural Gas', 'Other Gas', 'Nuclear', 'Hydroelectric', 'Renewable Sources', '...Wind', '...Solar', '...Wood', '...Other Biomass', '...Geothermal', 'Hydroelectric Pumped', 'All Energy Sources'];
 var us4a4_electric_17vs16 = [{
-        name: 'Fuel',
+        name: 'Deficit (-)',
         color: '#DF5656',
         data: [-2.50, -3.30, -24.00, -7.70, 0, -0.10, 0, 0, 0, 0, 0, -4.80, 0, -2.90, -1.50]
     }, {
-        name: 'Change',
+        name: 'Change (+)',
         color: '#168DD9',
         data: [0, 0, 0, 0, 10.60, 0, 12.00, 13.40, 12.00, 46.90, 5.70, 0, 0.90, 2.90, 1.50]
     }];
@@ -169,10 +170,14 @@ $("#us4a4_electric_17vs16").highcharts({
         text: null
     },
     xAxis: [{
+        title: {text:'Fuel', style: {fontSize: setFontsize}},
         categories: categories,
         labels: {
-            step: 1
-        }
+            step: 1,
+        style: {
+                fontSize: setFontsize
+            }  
+      }      
     }],
     yAxis: {
         title: {
@@ -185,17 +190,24 @@ $("#us4a4_electric_17vs16").highcharts({
         labels: {
             formatter: function () {
                 return Math.abs(this.value) + '%';
+            },
+            style: {
+                fontSize: setFontsize
             }
         }
     },
 
     plotOptions: {
         series: {
-            stacking: 'normal'
+            stacking: 'normal',
+            pointWidth: 25
         }
     },
 
     tooltip: {
+        style: {
+                fontSize: setFontsize
+        },
         formatter: function () {
             return '<b>' + this.series.name + ': ' + this.point.category + '</b><br/>' + Highcharts.numberFormat(Math.abs(this.point.y), 2) + '%';
         }
@@ -228,3 +240,13 @@ $("#us4a4_electric_17vs16").highcharts({
       </div>
     </div>
   </div>
+  
+  <!-----------------------------------------------------------------------------------------------------------------------------------------NEW script-->
+<script>
+//Start of 4.a.4.
+//Chart Data    
+var categories=["Coal","Petroleum Liquids","Petroleum Coke","Natural Gas","Other Gas","Nuclear","Hydroelectric","Renewable Sources","...Wind","...Solar","...Wood","...Other Biomass","...Geothermal","Hydroelectric Pumped","All Energy Sources"],us4a4_electric_17vs16=[{name:"Deficit (-) %",color:"#DF5656",data:[-2.5,-3.3,-24,-7.7,0,-.1,0,0,0,0,0,-4.8,0,-2.9,-1.5]},{name:"Change (+) %",color:"#168DD9",data:[0,0,0,0,10.6,0,12,13.4,12,46.9,5.7,0,.9,2.9,1.5]}];
+//Make Data
+$("#us4a4_electric_17vs16").highcharts({chart:{backgroundColor:bgColor,type:"bar"},legend:{layout:"horizontal",itemStyle:{fontSize:setFontsizeLegend}},credits:!1,exporting:{enabled:!1},title:{text:null},xAxis:[{title:{text:"Fuel",style:{fontSize:setFontsize}},categories:categories,labels:{step:1,style:{fontSize:setFontsize}}}],yAxis:{title:{text:null},min:-30,max:50,intervals:10,allowDecimals:!1,labels:{formatter:function(){return Math.abs(this.value)+"%"},style:{fontSize:setFontsize}}},plotOptions:{series:{stacking:"normal",pointWidth:25}},tooltip:{style:{fontSize:setFontsize},formatter:function(){return"<b>"+this.series.name+": "+this.point.category+"</b><br/>"+Highcharts.numberFormat(Math.abs(this.point.y),2)+"%"}},series:us4a4_electric_17vs16});
+//End of 4.a.4.
+</script>
