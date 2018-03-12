@@ -345,3 +345,190 @@ $('.modal').on('shown.bs.modal', function () {$(".chart").each(function() {var c
 $('').on('shown.bs.modal', function () {$(".chart").each(function() {var chart = $(this).highcharts();chart.reflow();});});
 });
 </script>
+
+<!--JavaScript Pretty-->
+
+<script>
+    $(function() {
+        Highcharts.setOptions({
+            lang: {
+                numericSymbols: null,
+                thousandsSep: ','
+            },
+        });
+        var setFontsize = '20px';
+        var setFontsizeLegend = '22px';
+        var topMargin = 20;
+        var axisMargin = 20;
+        var rightMargin = 200;
+        var bgColor = '#252830';
+        //Chart Data
+        var total_electricity_india_sector = [{
+            name: "Domestic",
+            color: "#3860DE",
+            dashStyle: "Solid",
+            data: [131720, 146080, 169326, 171104, 183700, 199842, 217405, 238876],
+            zIndex: 1,
+            visible: !0
+        }, {
+            name: "Industry",
+            color: "#00b324",
+            dashStyle: "ShortDash",
+            data: [209474, 236752, 272589, 352291, 365989, 384418, 418346, 423523],
+            visible: !0
+        }, {
+            name: "Agriculture",
+            color: "#E3E3E6",
+            dashStyle: "ShortDashDot",
+            data: [109610, 120209, 131967, 140960, 147462, 152744, 168913, 173185],
+            visible: !0
+        }, {
+            name: "Commercial",
+            color: "#DD3660",
+            dashStyle: "ShortDash",
+            data: [209474, 236752, 272589, 352291, 365989, 384418, 418346, 423523],
+            visible: !0
+        }, {
+            name: "Traction & Railways",
+            color: "#868FDB",
+            dashStyle: "dotted",
+            data: [209474, 236752, 272589, 352291, 365989, 384418, 418346, 423523],
+            visible: !0
+        }, {
+            name: "Other",
+            color: "#85DBD1",
+            dashStyle: "dotted",
+            data: [209474, 236752, 272589, 352291, 365989, 384418, 418346, 423523],
+            visible: !0
+        }];
+        //Make Chart
+        $("#total_electricity_india_sector").highcharts({
+            chart: {
+                marginRight: rightMargin,
+                marginTop: topMargin,
+                backgroundColor: bgColor,
+                type: "column",
+                alignTicks: !1
+            },
+            legend: {
+                layout: "horizontal",
+                itemStyle: {
+                    fontSize: setFontsizeLegend
+                }
+            },
+            credits: !1,
+            exporting: {
+                enabled: !1
+            },
+            title: !1,
+            xAxis: [{
+                title: {
+                    style: {
+                        fontSize: setFontsize
+                    },
+                    margin: axisMargin
+                },
+                plotLines: [{
+                    color: "#ff0000",
+                    width: 2,
+                    value: 6.5,
+                    zIndex: 1,
+                    label: {
+                        text: "Totals",
+                        verticalAlign: "middle",
+                        textAlign: "center",
+                        style: {
+                            color: "white",
+                            fontWeight: "bold",
+                            fontSize: 18
+                        }
+                    }
+                }],
+                categories: [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015],
+                tickmarkPlacement: "off",
+                labels: {
+                    style: {
+                        fontSize: setFontsize
+                    }
+                }
+            }],
+            yAxis: [{
+                title: {
+                    text: "Total Electricity Consumed (MWh) by Sector",
+                    style: {
+                        fontSize: setFontsize
+                    },
+                    margin: axisMargin
+                },
+                max: 425000,
+                min: 0,
+                tickInterval: 25000,
+                labels: {
+                    formatter: function() {
+                        return Highcharts.numberFormat(this.value, 0)
+                    },
+                    style: {
+                        fontSize: setFontsize
+                    }
+                }
+            }],
+            tooltip: {
+                shared: !0,
+                useHTML: !0,
+                headerFormat: "<h5>{point.key}</h5>",
+                pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',
+                style: {
+                    fontSize: setFontsize
+                }
+            },
+            plotOptions: {
+                column: {
+                    dataLabels: {
+                        style: {
+                            fontSize: setFontsize
+                        }
+                    },
+                    style: {
+                        color: Highcharts.theme && Highcharts.theme.contrastTextColor || "black",
+                        fontSize: setFontsize
+                    }
+                },
+                series: {
+                    lineWidth: 4,
+                    marker: {
+                        fillColor: bgColor,
+                        radius: 6,
+                        lineWidth: 4,
+                        lineColor: null,
+                        states: {
+                            hover: {
+                                enabled: !0,
+                                radiusPlus: 4
+                            }
+                        }
+                    },
+                    states: {
+                        hover: {
+                            enabled: !0,
+                            lineWidthPlus: 2
+                        }
+                    }
+                }
+            },
+            series: total_electricity_india_sector
+        });
+        // reflow charts in hidden modals
+        $('.modal').on('shown.bs.modal', function() {
+            $(".chart").each(function() {
+                var chart = $(this).highcharts();
+                chart.reflow();
+            });
+        });
+        $('').on('shown.bs.modal', function() {
+            $(".chart").each(function() {
+                var chart = $(this).highcharts();
+                chart.reflow();
+            });
+        });
+    });
+</script>
