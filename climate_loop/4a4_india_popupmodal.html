@@ -13,3 +13,69 @@
 <br>
 
 <script src="https://www.theatlas.com/javascripts/atlas.js"></script>
+
+<!--HighCharts: (Neg+Pos Values) Stacked Bar Chart--------------------------------------------------------------------------------------------------------------------------------------->
+
+<script>
+// fuel categories
+var categories = ['Coal', 'Petroleum Liquids', 'Petroleum Coke', 'Natural Gas', 'Other Gas', 'Nuclear', 'Hydroelectric', 'Renewable Sources', '...Wind', '...Solar', '...Wood', '...Other Biomass', '...Geothermal', 'Hydroelectric Pumped', 'All Energy Sources'];
+
+Highcharts.chart('container', {
+    chart: {
+        type: 'bar'
+    },
+    title: {
+        text: 'Where Americans got their electricity, 2017 vs. 2016'
+    },
+    subtitle: {
+        text: 'Source: <a href="https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_es1b">EIA.gov</a>'
+    },
+    xAxis: [{
+        categories: categories,
+        reversed: false,
+        labels: {
+            step: 1
+        }
+    }],
+    yAxis: {
+        title: {
+            text: null
+        },
+        labels: {
+            formatter: function () {
+                return Math.abs(this.value) + '%';
+            }
+        }
+    },
+
+    plotOptions: {
+        series: {
+            stacking: 'normal'
+        }
+    },
+
+    tooltip: {
+        formatter: function () {
+            return '<b>' + this.series.name + ': ' + this.point.category + '</b><br/>' + Highcharts.numberFormat(Math.abs(this.point.y), 2) + '%';
+        }
+    },
+
+    series: [{
+        name: 'Fuel',
+        color: '#DF5656',
+        data: [
+            -2.50, -3.30, -24.00, -7.70,
+            0, -0.10, 0, 0, 0, 0, 0, -4.80,
+            0, -2.90, -1.50
+        ],
+    }, {
+        name: 'Change',
+        color: '#168DD9',
+        data: [
+            0, 0, 0, 0, 10.60,
+            0, 12.00, 13.40, 12.00, 46.90,
+            5.70, 0, 0.90, 2.90, 1.50
+        ]
+    }]
+});
+</script>
