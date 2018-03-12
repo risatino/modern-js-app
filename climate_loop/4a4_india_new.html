@@ -15,22 +15,14 @@
         
 //Chart Data
        var us4a4_electric_17vs16 = [{
-        name: 'Fuel',
-        color: '#DF5656',
-        data: [
-            -2.50, -3.30, -24.00, -7.70,
-            0, -0.10, 0, 0, 0, 0, 0, -4.80,
-            0, -2.90, -1.50
-        ],
-    }, {
-        name: 'Change',
-        color: '#168DD9',
-        data: [
-            0, 0, 0, 0, 10.60,
-            0, 12.00, 13.40, 12.00, 46.90,
-            5.70, 0, 0.90, 2.90, 1.50
-        ]
-    }];
+            name: 'Fuel',
+            color: '#DF5656',
+            data: [-2.50, -3.30, -24.00, -7.70, 0, -0.10, 0, 0, 0, 0, 0, -4.80, 0, -2.90, -1.50],
+        }, {
+            name: 'Change',
+            color: '#168DD9',
+            data: [0, 0, 0, 0, 10.60, 0, 12.00, 13.40, 12.00, 46.90, 5.70, 0, 0.90, 2.90, 1.50]
+        }];
        
 //Make Chart
         $("#us4a4_electric_17vs16").highcharts({
@@ -126,6 +118,7 @@
             },
             series: us4a4_electric_17vs16
         });
+        
         // reflow charts in hidden modals
         $('.modal').on('shown.bs.modal', function() {
             $(".chart").each(function() {
@@ -147,14 +140,23 @@
 //Start of 4.a.4.
 //Chart Data    
 var categories = ['Coal', 'Petroleum Liquids', 'Petroleum Coke', 'Natural Gas', 'Other Gas', 'Nuclear', 'Hydroelectric', 'Renewable Sources', '...Wind', '...Solar', '...Wood', '...Other Biomass', '...Geothermal', 'Hydroelectric Pumped', 'All Energy Sources'];
+var us4a4_electric_17vs16 = [{
+        name: 'Fuel',
+        color: '#DF5656',
+        data: [-2.50, -3.30, -24.00, -7.70, 0, -0.10, 0, 0, 0, 0, 0, -4.80, 0, -2.90, -1.50]
+    }, {
+        name: 'Change',
+        color: '#168DD9',
+        data: [0, 0, 0, 0, 10.60, 0, 12.00, 13.40, 12.00, 46.90, 5.70, 0, 0.90, 2.90, 1.50]
+    }];
 //Make Data
 $("#us4a4_electric_17vs16").highcharts({
     chart: {
         backgroundColor: bgColor,
         type: 'bar'
     },
-legend: {
-                layout: "horizontal",
+    legend: {
+            layout: "horizontal",
                 itemStyle: {
                     fontSize: setFontsizeLegend
                 }
@@ -195,27 +197,11 @@ legend: {
 
     tooltip: {
         formatter: function () {
-            return '<b>' + this.series.name + ': ' + this.point.category + '</b><br/>' +                       Highcharts.numberFormat(Math.abs(this.point.y), 2) + '%';
+            return '<b>' + this.series.name + ': ' + this.point.category + '</b><br/>' + Highcharts.numberFormat(Math.abs(this.point.y), 2) + '%';
         }
     },
 
-    series: [{
-        name: 'Fuel',
-        color: '#DF5656',
-        data: [
-            -2.50, -3.30, -24.00, -7.70,
-            0, -0.10, 0, 0, 0, 0, 0, -4.80,
-            0, -2.90, -1.50
-        ],
-    }, {
-        name: 'Change',
-        color: '#168DD9',
-        data: [
-            0, 0, 0, 0, 10.60,
-            0, 12.00, 13.40, 12.00, 46.90,
-            5.70, 0, 0.90, 2.90, 1.50
-        ]
-    }]
+    series: us4a4_electric_17vs16
 });
 //End of 4.a.4.
 
