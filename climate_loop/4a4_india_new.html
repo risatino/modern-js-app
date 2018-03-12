@@ -144,18 +144,27 @@
 
 <!--new data-->
 <script>
-//Chart Data Make Data       
+//Start of 4.a.4.
+//Chart Data    
 var categories = ['Coal', 'Petroleum Liquids', 'Petroleum Coke', 'Natural Gas', 'Other Gas', 'Nuclear', 'Hydroelectric', 'Renewable Sources', '...Wind', '...Solar', '...Wood', '...Other Biomass', '...Geothermal', 'Hydroelectric Pumped', 'All Energy Sources'];
-
-Highcharts.chart('us4a4_electric_17vs16', {
+//Make Data
+$("#us4a4_electric_17vs16").highcharts({
     chart: {
+        backgroundColor: bgColor,
         type: 'bar'
     },
+legend: {
+                layout: "horizontal",
+                itemStyle: {
+                    fontSize: setFontsizeLegend
+                }
+            },
+            credits: !1,
+            exporting: {
+                enabled: !1
+            },
     title: {
-        text: 'Where Americans got their electricity, 2017 vs. 2016'
-    },
-    subtitle: {
-        text: 'Source: <a href="https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_es1b">EIA.gov</a>'
+        text: null
     },
     xAxis: [{
         categories: categories,
@@ -167,6 +176,10 @@ Highcharts.chart('us4a4_electric_17vs16', {
         title: {
             text: null
         },
+        min: -30,
+        max: 50,
+        intervals: 10,
+        allowDecimals: false,
         labels: {
             formatter: function () {
                 return Math.abs(this.value) + '%';
@@ -182,7 +195,7 @@ Highcharts.chart('us4a4_electric_17vs16', {
 
     tooltip: {
         formatter: function () {
-            return '<b>' + this.series.name + ': ' + this.point.category + '</b><br/>' + Highcharts.numberFormat(Math.abs(this.point.y), 2) + '%';
+            return '<b>' + this.series.name + ': ' + this.point.category + '</b><br/>' +                       Highcharts.numberFormat(Math.abs(this.point.y), 2) + '%';
         }
     },
 
@@ -204,6 +217,7 @@ Highcharts.chart('us4a4_electric_17vs16', {
         ]
     }]
 });
+//End of 4.a.4.
 
 </script>
 
