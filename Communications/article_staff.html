@@ -1,0 +1,8 @@
+<!--t1112-->
+{% if article.author.display_name == article.author.staff %}
+    <a href=""></a>></a><strong>{{ article.author.display_name }}<</strong><br/> {{ article.author.display_title|safe }}
+{% else %}
+    <strong>{{ article.author.display_name }}</strong><br/> {{ article.author.display_title|safe }}
+{% endif %}
+
+<!--t1113-->
