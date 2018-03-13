@@ -1,0 +1,198 @@
+<head>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/mapdata/custom/world.js"></script>
+<script src="http://code.highcharts.com/maps/highmaps.js"></script>
+<script src="http://code.highcharts.com/maps/modules/map.js"></script>
+</head>
+<!---->
+<body>
+<br>
+<hr>
+<div class="row">
+  <div class="col-sm-12">
+    <h1>3.A.1. Paris Climate Accord</h1>
+    <div class="chart-wrap">
+      <div id="paris_accord" class="chart"></div>
+      <p style="font-size:1em;"><em>Membership of the G20 consists of 19 individual countries plus the European Union (EU). This map shows the EU's 28 member states individually, rather than as a single block.</em></p>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-sm-12">
+    <h1>3.A.2. Montreal Protocol</h1>
+    <div class="chart-wrap">
+      <div id="montreal" class="chart"></div>
+      <p style="font-size:1em;"><em>Membership of the G20 consists of 19 individual countries plus the European Union (EU). This map shows the EU's 28 member states individually, rather than as a single block.</em></p>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-sm-12">
+    <h1>3.A.3. Kigali Amendment</h1>
+    <div class="chart-wrap">
+      <div id="kigali" class="chart"></div>
+      <p style="font-size:1em;"><em>Membership of the G20 consists of 19 individual countries plus the European Union (EU). This map shows the EU's 28 member states individually, rather than as a single block.</em></p>
+    </div>
+  </div>
+</div>
+
+<script>
+$(function () {
+  var setFontsize = '20px';
+  var setFontsizeLegend = '20px';
+  //Make the map
+  $('#paris_accord').highcharts('Map', {
+    chart: {spacingBottom: 20,backgroundColor: 'none'},
+    title : {text : 'Paris Climate Accord'},
+    legend: {enabled: true,layout: 'horizontal',itemStyle: {fontSize: setFontsizeLegend}},
+    title: false,
+    plotOptions: {
+      map: {
+        //allAreas: true,
+        nullColor: 'none',
+        joinBy: ['iso-a2', 'code'],
+        dataLabels: {
+          enabled: false,
+          color: 'red',
+          formatter: function () {
+            if (this.point.properties && this.point.properties.labelrank.toString() < 5) {return this.point.properties['iso-a2'];}
+          },
+          format: null,style: {fontWeight: 'bold'}},
+        mapData: Highcharts.maps['custom/world'],
+        tooltip: {useHTML: true,headerFormat: '',pointFormat: '<h5><b>{point.name}</b>: {series.name}</h5>',style: {fontSize: setFontsize}}
+      }
+    },
+    series : [
+      {
+      dataLabels: {style: {textShadow: false}},
+      name: 'Signature',
+      color: 'LightGreen',
+      data: $.map(['AO','BT','BI','CV','CO','CD','DO','EC','EH','ET','GQ','ER','GW','IR','IQ','KG','KW','LB','LR','LY','LI','ME','MZ','MM','NI','OM','SL','SM','SR','SS','SY','CH','MK','TT','TZ','UZ','YE','ZW'], function (code) {return {code: code};})},
+      {
+      dataLabels: {style: {textShadow: false}},
+      name: 'Entered into Force',
+      color: 'DarkGreen',
+      data: $.map(['AF','AL','DZ','AD','AG','AM','AZ','BS','BH','BD','BB','BY','BZ','BJ','BO','BA','BW','BN','BF','KH','CM','CF','TD','CL','KM','CK','CR','CU','DJ','DM','EG','SV','FJ','GA','GM','GE','GH','GR','GD','GT','GN','GY','HT','HN','IS','IL','JM','JO','KZ','KE','KI','LA','LS','LI','LU','MG','MW','MY','MV','ML','MH','MR','MU','FM','MC','MN','MA','NA','NR','NP','NZ','NE','NG','NU','NO','PK','PW','PA','PG','PY','PE','PH','QA','CG','RW','KN','LC','VC','ST','SN','SO','SX','RS','SC','LS','SG','SB','KR','LK','PS','SD','SZ','TJ','TH','TG','TO','TN','TM','TV','UG','UA','AE','UY','VU','VE','VN','ZM','VG','CI','KP','WS'],
+      function (code) {return {code: code};})},
+      {
+      dataLabels: {style: {textShadow: false}},
+      name: 'G20 Signature',
+      color: 'blue',
+      data: $.map(['RU','TR','CZ'],
+      function (code) {return {code: code};})},
+      {
+      dataLabels: {style: {textShadow: false}},
+      name: 'G20 Entered into Force',
+      color: 'DarkBlue',
+      data: $.map(['AR','AU','BR','CA','CN','FR','DE','IN','ID','IT','JP','MX','SA','ZA','GB','AT','BE','BG','HR','CY','DK','EE','FI','GL','HU','IE','LV','LT','MT','NL','PL','PT','RO','SK','SI','ES','SE'],
+      function (code) {return {code: code};})},
+      {
+      dataLabels: {style: {textShadow: false}},
+      name: 'Plans to withdraw',
+      color: 'grey',
+      data: $.map(['US'],
+      function (code) {return {code: code};})
+      }
+    ]
+  });
+  //Make the map
+  $('#montreal').highcharts('Map', {
+    chart: {spacingBottom: 20,backgroundColor: 'none'},
+    title : {text : 'Montreal Protocol'},
+    legend: {enabled: true,layout: 'horizontal',itemStyle: {fontSize: setFontsizeLegend}},
+    title: false,
+    plotOptions: {
+      map: {
+        //allAreas: true,
+        nullColor: 'none',
+        joinBy: ['iso-a2', 'code'],
+        dataLabels: {
+          enabled: false,
+          color: 'red',
+          formatter: function () {
+            if (this.point.properties && this.point.properties.labelrank.toString() < 5) {return this.point.properties['iso-a2'];}
+          },
+          format: null,style: {fontWeight: 'bold'}},
+        mapData: Highcharts.maps['custom/world'],
+        tooltip: {useHTML: true,headerFormat: '',pointFormat: '<h5><b>{point.name}</b>: {series.name}</h5>',style: {fontSize: setFontsize}}
+      }
+    },
+    series : [
+      {
+      dataLabels: {style: {textShadow: false}},
+      name: 'Ratified',
+      color: 'DarkGreen',
+      data: $.map(['AF','AL','DZ','AD','AO','AG','AM','AZ','BS','BH','BD','BB','BY','BZ','BJ','BT','BO','BA','BW','BN','BF','BI','KH','CM','CV','CF','TD','CL','CO','KM','CK','CR','CU','CZ','CD','DJ','DM','DO','EC','EG','SV','GQ','ER','ET','FJ','GA','GM','GE','DE','GH','GR','GD','GT','GN','GW','GY','HT','HN','IS','IR','IQ','IL','CI','JM','JO','KZ','KE','KI','KW','KG','LA','LB','LS','LR','LY','LI','LU','MG','MW','MY','MV','MR','MC','MN','MZ','MM','NA','NR','NP','NZ','NI','NE','NG','NU','NO','OM','PK','PW','PA','PG','PY','PE','PH','QA','RU','KN','LC','VC','WS','SM','ST','SN','RS','SC','SL','SG','SS','LK','SD','SR','SZ','CH','SY','TJ','TH','TG','TO','TT','TN','TR','TM','TV','UG','UA','AE','TZ','US','UY','UZ','VU','VE','VN','YE','ZM','ZW','MK','MD','KP','KR','ML','MH','FM','RW','GL','SO'],
+      function (code) {return {code: code};})},
+      {
+      dataLabels: {style: {textShadow: false}},
+      name: 'G20 Ratified',
+      color: 'DarkBlue',
+      data: $.map(['AR','AU','BR','CA','CN','FR','DE','IN','ID','IT','JP','MX','SA','ZA','GB','AT','BE','BG','HR','CY','DK','EE','FI','HU','IE','LV','LT','MT','NL','PL','PT','RO','SK','SI','ES','SE','RU','US','CZ'],
+      function (code) {return {code: code};})},
+      {
+      dataLabels: {style: {textShadow: false}},
+      name: 'Did not sign',
+      color: 'yellow',
+      data: $.map(['AI','AN','AQ','AS','AW','BL','BM','CC','CW','CX','CY','EH','FK','FO','GG','GI','GU','HK','IM','IO','JE','KY','ME','MF','MO','MP','MS','MU','NC','PF','PM','PN','PS','RE','SB','SH','SJ','SO','SX','TC','TK','TL','TW','VA','VG','VI','WF','XK','YT'],
+      function (code) {return {code: code};})
+      }
+    ]
+  });
+  //Make the map
+  $('#kigali').highcharts('Map', {
+    chart: {spacingBottom: 20,backgroundColor: 'none'},
+    title : {text : 'Kigali Amendment'},
+    legend: {enabled: true,layout: 'horizontal',itemStyle: {fontSize: setFontsizeLegend}},
+    title: false,
+    plotOptions: {
+      map: {
+        //allAreas: true,
+        nullColor: 'none',
+        joinBy: ['iso-a2', 'code'],
+        dataLabels: {
+          enabled: false,
+          color: 'red',
+          formatter: function () {
+            if (this.point.properties && this.point.properties.labelrank.toString() < 5) {return this.point.properties['iso-a2'];}
+          },
+          format: null,style: {fontWeight: 'bold'}},
+        mapData: Highcharts.maps['custom/world'],
+        tooltip: {useHTML: true,headerFormat: '',pointFormat: '<h5><b>{point.name}</b>: {series.name}</h5>',style: {fontSize: setFontsize}}
+      }
+    },
+    series : [
+      {
+      dataLabels: {style: {textShadow: false}},
+      name: 'Signed',
+      color: 'Green',
+      data: $.map(['AF','AL','DZ','AD','AO','AG','AM','AZ','BS','BH','BD','BB','BY','BZ','BJ','BT','BO','BA','BW','BN','BF','BI','KH','CM','CV','CF','TD','CL','CO','KM','CK','CR','CU','CZ','CD','DJ','DM','DO','EC','EG','SV','GQ','ER','ET','FJ','GA','GM','GE','DE','GH','GR','GD','GT','GN','GW','GY','HT','HN','IS','IR','IQ','IL','CI','JM','JO','KZ','KE','KI','KW','KG','LA','LB','LS','LR','LY','LI','LU','MG','MW','MY','MV','MR','MC','MN','MZ','MM','NA','NR','NP','NZ','NI','NE','NG','NU','NO','OM','PK','PW','PA','PG','PY','PE','PH','QA','RU','KN','LC','VC','WS','SM','ST','SN','RS','SC','SL','SG','SS','LK','SD','SR','SZ','CH','SY','TJ','TH','TG','TO','TT','TN','TR','TM','TV','UG','UA','AE','TZ','US','UY','UZ','VU','VE','VN','YE','ZM','ZW','MK','MD','KP','KR','GL','SO'],
+      function (code) {return {code: code};})},
+      {
+      dataLabels: {style: {textShadow: false}},
+      name: 'Ratified',
+      color: 'DarkGreen',
+      data: $.map(['MH','FM','RW','ML'],
+      function (code) {return {code: code};})},
+      {
+      dataLabels: {style: {textShadow: false}},
+      name: 'G20 Signed',
+      color: 'DarkBlue',
+      data: $.map(['AR','AU','BR','CA','CN','FR','DE','IN','ID','IT','JP','MX','SA','ZA','GB','AT','BE','BG','HR','CY','DK','EE','FI','HU','IE','LV','LT','MT','NL','PL','PT','RO','SK','SI','ES','SE','RU','US','CZ'],
+      function (code) {return {code: code};})},
+      {
+      dataLabels: {style: {textShadow: false}},
+      name: 'Did not sign',
+      color: 'yellow',
+      data: $.map(['AI','AN','AQ','AS','AW','BL','BM','CC','CW','CX','CY','EH','FK','FO','GG','GI','GU','HK','IM','IO','JE','KY','ME','MF','MO','MP','MS','MU','NC','PF','PM','PN','PS','RE','SB','SH','SJ','SO','SX','TC','TK','TL','TW','VA','VG','VI','WF','XK','YT'],
+      function (code) {return {code: code};})
+      }
+    ]
+  });
+});
+
+</script>
+
+</body>
