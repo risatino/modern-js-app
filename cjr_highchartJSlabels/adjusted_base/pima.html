@@ -1,0 +1,127 @@
+<div class="modal fade wide" id="modal01" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+        <h2 class="modal-title" class="ss-standard ss-alert">0.1. Arrest Data (Total Arrest Rate per 10,000)</h2>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 chart-wrap">   
+              <div id="arrestdata_pima" class="chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade wide" id="modal11" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+        <h2 class="modal-title" class="ss-standard ss-alert">1.1. Average Daily Population</h2>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 chart-wrap">   
+              <div id="adp_pima" class="chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade wide" id="modal12" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+        <h2 class="modal-title" class="ss-standard ss-alert">1.2. Average Daily Sentenced Population</h2>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 chart-wrap">
+              <div id="adsp_pima" class="chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade wide" id="modal22" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+        <h2 class="modal-title" class="ss-standard ss-alert">2.2. Percentage of non-white confined population</h2>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 chart-wrap">
+              <div id="percentage_nwcp_pima" class="chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade wide" id="modal31" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+        <h2 class="modal-title" class="ss-standard ss-alert">3.1. Average Length of Stay Among Individuals Released From Jail</h2>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 chart-wrap">
+              <div id="averagelen_of_stay_pima" class="chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+$(function() {
+Highcharts.setOptions({lang: { numericSymbols: null,thousandsSep: ','},});var setFontsize = '20px';var setFontsizeLegend = '22px';var topMargin = 20;var axisMargin = 20;var rightMargin = 200;var bgColor = '#252830';
+//Chart Data
+var arrestdata_pima = [{ name: 'Pima County, AZ (Local)',color: '#1ca8dd',dashStyle: 'Solid',data: [636.1,558.7,470.1,457.7,455.8,447,null,null],zIndex: 1,visible: true},{ name: 'Synthetic Match (BJS)',color:'#00b324',dashStyle: 'ShortDash',data: [522.2,500.4,487.2,455.4,433.6,420,null,null],visible: true},{ name: 'Pinal County, AZ (BJS)',color: '#E3E3E6',dashStyle: 'ShortDashDot',data: [306.6,300.9,307.6,325.7,299.8,299.6,null,null],visible: true}];
+//Make Chart
+$("#arrestdata_pima").highcharts({chart: { marginRight: rightMargin,marginTop: topMargin,backgroundColor:bgColor,type: 'line',alignTicks: false},legend: { layout: 'horizontal',itemStyle: { fontSize: setFontsizeLegend}},credits: false,exporting: { enabled: false},title: false,xAxis: [{title: { style: { fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 4.5,zIndex: 1,label: { text: 'Strategy Approved',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [2010,2011,2012,2013,2014,2015,2016,2017],tickmarkPlacement: 'off',labels: {style: { fontSize: setFontsize}}}],yAxis:[{title: { text: 'Total Arrest Rate per 10,000 (1,000 displayed)',style: { fontSize: setFontsize},margin: axisMargin},max: 1000,min: 0,tickInterval: 250,labels: { formatter: function() {return Highcharts.numberFormat(this.value,0);},style: { fontSize: setFontsize}}}],tooltip: { shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style: { fontSize: setFontsize}},plotOptions: { column: { dataLabels: { style: { fontSize: setFontsize}},style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize}},series: { lineWidth: 4,marker: { fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: { hover: { enabled: true, radiusPlus: 4}}},states: { hover: { enabled: true,lineWidthPlus: 2}}}},series: arrestdata_pima});
+//Chart Data
+var adp_pima = [{ name: 'Pima County, AZ (Local)',color: '#1ca8dd',dashStyle: 'Solid',data: [1649,1640,1802,2018,2061,1838,null,null,null,null],zIndex: 1,visible: true},{ name: 'Synthetic Match (BJS)',color:'#00b324',dashStyle: 'ShortDash',data: [1615,1552,1572,1570,1548,1596,null,null,null,null],visible: true},{ name: 'Pinal County, AZ (BJS)',color: '#E3E3E6',dashStyle: 'ShortDashDot',data: [1163,1176,1057,1121,1105,853,null,null,null,null],visible: true},{ name: 'Target',color: '#cc00ff',dashStyle: 'ShortDash',data: [null,null,null,null,null,null,1560,1560,1560,1560],marker: { enabled: false},zIndex: 1,visible: true}];
+//Make Chart
+$("#adp_pima").highcharts({chart: { marginRight: rightMargin,marginTop: topMargin,backgroundColor:bgColor,type: 'line',alignTicks: false},legend: { layout: 'horizontal',itemStyle: { fontSize: setFontsizeLegend}},credits: false,exporting: { enabled: false},title: false,xAxis: [{title: { style: { fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 4.5,zIndex: 1,label: { text: 'Strategy Approved',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [2010,2011,2012,2013,2014,2015,2016,2017,2018,2019],tickmarkPlacement: 'off',labels: {style: { fontSize: setFontsize}}}],yAxis:[{title: { text: 'Average Daily Population',style: { fontSize: setFontsize},margin: axisMargin},max: 3500,min: 0,tickInterval: 1600,labels: { formatter: function() {return Highcharts.numberFormat(this.value,0);},style: { fontSize: setFontsize}}}],tooltip: { shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style: { fontSize: setFontsize}},plotOptions: { column: { dataLabels: { style: { fontSize: setFontsize}},style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize}},series: { lineWidth: 4,marker: { fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: { hover: { enabled: true, radiusPlus: 4}}},states: { hover: { enabled: true,lineWidthPlus: 2}}}},series: adp_pima});
+//Chart Data
+var adsp_pima = [{ name: 'Pima County, AZ (Local)',color: '#1ca8dd',dashStyle: 'Solid',data: [42016,33436,39936,34788,32240,32508,null,null],zIndex: 1,visible: true},{ name: 'Synthetic Match (BJS)',color:'#00b324',dashStyle: 'ShortDash',data: [20893,22347,21065,20982,20696,19214,null,null],visible: true},{ name: 'Pinal County, AZ (BJS)',color: '#E3E3E6',dashStyle: 'ShortDashDot',data: [20384,16848,17212,15080,15860,11599,null,null],visible: true}];
+//Make Chart
+$("#adsp_pima").highcharts({chart: { marginRight: rightMargin,marginTop: topMargin,backgroundColor:bgColor,type: 'line',alignTicks: false},legend: { layout: 'horizontal',itemStyle: { fontSize: setFontsizeLegend}},credits: false,exporting: { enabled: false},title: false,xAxis: [{title: { style: { fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 4.5,zIndex: 1,label: { text: 'Strategy Approved',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [2010,2011,2012,2013,2014,2015,2016,2017],tickmarkPlacement: 'off',labels: {style: { fontSize: setFontsize}}}],yAxis:[{title: { text: 'Average Daily Sentenced Population',style: { fontSize: setFontsize},margin: axisMargin},max: 60000,min: 0,tickInterval: 15000,labels: { formatter: function() {return Highcharts.numberFormat(this.value,0);},style: { fontSize: setFontsize}}}],tooltip: { shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style: { fontSize: setFontsize}},plotOptions: { column: { dataLabels: { style: { fontSize: setFontsize}},style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize}},series: { lineWidth: 4,marker: { fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: { hover: { enabled: true, radiusPlus: 4}}},states: { hover: { enabled: true,lineWidthPlus: 2}}}},series: adsp_pima});
+//Chart Data
+var percentage_nwcp_pima = [{ name: 'Pima County, AZ (Local)',color: '#1ca8dd',dashStyle: 'Solid',data: [56,45,56,62,56,59,null,null],zIndex: 1,visible: true},{ name: 'Synthetic Match (BJS)',color:'#00b324',dashStyle: 'ShortDash',data: [56,54,56,54,52,55,null,null],visible: true},{ name: 'Pinal County, AZ (BJS)',color: '#E3E3E6',dashStyle: 'ShortDashDot',data: [77,80,80,78,72,88,null,null],visible: true}];
+//Make Chart
+$("#percentage_nwcp_pima").highcharts({chart: { marginRight: rightMargin,marginTop: topMargin,backgroundColor:bgColor,type: 'line',alignTicks: false},legend: { layout: 'horizontal',itemStyle: { fontSize: setFontsizeLegend}},credits: false,exporting: { enabled: false},title: false,xAxis: [{title: { style: { fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 4.5,zIndex: 1,label: { text: 'Strategy Approved',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [2010,2011,2012,2013,2014,2015,2016,2017],tickmarkPlacement: 'off',labels: {style: { fontSize: setFontsize}}}],yAxis:[{title: { text: '% of Non-White Confined Population',style: { fontSize: setFontsize},margin: axisMargin},max: 100,min: 0,tickInterval: 25,labels: { formatter: function() {return Highcharts.numberFormat(this.value,0);},style: { fontSize: setFontsize}}}],tooltip: { shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style: { fontSize: setFontsize}},plotOptions: { column: { dataLabels: { style: { fontSize: setFontsize}},style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize}},series: { lineWidth: 4,marker: { fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: { hover: { enabled: true, radiusPlus: 4}}},states: { hover: { enabled: true,lineWidthPlus: 2}}}},series: percentage_nwcp_pima});
+//Chart Data
+var averagelen_of_stay_pima = [{ name: 'Pima County, AZ (Local)',color: '#1ca8dd',dashStyle: 'Solid',data: [14.3,17.9,16.5,21.2,23.3,20.6,null,null],zIndex: 1,visible: true},{ name: 'Synthetic Match (BJS)',color:'#00b324',dashStyle: 'ShortDash',data: [28.2,25.4,27.2,27.3,27.3,30.3,null,null],visible: true},{ name: 'Pinal County, AZ (BJS)',color: '#E3E3E6',dashStyle: 'ShortDashDot',data: [20.8,25.5,22.4,27.1,25.4,26.8,null,null],visible: true}];
+//Make Chart
+$("#averagelen_of_stay_pima").highcharts({chart: { marginRight: rightMargin,marginTop: topMargin,backgroundColor:bgColor,type: 'line',alignTicks: false},legend: { layout: 'horizontal',itemStyle: { fontSize: setFontsizeLegend}},credits: false,exporting: { enabled: false},title: false,xAxis: [{title: { style: { fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 4.5,zIndex: 1,label: { text: 'Strategy Approved',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [2010,2011,2012,2013,2014,2015,2016,2017],tickmarkPlacement: 'off',labels: {style: { fontSize: setFontsize}}}],yAxis:[{title: { text: 'Time Served (in Days)',style: { fontSize: setFontsize},margin: axisMargin},max: 40,min: 0,tickInterval: 10,labels: { formatter: function() {return Highcharts.numberFormat(this.value,0);},style: { fontSize: setFontsize}}}],tooltip: { shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style: { fontSize: setFontsize}},plotOptions: { column: { dataLabels: { style: { fontSize: setFontsize}},style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize}},series: { lineWidth: 4,marker: { fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: { hover: { enabled: true, radiusPlus: 4}}},states: { hover: { enabled: true,lineWidthPlus: 2}}}},series: averagelen_of_stay_pima});
+// reflow charts in hidden modals
+$('.modal').on('shown.bs.modal', function () {$(".chart").each(function() {var chart = $(this).highcharts();chart.reflow();});});        
+$('').on('shown.bs.modal', function () {$(".chart").each(function() {var chart = $(this).highcharts();chart.reflow();});});
+});
+</script>

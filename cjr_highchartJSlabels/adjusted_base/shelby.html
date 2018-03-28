@@ -1,0 +1,127 @@
+<div class="modal fade wide" id="modal01" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+        <h2 class="modal-title" class="ss-standard ss-alert">0.1. Arrest Data (Total Arrest Rate per 10,000)</h2>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 chart-wrap">   
+              <div id="arrestdata_shelby" class="chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade wide" id="modal11" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+        <h2 class="modal-title" class="ss-standard ss-alert">1.1. Average Daily Population</h2>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 chart-wrap">   
+              <div id="adp_shelby" class="chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade wide" id="modal12" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+        <h2 class="modal-title" class="ss-standard ss-alert">1.2. Average Daily Sentenced Population</h2>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 chart-wrap">
+              <div id="adsp_shelby" class="chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade wide" id="modal22" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+        <h2 class="modal-title" class="ss-standard ss-alert">2.2. Percentage of non-white confined population</h2>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 chart-wrap">
+              <div id="percentage_nwcp_shelby" class="chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade wide" id="modal31" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+        <h2 class="modal-title" class="ss-standard ss-alert">3.1. Average Length of Stay Among Individuals Released From Jail</h2>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 chart-wrap">
+              <div id="averagelen_of_stay_shelby" class="chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+$(function() {
+Highcharts.setOptions({lang: { numericSymbols: null,thousandsSep: ','},});var setFontsize = '20px';var setFontsizeLegend = '22px';var topMargin = 20;var axisMargin = 20;var rightMargin = 200;var bgColor = '#252830';
+//Chart Data
+var arrestdata_shelby = [{ name: 'Shelby County, TN (Local)',color: '#1ca8dd',dashStyle: 'Solid',data: [646.8,662.2,620,602,510.3,450.7,null,null],zIndex: 1,visible: true},{ name: 'Synthetic Match (BJS)',color:'#00b324',dashStyle: 'ShortDash',data: [520.1,513,474.4,452.9,437.4,406.9,null,null],visible: true},{ name: 'Davidson County, TN (BJS)',color: '#E3E3E6',dashStyle: 'ShortDashDot',data: [1199.4,1135.1,821.2,803.9,727.8,692.3,null,null],visible: true}];
+//Make Chart
+$("#arrestdata_shelby").highcharts({chart: { marginRight: rightMargin,marginTop: topMargin,backgroundColor:bgColor,type: 'line',alignTicks: false},legend: { layout: 'horizontal',itemStyle: { fontSize: setFontsizeLegend}},credits: false,exporting: { enabled: false},title: false,xAxis: [{title: { style: { fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 4.5,zIndex: 1,label: { text: 'Strategy Approved',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [2010,2011,2012,2013,2014,2015,2016,2017],tickmarkPlacement: 'off',labels: {style: { fontSize: setFontsize}}}],yAxis:[{title: { text: 'Total Arrest Rate per 10,000 (1,400 displayed)',style: { fontSize: setFontsize},margin: axisMargin},max: 1400,min: 0,tickInterval: 350,labels: { formatter: function() {return Highcharts.numberFormat(this.value,0);},style: { fontSize: setFontsize}}}],tooltip: { shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style: { fontSize: setFontsize}},plotOptions: { column: { dataLabels: { style: { fontSize: setFontsize}},style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize}},series: { lineWidth: 4,marker: { fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: { hover: { enabled: true, radiusPlus: 4}}},states: { hover: { enabled: true,lineWidthPlus: 2}}}},series: arrestdata_shelby});
+//Chart Data
+var adp_shelby = [{ name: 'Shelby County, TN (Local)',color: '#1ca8dd',dashStyle: 'Solid',data: [2750,2680,2556,2384,2456,2474,null,null,null,null],zIndex: 1,visible: true},{ name: 'Synthetic Match (BJS)',color:'#00b324',dashStyle: 'ShortDash',data: [2524,2481,2404,2314,2331,2162,null,null,null,null],visible: true},{ name: 'Davidson County, TN (BJS)',color: '#E3E3E6',dashStyle: 'ShortDashDot',data: [3551,3435,2283,1131,2973,2587,null,null,null,null],visible: true},{ name: 'Target',color: '#cc00ff',dashStyle: 'ShortDash',data: [null,null,null,null,null,null,1398,1398,1398,1398],marker: { enabled: false},zIndex: 1,visible: true}];
+//Make Chart
+$("#adp_shelby").highcharts({chart: { marginRight: rightMargin,marginTop: topMargin,backgroundColor:bgColor,type: 'line',alignTicks: false},legend: { layout: 'horizontal',itemStyle: { fontSize: setFontsizeLegend}},credits: false,exporting: { enabled: false},title: false,xAxis: [{title: { style: { fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 4.5,zIndex: 1,label: { text: 'Strategy Approved',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [2010,2011,2012,2013,2014,2015,2016,2017,2018,2019],tickmarkPlacement: 'off',labels: {style: { fontSize: setFontsize}}}],yAxis:[{title: { text: 'Average Daily Population',style: { fontSize: setFontsize},margin: axisMargin},max: 4000,min: 0,tickInterval: 1000,labels: { formatter: function() {return Highcharts.numberFormat(this.value,0);},style: { fontSize: setFontsize}}}],tooltip: { shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style: { fontSize: setFontsize}},plotOptions: { column: { dataLabels: { style: { fontSize: setFontsize}},style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize}},series: { lineWidth: 4,marker: { fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: { hover: { enabled: true, radiusPlus: 4}}},states: { hover: { enabled: true,lineWidthPlus: 2}}}},series: adp_shelby});
+//Chart Data
+var adsp_shelby = [{ name: 'Shelby County, TN (Local)',color: '#1ca8dd',dashStyle: 'Solid',data: [60164,60008,68016,63908,47008,44251,null,null],zIndex: 1,visible: true},{ name: 'Synthetic Match (BJS)',color:'#00b324',dashStyle: 'ShortDash',data: [35414,33982,33214,29437,29913,25706,null,null],visible: true},{ name: 'Davidson County, TN (BJS)',color: '#E3E3E6',dashStyle: 'ShortDashDot',data: [60450,47372,50986,54600,48568,55768,null,null],visible: true}];
+//Make Chart
+$("#adsp_shelby").highcharts({chart: { marginRight: rightMargin,marginTop: topMargin,backgroundColor:bgColor,type: 'line',alignTicks: false},legend: { layout: 'horizontal',itemStyle: { fontSize: setFontsizeLegend}},credits: false,exporting: { enabled: false},title: false,xAxis: [{title: { style: { fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 4.5,zIndex: 1,label: { text: 'Strategy Approved',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [2010,2011,2012,2013,2014,2015,2016,2017],tickmarkPlacement: 'off',labels: {style: { fontSize: setFontsize}}}],yAxis:[{title: { text: 'Average Daily Sentenced Population',style: { fontSize: setFontsize},margin: axisMargin},max: 80000,min: 0,tickInterval: 20000,labels: { formatter: function() {return Highcharts.numberFormat(this.value,0);},style: { fontSize: setFontsize}}}],tooltip: { shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style: { fontSize: setFontsize}},plotOptions: { column: { dataLabels: { style: { fontSize: setFontsize}},style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize}},series: { lineWidth: 4,marker: { fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: { hover: { enabled: true, radiusPlus: 4}}},states: { hover: { enabled: true,lineWidthPlus: 2}}}},series: adsp_shelby});
+//Chart Data
+var percentage_nwcp_shelby = [{ name: 'Shelby County, TN (Local)',color: '#1ca8dd',dashStyle: 'Solid',data: [88,84,93,88,87,88,null,null],zIndex: 1,visible: true},{ name: 'Synthetic Match (BJS)',color:'#00b324',dashStyle: 'ShortDash',data: [65,64,64,63,62,64,null,null],visible: true},{ name: 'Davidson County, TN (BJS)',color: '#E3E3E6',dashStyle: 'ShortDashDot',data: [67,65,67,68,66,63,null,null],visible: true}];
+//Make Chart
+$("#percentage_nwcp_shelby").highcharts({chart: { marginRight: rightMargin,marginTop: topMargin,backgroundColor:bgColor,type: 'line',alignTicks: false},legend: { layout: 'horizontal',itemStyle: { fontSize: setFontsizeLegend}},credits: false,exporting: { enabled: false},title: false,xAxis: [{title: { style: { fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 4.5,zIndex: 1,label: { text: 'Strategy Approved',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [2010,2011,2012,2013,2014,2015,2016,2017],tickmarkPlacement: 'off',labels: {style: { fontSize: setFontsize}}}],yAxis:[{title: { text: '% of Non-White Confined Population',style: { fontSize: setFontsize},margin: axisMargin},max: 100,min: 0,tickInterval: 25,labels: { formatter: function() {return Highcharts.numberFormat(this.value,0);},style: { fontSize: setFontsize}}}],tooltip: { shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style: { fontSize: setFontsize}},plotOptions: { column: { dataLabels: { style: { fontSize: setFontsize}},style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize}},series: { lineWidth: 4,marker: { fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: { hover: { enabled: true, radiusPlus: 4}}},states: { hover: { enabled: true,lineWidthPlus: 2}}}},series: percentage_nwcp_shelby});
+//Chart Data
+var averagelen_of_stay_shelby = [{ name: 'Shelby County, TN (Local)',color: '#1ca8dd',dashStyle: 'Solid',data: [16.7,16.3,13.7,13.6,19.1,20.4,null,null],zIndex: 1,visible: true},{ name: 'Synthetic Match (BJS)',color:'#00b324',dashStyle: 'ShortDash',data: [26.0,26.7,26.4,28.7,28.4,30.7,null,null],visible: true},{ name: 'Davidson County, TN (BJS)',color: '#E3E3E6',dashStyle: 'ShortDashDot',data: [22.1,26.5,17.0,7.6,22.3,16.9,null,null],visible: true}];
+//Make Chart
+$("#averagelen_of_stay_shelby").highcharts({chart: { marginRight: rightMargin,marginTop: topMargin,backgroundColor:bgColor,type: 'line',alignTicks: false},legend: { layout: 'horizontal',itemStyle: { fontSize: setFontsizeLegend}},credits: false,exporting: { enabled: false},title: false,xAxis: [{title: { style: { fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 4.5,zIndex: 1,label: { text: 'Strategy Approved',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [2010,2011,2012,2013,2014,2015,2016,2017],tickmarkPlacement: 'off',labels: {style: { fontSize: setFontsize}}}],yAxis:[{title: { text: 'Time Served (in Days)',style: { fontSize: setFontsize},margin: axisMargin},max: 40,min: 0,tickInterval: 10,labels: { formatter: function() {return Highcharts.numberFormat(this.value,0);},style: { fontSize: setFontsize}}}],tooltip: { shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style: { fontSize: setFontsize}},plotOptions: { column: { dataLabels: { style: { fontSize: setFontsize}},style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize}},series: { lineWidth: 4,marker: { fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: { hover: { enabled: true, radiusPlus: 4}}},states: { hover: { enabled: true,lineWidthPlus: 2}}}},series: averagelen_of_stay_shelby});
+// reflow charts in hidden modals
+$('.modal').on('shown.bs.modal', function () {$(".chart").each(function() {var chart = $(this).highcharts();chart.reflow();});});        
+$('').on('shown.bs.modal', function () {$(".chart").each(function() {var chart = $(this).highcharts();chart.reflow();});});
+});
+</script>
