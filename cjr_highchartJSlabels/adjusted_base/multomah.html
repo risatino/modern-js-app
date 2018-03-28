@@ -1,0 +1,127 @@
+<div class="modal fade wide" id="modal01" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+        <h2 class="modal-title" class="ss-standard ss-alert">0.1. Arrest Data (Total Arrest Rate per 10,000)</h2>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 chart-wrap">   
+              <div id="arrestdata_multnomah" class="chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade wide" id="modal11" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+        <h2 class="modal-title" class="ss-standard ss-alert">1.1. Average Daily Population</h2>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 chart-wrap">   
+              <div id="adp_multnomah" class="chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade wide" id="modal12" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+        <h2 class="modal-title" class="ss-standard ss-alert">1.2. Average Daily Sentenced Population</h2>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 chart-wrap">
+              <div id="adsp_multnomah" class="chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade wide" id="modal22" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+        <h2 class="modal-title" class="ss-standard ss-alert">2.2. Percentage of non-white confined population</h2>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 chart-wrap">
+              <div id="percentage_nwcp_multnomah" class="chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade wide" id="modal31" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+        <h2 class="modal-title" class="ss-standard ss-alert">3.1. Average Length of Stay Among Individuals Released From Jail</h2>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 chart-wrap">
+              <div id="averagelen_of_stay_multnomah" class="chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+$(function() {
+Highcharts.setOptions({lang: { numericSymbols: null,thousandsSep: ','},});var setFontsize = '20px';var setFontsizeLegend = '22px';var topMargin = 20;var axisMargin = 20;var rightMargin = 200;var bgColor = '#252830';
+//Chart Data
+var arrestdata_multnomah = [{ name: 'Multnomah County, OR (Local)',color: '#1ca8dd',dashStyle: 'Solid',data: [351.2,358.0,366.1,297.7,252.1,null,null],zIndex: 1,visible: true},{ name: 'Synthetic Match (BJS)',color:'#00b324',dashStyle: 'ShortDash',data: [406.0,373.0,371.0,358.3,341.4,334.9,null,null],visible: true},{ name: 'Clackamas County, OR (BJS)',color: '#E3E3E6',dashStyle: 'ShortDashDot',data: [283.6,272.1,259.6,210.5,null,null],visible: true}];
+//Make Chart
+$("#arrestdata_multnomah").highcharts({chart: { marginRight: rightMargin,marginTop: topMargin,backgroundColor:bgColor,type: 'line',alignTicks: false},legend: { layout: 'horizontal',itemStyle: { fontSize: setFontsizeLegend}},credits: false,exporting: { enabled: false},title: false,xAxis: [{title: { style: { fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 4.5,zIndex: 1,label: { text: 'Strategy Approved',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [2010,2011,2012,2013,2014,2015,2016,2017],tickmarkPlacement: 'off',labels: {style: { fontSize: setFontsize}}}],yAxis:[{title: { text: 'Total Arrest Rate per 10,000 (1,000 displayed)',style: { fontSize: setFontsize},margin: axisMargin},max: 1000,min: 0,tickInterval: 250,labels: { formatter: function() {return Highcharts.numberFormat(this.value,0);},style: { fontSize: setFontsize}}}],tooltip: { shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style: { fontSize: setFontsize}},plotOptions: { column: { dataLabels: { style: { fontSize: setFontsize}},style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize}},series: { lineWidth: 4,marker: { fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: { hover: { enabled: true, radiusPlus: 4}}},states: { hover: { enabled: true,lineWidthPlus: 2}}}},series: arrestdata_multnomah});
+//Chart Data
+var adp_multnomah = [{ name: 'Multnomah County, OR (Local)',color: '#1ca8dd',dashStyle: 'Solid',data: [1274,1190,1235,1232,1218,1166,null,null,null,null],zIndex: 1,visible: true},{ name: 'Synthetic Match (BJS)',color:'#00b324',dashStyle: 'ShortDash',data: [1267,1203,1234,1227,1219,1176,null,null,null,null],visible: true},{ name: 'Clackamas County, OR (BJS)',color: '#E3E3E6',dashStyle: 'ShortDashDot',data: [524,544,563,583,602,621,null,null,null,null],visible: true},{ name: 'Target',color: '#cc00ff',dashStyle: 'ShortDash',data: [null,null,null,null,null,null,896,896,896,896],marker: { enabled: false},zIndex: 1,visible: true}];
+//Make Chart
+$("#adp_multnomah").highcharts({chart: { marginRight: rightMargin,marginTop: topMargin,backgroundColor:bgColor,type: 'line',alignTicks: false},legend: { layout: 'horizontal',itemStyle: { fontSize: setFontsizeLegend}},credits: false,exporting: { enabled: false},title: false,xAxis: [{title: { style: { fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 4.5,zIndex: 1,label: { text: 'Strategy Approved',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [2010,2011,2012,2013,2014,2015,2016,2017,2018,2019],tickmarkPlacement: 'off',labels: {style: { fontSize: setFontsize}}}],yAxis:[{title: { text: 'Average Daily Population',style: { fontSize: setFontsize},margin: axisMargin},max: 1275,min: 0,tickInterval:300,labels: { formatter: function() {return Highcharts.numberFormat(this.value,0);},style: { fontSize: setFontsize}}}],tooltip: { shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style: { fontSize: setFontsize}},plotOptions: { column: { dataLabels: { style: { fontSize: setFontsize}},style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize}},series: { lineWidth: 4,marker: { fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: { hover: { enabled: true, radiusPlus: 4}}},states: { hover: { enabled: true,lineWidthPlus: 2}}}},series: adp_multnomah});
+//Chart Data
+var adsp_multnomah = [{ name: 'Multnomah County, OR (Local)',color: '#1ca8dd',dashStyle: 'Solid',data: [38064,36816,38896,39104,38064,34776,null,null],zIndex: 1,visible: true},{ name: 'Synthetic Match (BJS)',color:'#00b324',dashStyle: 'ShortDash',data: [19094,19710,19027,17771,17601,16265,null,null],visible: true},{ name: 'Clackamas County, OR (BJS)',color: '#E3E3E6',dashStyle: 'ShortDashDot',data: [12693,13672,14650,15629,15884,16138,null,null],visible: true}];
+//Make Chart
+$("#adsp_multnomah").highcharts({chart: { marginRight: rightMargin,marginTop: topMargin,backgroundColor:bgColor,type: 'line',alignTicks: false},legend: { layout: 'horizontal',itemStyle: { fontSize: setFontsizeLegend}},credits: false,exporting: { enabled: false},title: false,xAxis: [{title: { style: { fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 4.5,zIndex: 1,label: { text: 'Strategy Approved',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [2010,2011,2012,2013,2014,2015,2016,2017],tickmarkPlacement: 'off',labels: {style: { fontSize: setFontsize}}}],yAxis:[{title: { text: 'Average Daily Sentenced Population',style: { fontSize: setFontsize},margin: axisMargin},max: 40000,min: 0,tickInterval: 10000,labels: { formatter: function() {return Highcharts.numberFormat(this.value,0);},style: { fontSize: setFontsize}}}],tooltip: { shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style: { fontSize: setFontsize}},plotOptions: { column: { dataLabels: { style: { fontSize: setFontsize}},style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize}},series: { lineWidth: 4,marker: { fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: { hover: { enabled: true, radiusPlus: 4}}},states: { hover: { enabled: true,lineWidthPlus: 2}}}},series: adsp_multnomah});
+//Chart Data
+var percentage_nwcp_multnomah = [{ name: 'Multnomah County, OR (Local)',color: '#1ca8dd',dashStyle: 'Solid',data: [47,43,44,42,37,42,null,null],zIndex: 1,visible: true},{ name: 'Synthetic Match (BJS)',color:'#00b324',dashStyle: 'ShortDash',data: [55,55,53,48,52,53,null,null],visible: true},{ name: 'Clackamas County, OR (BJS)',color: '#E3E3E6',dashStyle: 'ShortDashDot',data: [13,14,14,15,17,19,null,null],visible: true}];
+//Make Chart
+$("#percentage_nwcp_multnomah").highcharts({chart: { marginRight: rightMargin,marginTop: topMargin,backgroundColor:bgColor,type: 'line',alignTicks: false},legend: { layout: 'horizontal',itemStyle: { fontSize: setFontsizeLegend}},credits: false,exporting: { enabled: false},title: false,xAxis: [{title: { style: { fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 4.5,zIndex: 1,label: { text: 'Strategy Approved',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [2010,2011,2012,2013,2014,2015,2016,2017],tickmarkPlacement: 'off',labels: {style: { fontSize: setFontsize}}}],yAxis:[{title: { text: '% of Non-White Confined Population',style: { fontSize: setFontsize},margin: axisMargin},max: 100,min: 0,tickInterval: 25,labels: { formatter: function() {return Highcharts.numberFormat(this.value,0);},style: { fontSize: setFontsize}}}],tooltip: { shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style: { fontSize: setFontsize}},plotOptions: { column: { dataLabels: { style: { fontSize: setFontsize}},style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize}},series: { lineWidth: 4,marker: { fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: { hover: { enabled: true, radiusPlus: 4}}},states: { hover: { enabled: true,lineWidthPlus: 2}}}},series: percentage_nwcp_multnomah});
+//Chart Data
+var averagelen_of_stay_multnomah = [{ name: 'Multnomah County, OR (Local)',color: '#1ca8dd',dashStyle: 'Solid',data: [12.2,11.8,11.6,11.5,11.7,12.2,null,null],zIndex: 1,visible: true},{ name: 'Synthetic Match (BJS)',color:'#00b324',dashStyle: 'ShortDash',data: [24.2,22.3,23.7,25.2,25.3,26.4,null,null],visible: true},{ name: 'Clackamas County, OR (BJS)',color: '#E3E3E6',dashStyle: 'ShortDashDot',data: [16.0,15.2,14.4,13.6,13.8,14.0,null,null],visible: true}];
+//Make Chart
+$("#averagelen_of_stay_multnomah").highcharts({chart: { marginRight: rightMargin,marginTop: topMargin,backgroundColor:bgColor,type: 'line',alignTicks: false},legend: { layout: 'horizontal',itemStyle: { fontSize: setFontsizeLegend}},credits: false,exporting: { enabled: false},title: false,xAxis: [{title: { style: { fontSize: setFontsize},margin: axisMargin},plotLines: [{ color: '#ff0000',width: 2,value: 4.5,zIndex: 1,label: { text: 'Strategy Approved',verticalAlign: 'middle',textAlign: 'center',style: { color: 'white',fontWeight: 'bold',fontSize: 18}}}],categories: [2010,2011,2012,2013,2014,2015,2016,2017,2018,2019],tickmarkPlacement: 'off',labels: {style: { fontSize: setFontsize}}}],yAxis:[{title: { text: 'Time Served (in Days)',style: { fontSize: setFontsize},margin: axisMargin},max: 30,min: 0,tickInterval: 10,labels: { formatter: function() {return Highcharts.numberFormat(this.value,0);},style: { fontSize: setFontsize}}}],tooltip: { shared: true,useHTML: true,headerFormat: '<h5>{point.key}</h5>',pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>{point.y}</b><br>',style: { fontSize: setFontsize}},plotOptions: { column: { dataLabels: { style: { fontSize: setFontsize}},style: { color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',fontSize: setFontsize}},series: { lineWidth: 4,marker: { fillColor: bgColor,radius: 6,lineWidth: 4,lineColor: null,states: { hover: { enabled: true, radiusPlus: 4}}},states: { hover: { enabled: true,lineWidthPlus: 2}}}},series: averagelen_of_stay_multnomah});
+// reflow charts in hidden modals
+$('.modal').on('shown.bs.modal', function () {$(".chart").each(function() {var chart = $(this).highcharts();chart.reflow();});});        
+$('').on('shown.bs.modal', function () {$(".chart").each(function() {var chart = $(this).highcharts();chart.reflow();});});
+});
+</script>
