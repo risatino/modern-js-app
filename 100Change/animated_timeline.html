@@ -1,0 +1,174 @@
+<!-- Timeline for 100&Change -->
+
+<style>
+#process {
+  position: relative;
+  width: 75%;
+  border-top: 5px solid white;
+  left: 10%;
+  margin: 10px;
+}
+
+.arrow-steps {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.step {
+/*  width: 13%;*/
+  background-color: #0E578C;
+  flex: 1;
+  display: flex;
+}
+
+.step:hover:after {
+  background-color: blue;
+}
+
+.step {
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  cursor: default;
+  margin: 5px 5px;
+  padding: 10px 10px 10px 30px;
+  border-radius: 2px;
+  float: left;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+  transition: flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11);
+}
+.step:hover {
+  background-color: black;
+  color: white;
+}
+
+.current {
+  background-color: #02927b;
+  color: white;
+  flex: 1.5;
+}
+
+.current:hover {
+  background-color: lightblue;
+  color: black;
+}
+
+#content {
+  position: relative;
+  width: 100%;
+  top: 15%;
+  display: flex;
+}
+
+.step-content {
+  flex: 1;
+  display: flex;
+  padding-bottom: 20px;
+}
+
+.step-description {
+  position: relative;
+  display: block;
+  padding-left: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+/*.step-image {
+  text-align: center;
+}*/
+.step-image img {
+  position: relative;
+  height: 200px;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+</style>
+
+<div id="process">
+  <div class="arrow-steps">
+  <div class="step current" id='one')">
+    <span>1</span>
+  </div>
+  <div class="step" id='two'>
+    <span>2</span>
+  </div>
+  <div class="step" id='three'>
+    <span>3</span>
+  </div>
+  <div class="step" id='four'>
+    <span>4</span>
+  </div>
+  <div class="step" id='five'>
+   <span>5</span>
+  </div>
+  <div class="step" id='six'>
+    <span>6</span>
+  </div>
+  <div class="step" id='seven'>
+    <span>7</span>
+  </div>
+  <div class="step" id='eight'>
+    <span>8</span>
+  </div>
+  <div class="step" id='nine'>
+    <span>9</span>
+  </div>
+  </div>
+  <div id="content">
+    <div class="step-description step-content">
+      <p>
+        Step one description. 
+      </p>
+    </div>
+    <div class="step-image step-content">
+      <img src="https://theloop.macfound.org/media/images/12_shelby.original.png">
+    </div>
+  </div>          
+</div>
+
+<script>
+$(document).ready(function() {
+  var current = "one";
+
+  var steps = document.querySelectorAll(".step");
+  steps.forEach(function(step) {
+    step.addEventListener("click", changeStep);
+  });
+
+  function changeStep() {
+    document.querySelector(`#${current}`).classList.remove('current');
+    document.querySelector(`#${this.id}`).classList.add('current');
+    document.querySelector('#content').innerHTML = allSteps[this.id];
+    current = this.id;
+  }
+
+
+  var allSteps = {"one":"<div class='step-description step-content'><p>Step 1 description</p></div><div class='step-image step-content'><img src='https://theloop.macfound.org/media/images/01_milwaukee.original.png'></div>",
+
+                  "two":"<div class='step-description step-content'><p>Step 2 description</p></div><div class='step-image step-content'><img src='https://theloop.macfound.org/media/images/12_lucas.original.png'></div>",
+
+                  "three":"<div class='step-description step-content'><p>Step 3 description</p></div><div class='step-image step-content'><img src='https://theloop.macfound.org/media/images/01_milwaukee.original.png'></div>",
+
+                  "four":"<div class='step-description step-content'><p>Step 4 description</p></div><div class='step-image step-content'><img src='https://theloop.macfound.org/media/images/31_lucas.original.png'></div>",
+
+                  "five":"<div class='step-description step-content'><p>Step 5 description</p></div><div class='step-image step-content'><img src='https://theloop.macfound.org/media/images/12_milwaukee.original.png'></div>",
+
+                  "six":"<div class='step-description step-content'><p>Step 6 description</p></div><div class='step-image step-content'><img src='https://theloop.macfound.org/media/images/31_lucas.original.png'></div>",
+
+                  "seven":"<div class='step-description step-content'><p>Step 7 description</p></div><div class='step-image step-content'><img src='https://theloop.macfound.org/media/images/12_philly.original.png'></div>",
+
+                  "eight":"<div class='step-description step-content'><p>Step 8 description</p></div><div class='step-image step-content'><img src='https://theloop.macfound.org/media/images/31_philly.original.png'></div>",
+                  "nine":"<div class='step-description step-content'><p> Step 9 description</p></div><div class='step-image step-content'><img src='https://theloop.macfound.org/media/images/12_cook.original.png'></div>"
+                  };
+});
+</script>
